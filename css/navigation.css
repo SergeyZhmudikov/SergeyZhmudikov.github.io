@@ -16,6 +16,7 @@
 .navlist__links {
     text-decoration: none;
     font-family: 'Mada', sans-serif;
+    color: #66677c;
 }
 
 .navlist__links:visited {
