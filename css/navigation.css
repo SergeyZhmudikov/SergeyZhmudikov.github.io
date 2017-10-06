@@ -1,0 +1,42 @@
+.navigation {
+    top: 20px;
+    left: 10%;
+    position: absolute;
+    font-family: 'Mada', sans-serif;
+}
+
+.navlist__item {
+    display: inline;
+    padding: 0px 10px 0px 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #66677c;
+}
+
+.navlist__links {
+    text-decoration: none;
+    font-family: 'Mada', sans-serif;
+}
+
+.navlist__links:visited {
+    color: #66677c;
+}
+
+.navlist__links:hover {
+    color: #efc26f;
+}
+
+.active {
+    color: #efc26f;
+}
+
+@media(max-width:1253px) {
+    .navlist__item {
+        display: block;
+        padding-bottom: 10%;
+    }
+    .navigation {
+        top: 20px;
+        left: 5%;
+    }
+}

@@ -1,0 +1,22 @@
+.footer {
+    color: #9ba3a5;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.footer__text {
+    padding-bottom: 60px;
+}
+
+.social {
+    padding: 0 25px 0 25px;
+}
+
+.templateno {
+    color: #ad8353;
+    text-decoration: none;
+}
+
+.social_link {
+    color: #9ba3a5;
+}

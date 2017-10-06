@@ -1,0 +1,68 @@
+.resume {
+    left: 10%;
+    right: 5%;
+    font-family: 'Mada', sans-serif;
+    font-size: 14px;
+    top: 40%;
+    color: white;
+    font-weight: 300;
+    margin: 0;
+    position: absolute;
+    overflow: hidden;
+}
+
+.resume_icon {
+    display: inline-block;
+    padding-right: 50px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.resume__text {
+    margin: 0px;
+    display: block;
+    position: relative;
+    padding-left: 70px;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+
+.par__resume_head {
+    font-size: 28px;
+    display: inline;
+    overflow: hidden;
+}
+
+.par__resume_date {
+    color: #703128;
+    display: inline;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.par__resume_text {
+    font-size: 16px;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+}
+
+.fa-laptop {
+    position: absolute;
+}
+
+.par__resume_date--gold {
+    color: #866f23;
+}
+
+@media(max-width:460px) {
+    .par__resume_text {
+        font-size: 12px;
+    }
+    .par__resume_head {
+        font-size: 18px;
+    }
+    .resume {
+        top: 30%;
+    }
+}

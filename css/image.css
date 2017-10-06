@@ -1,0 +1,104 @@
+.background {
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    font-family: 'Mada', sans-serif;
+    position: relative;
+}
+
+.background__imgfirst--man {
+    background-image: url(../images/1.jpg);
+    height: 820px;
+}
+
+.background__grey {
+    background-color: #f0e2d7;
+    height: 820px;
+}
+
+.background__text {
+    color: black;
+    font-size: 20px;
+    margin-left: 25%;
+    margin-top: 5%;
+    font-weight: bold;
+    text-shadow: 1px 1px white;
+    position: absolute;
+}
+
+.background__white {}
+
+.background__img_half-man {
+    background-image: url(../images/2.jpg);
+    height: 340px;
+}
+
+.background__gold {
+    background-color: #e4ae58;
+    height: 340px;
+}
+
+.background__red {
+    background-color: #e9714c;
+    height: 340px;
+}
+
+.background__black {
+    background-color: #161616;
+    height: 340px;
+}
+
+.background__white {
+    background-color: white;
+    height: 340px;
+}
+
+.background__img_man_with_phone {
+    background-image: url(../images/3.jpg);
+    height: 420px;
+}
+
+.background__red--medium {
+    height: 420px;
+}
+
+.background__red--large {
+    height: 820px;
+}
+
+.background__gold--medium {
+    height: 420px;
+}
+
+.background__img_notebook {
+    background-image: url(../images/4.jpg);
+    height: 420px;
+}
+
+.background__img_hands {
+    background-image: url(../images/5.jpg);
+    height: 480px;
+}
+
+.background__img_hands:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.background__img_man_with_laptop {
+    background-image: url(../images/6.jpg);
+    height: 820px;
+}
+
+.background__black--large {
+    height: 820px;
+}
+
+.background__white--large {
+    height: 375px;
+}

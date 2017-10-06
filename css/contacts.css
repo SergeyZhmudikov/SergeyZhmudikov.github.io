@@ -1,0 +1,46 @@
+.contact {
+    color: white;
+    font-size: 26px;
+    font-weight: 300;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 45px;
+}
+
+.contact__adresscontact {
+    font-size: 14px;
+    color: #65696a;
+    padding-bottom: 60px;
+}
+
+.contact__headcontact {
+    padding-bottom: 30px;
+}
+
+.ico {
+    padding-right: 15px;
+}
+
+.contact__info {
+    display: block;
+    font-size: 16px;
+    color: #65696a;
+    padding-bottom: 25px;
+}
+
+.phonetext {
+    color: #65696a;
+}
+
+.emailtext,
+.websitetext {
+    color: #ad8353;
+}
+
+.phonetext,
+.emailtext,
+.websitetext {
+    display: inline;
+    text-decoration: none;
+}

@@ -1,0 +1,143 @@
+.content {
+    position: absolute;
+    left: 10%;
+    right: 5%;
+    font-family: 'Mada', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.content--top245 {
+    top: 245px;
+}
+
+.content--top45_left5 {
+    top: 45px;
+    left: 5%;
+}
+
+.content--top45_left10 {
+    top: 45px;
+    left: 10%;
+    margin: 0;
+    position: absolute;
+}
+
+.content--top505_left5 {
+    top: 505px;
+    left: 5%;
+}
+
+.content__block {
+    margin: 0;
+    padding: 0;
+}
+
+.content__block--first-paragraph {
+    font-size: 14px;
+    color: #a3aab2;
+    padding-bottom: 40px;
+}
+
+.content__block--second-paragraph {
+    color: #2c302f;
+    font-size: 34px;
+    padding-bottom: 35px;
+    font-weight: 300;
+}
+
+.stimulus_word {
+    font-weight: 500;
+}
+
+.content__block--third-paragraph {
+    line-height: 30px;
+    color: #97a3b1;
+    font-size: 14px;
+    padding-bottom: 60px;
+}
+
+.content__block--getbutton {
+    border-radius: 30px;
+    width: 170px;
+    height: 45px;
+    background-color: #f0e2d7;
+    border: 3px solid #252b29;
+    color: #2a2e1f;
+    font-size: 14px;
+    font-family: inherit;
+    text-align: center;
+    font-weight: bold;
+}
+
+.content__block--first-paragraph--head {
+    color: #393031;
+    font-size: 34px;
+    padding-bottom: 10px;
+    font-weight: 300;
+}
+
+.content__block--second-paragraph--yellow_text {
+    color: #e4ae94;
+    font-size: 14px;
+    padding-bottom: 30px;
+}
+
+.content__block--third-paragraph--info {
+    color: #9bb4dd;
+    line-height: 30px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.content__block--first-paragraph--head--white {
+    color: white;
+}
+
+.content__block--second-paragraph--white_text {
+    color: white;
+    font-size: 14px;
+}
+
+.content__block--sendbutton {
+    width: 260px;
+    height: 40px;
+    background-color: white;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    border: none;
+    margin-left: 10px;
+}
+
+@media(max-width:460px) {
+    .content__block--sendbutton {
+        width: 130px;
+    }
+    .content__block--first-paragraph--head {
+        font-size: 20px;
+    }
+    .content--position3 {
+        top: 20px;
+    }
+    .content__block--third-paragraph--info {
+        font-size: 10px;
+    }
+    .content__block--getbutton {
+        width: 100px;
+        height: 30px;
+    }
+    .content__block--third-paragraph {
+        padding-bottom: 10px;
+        line-height: 20px;
+    }
+    .content__block--second-paragraph {
+        font-size: 26px;
+    }
+    .content--position1 {
+        top: 180px;
+    }
+}
