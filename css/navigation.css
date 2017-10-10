@@ -2,6 +2,9 @@
     top: 20px;
     left: 10%;
     position: absolute;
+}
+
+.navigation_block {
     font-family: 'Mada', sans-serif;
 }
 
@@ -28,7 +31,7 @@
 }
 
 .active {
-    color: #efc26f;
+    color: #D1B077;
 }
 
 @media(max-width:1253px) {

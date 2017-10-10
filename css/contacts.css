@@ -1,11 +1,14 @@
-.contact {
-    color: white;
-    font-size: 26px;
-    font-weight: 300;
+.contact_wrap {
     position: absolute;
     left: 10%;
     right: 10%;
     top: 45px;
+}
+
+.contact {
+    color: white;
+    font-size: 26px;
+    font-weight: 300;
 }
 
 .contact__adresscontact {

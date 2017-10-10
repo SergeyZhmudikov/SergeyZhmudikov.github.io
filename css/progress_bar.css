@@ -1,8 +1,13 @@
-.progress {
+.prgs_wrap {
     position: absolute;
     top: 165px;
     left: 10%;
     right: 10%;
+}
+
+.progress {
+    margin: 0;
+    padding: 0;
 }
 
 .progress__bar {

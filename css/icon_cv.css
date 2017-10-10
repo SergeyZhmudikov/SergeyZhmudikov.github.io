@@ -1,14 +1,17 @@
-.resume {
+.res_wrap {
     left: 10%;
     right: 5%;
-    font-family: 'Mada', sans-serif;
-    font-size: 14px;
     top: 40%;
-    color: white;
-    font-weight: 300;
+    overflow: hidden;
     margin: 0;
     position: absolute;
-    overflow: hidden;
+}
+
+.resume {
+    font-family: 'Mada', sans-serif;
+    font-size: 14px;
+    color: white;
+    font-weight: 300;
 }
 
 .resume_icon {
@@ -62,7 +65,7 @@
     .par__resume_head {
         font-size: 18px;
     }
-    .resume {
+    .res_wrap {
         top: 30%;
     }
 }

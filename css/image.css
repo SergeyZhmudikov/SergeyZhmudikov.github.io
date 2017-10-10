@@ -7,12 +7,12 @@
     position: relative;
 }
 
-.background__imgfirst--man {
+.background--imgfirst_man {
     background-image: url(../images/1.jpg);
     height: 820px;
 }
 
-.background__grey {
+.background--grey {
     background-color: #f0e2d7;
     height: 820px;
 }
@@ -27,61 +27,61 @@
     position: absolute;
 }
 
-.background__white {}
+.background--white {}
 
-.background__img_half-man {
+.background--img_half-man {
     background-image: url(../images/2.jpg);
     height: 340px;
 }
 
-.background__gold {
+.background--gold {
     background-color: #e4ae58;
     height: 340px;
 }
 
-.background__red {
+.background--red {
     background-color: #e9714c;
     height: 340px;
 }
 
-.background__black {
+.background--black {
     background-color: #161616;
     height: 340px;
 }
 
-.background__white {
+.background--white {
     background-color: white;
     height: 340px;
 }
 
-.background__img_man_with_phone {
+.background--img_man_with_phone {
     background-image: url(../images/3.jpg);
     height: 420px;
 }
 
-.background__red--medium {
+.background--red--medium {
     height: 420px;
 }
 
-.background__red--large {
+.background--red--large {
     height: 820px;
 }
 
-.background__gold--medium {
+.background--gold--medium {
     height: 420px;
 }
 
-.background__img_notebook {
+.background--img_notebook {
     background-image: url(../images/4.jpg);
     height: 420px;
 }
 
-.background__img_hands {
+.background--img_hands {
     background-image: url(../images/5.jpg);
     height: 480px;
 }
 
-.background__img_hands:before {
+.background--img_hands:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -90,15 +90,15 @@
     z-index: 5;
 }
 
-.background__img_man_with_laptop {
+.background--img_man_with_laptop {
     background-image: url(../images/6.jpg);
     height: 820px;
 }
 
-.background__black--large {
+.background--black--large {
     height: 820px;
 }
 
-.background__white--large {
+.background--white--large {
     height: 375px;
 }
