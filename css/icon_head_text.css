@@ -84,6 +84,7 @@
             margin: 5% 30% 5% 30%;
         }
     }
+    /* new media */
     
     @media(min-width:2200px) {
         .ico-wrap--full--media {
