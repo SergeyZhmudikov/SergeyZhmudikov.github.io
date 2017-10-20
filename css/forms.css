@@ -62,6 +62,7 @@ input {
     font-size: 16px;
     border: none;
     margin-left: 10px;
+    outline: none;
 }
 
 .form_block__sendbutton:active {

@@ -84,6 +84,7 @@
     text-align: center;
     font-weight: bold;
     margin-top: 30px;
+    outline: none;
 }
 
 @media(max-width:460px) {

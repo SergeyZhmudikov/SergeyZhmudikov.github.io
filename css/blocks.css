@@ -13,6 +13,10 @@ body {
     justify-content: flex-start;
 }
 
+.block {
+    /* border: 0.5px solid black; */
+}
+
 .block--large {
     height: 820px;
     flex: 1 1 500px;
