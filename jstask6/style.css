@@ -1,0 +1,55 @@
+ /* * {
+     margin: 0;
+     padding: 0;
+ } */
+ 
+ .dp_calendar-header {
+     display: flex;
+     width: 200px;
+     justify-content: space-around;
+ }
+ 
+ .dp_calendar {
+     /* background-color: #d8d8d8; */
+ }
+ 
+ .dp_calendar-header__btn {}
+ 
+ .dp_calendar__week {
+     width: 275px;
+     display: flex;
+     flex-wrap: wrap;
+     height: auto;
+ }
+ 
+ .dp_calendar__dayweek {
+     box-sizing: border-box;
+     text-align: center;
+     padding-top: 5px;
+     height: 30px;
+     width: 10%;
+     font-size: 14px;
+ }
+ 
+ .dp_calendar__days {
+     width: 400px;
+     display: flex;
+     flex-wrap: wrap;
+     height: auto;
+ }
+ 
+ .alldays {
+     box-sizing: border-box;
+     text-align: center;
+     padding-top: 5px;
+     height: 30px;
+     width: 14.28%;
+ }
+ 
+ .alldays--null {
+     background-color: #0af7f7;
+ }
+ 
+ .alldays--day {
+     background-color: #f3e8e8;
+ }
