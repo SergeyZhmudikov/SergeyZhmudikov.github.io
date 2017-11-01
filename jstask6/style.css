@@ -1,55 +1,60 @@
- /* * {
-     margin: 0;
-     padding: 0;
- } */
- 
- .dp_calendar-header {
-     display: flex;
-     width: 200px;
-     justify-content: space-around;
- }
- 
- .dp_calendar {
-     /* background-color: #d8d8d8; */
- }
- 
- .dp_calendar-header__btn {}
- 
- .dp_calendar__week {
-     width: 275px;
-     display: flex;
-     flex-wrap: wrap;
-     height: auto;
- }
- 
- .dp_calendar__dayweek {
-     box-sizing: border-box;
-     text-align: center;
-     padding-top: 5px;
-     height: 30px;
-     width: 10%;
-     font-size: 14px;
- }
- 
- .dp_calendar__days {
-     width: 400px;
-     display: flex;
-     flex-wrap: wrap;
-     height: auto;
- }
- 
- .alldays {
-     box-sizing: border-box;
-     text-align: center;
-     padding-top: 5px;
-     height: 30px;
-     width: 14.28%;
- }
- 
- .alldays--null {
-     background-color: #0af7f7;
- }
- 
- .alldays--day {
-     background-color: #f3e8e8;
- }
+.datepicker-container {
+    width: 400px;
+}
+
+.datepicker-container__head {
+    width: 100%;
+}
+
+.datepicker-container__backbtn {
+    width: 60px;
+    height: 30px;
+    display: inline;
+}
+
+.datepicker-container__nextbtn {
+    width: 60px;
+    height: 30px;
+    display: inline;
+}
+
+.datepicker-container__nextbtn:hover {
+    background-color: green;
+}
+
+.datepicker-container__backbtn:hover {
+    background-color: green;
+}
+
+.datepicker-container__MY {
+    display: inline;
+    margin-left: 70px;
+}
+
+.datepicker-container__weeks {
+    width: 100%;
+}
+
+.datepicker-container__week-mass {
+    display: inline-block;
+    width: 14.2%;
+    color: rgb(245, 9, 9);
+    text-align: center;
+    font-weight: bold;
+}
+
+.datepicker-container__days-block {
+    width: 100%;
+    overflow: hidden;
+}
+
+.datepicker-container__days-mass {
+    width: 14.2%;
+    height: 18px;
+    display: inline-block;
+    text-align: center;
+}
+
+.datepicker-container__current-day {
+    background-color: rgb(106, 106, 220);
+}
