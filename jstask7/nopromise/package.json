@@ -1,0 +1,17 @@
+{
+    "name": "nopromise",
+    "version": "1.0.0",
+    "description": "example",
+    "main": "example.js",
+    "dependencies": {
+        "xmlhttprequest": "^1.8.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "node nopromise.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+
+    },
+    "author": "Sergey",
+    "license": "ISC"
+}
