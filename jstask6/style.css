@@ -1,0 +1,60 @@
+.datepicker-container {
+    width: 400px;
+}
+
+.datepicker-container__head {
+    width: 100%;
+}
+
+.datepicker-container__backbtn {
+    width: 60px;
+    height: 30px;
+    display: inline;
+}
+
+.datepicker-container__nextbtn {
+    width: 60px;
+    height: 30px;
+    display: inline;
+}
+
+.datepicker-container__nextbtn:hover {
+    background-color: green;
+}
+
+.datepicker-container__backbtn:hover {
+    background-color: green;
+}
+
+.datepicker-container__MY {
+    display: inline;
+    margin-left: 70px;
+}
+
+.datepicker-container__weeks {
+    width: 100%;
+}
+
+.datepicker-container__week-mass {
+    display: inline-block;
+    width: 14.2%;
+    color: rgb(245, 9, 9);
+    text-align: center;
+    font-weight: bold;
+}
+
+.datepicker-container__days-block {
+    width: 100%;
+    overflow: hidden;
+}
+
+.datepicker-container__days-mass {
+    width: 14.2%;
+    height: 18px;
+    display: inline-block;
+    text-align: center;
+}
+
+.datepicker-container__current-day {
+    background-color: rgb(106, 106, 220);
+}
