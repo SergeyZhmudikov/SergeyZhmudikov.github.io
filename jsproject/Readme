@@ -1,0 +1,3 @@
+npm start - run develop project with devserver;
+npm run build - run webpack with common.js settings;
+npm run release -run webpack production project(mini).
