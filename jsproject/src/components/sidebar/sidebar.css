@@ -1,0 +1,44 @@
+.mdb-sidebar {
+    background-color: #363947;
+}
+
+.mdb-container_side {
+    /* position: fixed; */
+    flex: 1 1 150px;
+    min-height: 100%;
+}
+
+.fa {
+    color: white;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.mdb-text {
+    color: white;
+    display: inline;
+    font-size: 20px;
+}
+
+.mdb-text--big {
+    font-size: 30px;
+    color: grey;
+}
+
+.mdb-size {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.mdb-sidebar__support {
+    margin-left: 5px;
+}
+
+.mdb-logo {
+    margin-left: 13px;
+}
+
+
+/* .mdb-sidebar__btn {
+    opacity: 1;
+} */

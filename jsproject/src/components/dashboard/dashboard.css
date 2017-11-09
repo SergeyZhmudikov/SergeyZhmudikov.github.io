@@ -1,0 +1,15 @@
+.mdb-dashboard {
+    background-color: #262126;
+    height: 100%;
+}
+
+.mdb-container-dash {
+    flex: 3 1 600px;
+}
+
+.mdb-dashboard__content {
+    height: 100%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}

@@ -1,5 +1,15 @@
-.example {
-    color: rgb(7, 45, 167);
-    font-size: 40px;
-    font-weight: bold;
+body {
+    font-family: 'Kalam', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: flex-start;
 }
