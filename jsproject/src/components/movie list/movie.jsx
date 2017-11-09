@@ -7,8 +7,9 @@ export default function Movies(props){
     const data = require('../../../data.json');
     const moviesdb = data.movies;
     const titleName = moviesdb.map((name)=>
-    <a href="" className="mdb-movie__item">
-    <img className="mdb-movie__img" src={name.poster_path} alt={name.title}/>
+    <a key={name.id} href="" className="mdb-movie__item">
+    <img className="mdb-movie__img" src={name.poster_path} title
+={name.title}/>
     
   </a>
   );
@@ -18,23 +19,6 @@ export default function Movies(props){
   );
 }
 
-// export default class Movies extends Component{
-
-//     constructor(props) {
-//         super(props);
-//         const data = require('../../../data.json');
-//         const moviesdb = data.movies;
-//         const titleName = moviesdb.map((name)=>
-//         <div>
-//         {name.poster_path}
-//       </div> );
-// 	}
-//     render(){
- 
-//   return (
-//     <div>{titleName}</div>
-//   );
-// }}
 
 
 

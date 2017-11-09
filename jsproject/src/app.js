@@ -7,6 +7,6 @@ import Complete from './components/complete.jsx';
 ReactDOM.render( < Complete / > , document.querySelector('.container'));
 
 
-// import Movies from '../src/components/movie list/movie.jsx';
+// import Example from '../src/components/search/example.jsx';
 
-// ReactDOM.render( < Movies / > , document.querySelector('.container'));
+// ReactDOM.render( < Example / > , document.querySelector('.container'));

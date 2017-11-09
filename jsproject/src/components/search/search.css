@@ -1,5 +1,6 @@
 .mdb-search {
     display: inline;
+    /* position: fixed; */
 }
 
 .mdb-search__form {

@@ -12,7 +12,7 @@ render(){
         <span>|</span>
         <a href="" className="mdb-nav__about mdb-nav-link">About</a>
         <span>|</span>
-        <a href="" className="mdb-nav__priority mdb-nav-link">Priority</a>
+        <a href="" className="mdb-nav__priority mdb-nav-link">Pricing</a>
         <span>|</span>
         <a href="" className="mdb-nav__blog mdb-nav-link">Blog</a>           
             

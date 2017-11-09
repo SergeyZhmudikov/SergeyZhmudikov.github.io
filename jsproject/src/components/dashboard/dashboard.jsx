@@ -9,12 +9,18 @@ export default  class DashBoard extends Component{
 render(){
     return(
 <div className="mdb-container-dash mdb-dashboard">
-<div className="mdb-dashboard__content">
-<Search/>
+<div className="mdb-dashboard_content">
+<div className="mdb-dashboard__nav">
 <Navigation/>
 </div>
-<Movies/>
+<div className="mdb-dashboard__search">
+<Search/>
+</div>
 
+</div>
+{/* <div className="mdb-dashboard__movies">
+<Movies/>
+</div> */}
 </div>
             )
 }

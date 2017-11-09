@@ -1,11 +1,13 @@
 .mdb-sidebar {
     background-color: #363947;
+    position: fixed;
+    /* width: 250px; */
 }
 
 .mdb-container_side {
-    /* position: fixed; */
     flex: 1 1 150px;
     min-height: 100%;
+    position: relative;
 }
 
 .fa {
