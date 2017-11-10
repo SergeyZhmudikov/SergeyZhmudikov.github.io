@@ -16,7 +16,6 @@ render(){
 <div className="mdb-dashboard__search">
 <Search/>
 </div>
-
 </div>
 {/* <div className="mdb-dashboard__movies">
 <Movies/>

@@ -1,0 +1,40 @@
+.mdb-addform {
+    /* display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: flex-start; */
+    height: 450px;
+    color: #ffffff;
+}
+
+.mdb-addform__txtinput {
+    /* flex: 1 1 100px; */
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.txtinput {}
+
+.txtinput__header {}
+
+.txtinput__subheader {}
+
+.txtinput__field {}
+
+.txtinput__area {}
+
+.mdb-addform__genre {
+    /* flex: 1 1 100px; */
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.genre {}
+
+.mdb-addform__upload_bar {
+    /* flex: 1 1 100px; */
+    display: inline-block;
+}

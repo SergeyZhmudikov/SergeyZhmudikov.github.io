@@ -1,25 +1,37 @@
 .mdb-sidebar {
     background-color: #363947;
     position: fixed;
+    display: inline;
     /* width: 250px; */
 }
 
+.mdb-sidebar__icons {
+    display: inline-block;
+}
+
+.fa {}
+
 .mdb-container_side {
-    flex: 1 1 150px;
+    /* flex: 1 1 150px; */
     min-height: 100%;
     position: relative;
+    /* width: 240px; */
 }
 
 .fa {
     color: white;
-    margin-right: 20px;
-    margin-left: 20px;
+    margin: 20px 20px 20px 20px;
+}
+
+.fa-plus-square-o {
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .mdb-text {
     color: white;
-    display: inline;
     font-size: 20px;
+    margin: 0px 20px 25px 20px;
 }
 
 .mdb-text--big {
@@ -28,8 +40,7 @@
 }
 
 .mdb-size {
-    margin-top: 20px;
-    margin-bottom: 30px;
+    display: inline-block;
 }
 
 .mdb-sidebar__support {
@@ -38,9 +49,22 @@
 
 .mdb-logo {
     margin-left: 13px;
+    display: inline;
 }
+
+.mdb-sidebar__movies {}
+
+.mdb-hide {
+    display: inline-block;
+}
+
+.mdb-sidebar-icon {}
 
 
 /* .mdb-sidebar__btn {
     opacity: 1;
 } */
+
+.mdb-logo-container {
+    margin: 0px;
+}

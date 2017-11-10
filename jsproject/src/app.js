@@ -7,6 +7,6 @@ import Complete from './components/complete.jsx';
 ReactDOM.render( < Complete / > , document.querySelector('.container'));
 
 
-// import Example from '../src/components/search/example.jsx';
+// import Addform from '../src/components/add_form/addform.jsx';
 
-// ReactDOM.render( < Example / > , document.querySelector('.container'));
+// ReactDOM.render( < Addform / > , document.querySelector('.container'));

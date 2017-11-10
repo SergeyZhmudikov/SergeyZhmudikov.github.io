@@ -40,7 +40,7 @@ render(){
          </form>
          <div className="mdb-movie">
          {this.state.display.map(function(el) {
-        return <div className="mdb-movie__item"> <img className='mdb-movie__img' src={el.poster_path} key={el.id} title={el.title}></img></div>
+        return <div className="mdb-movie__item" key={el.id}> <img className='mdb-movie__img'  src={el.poster_path} title={el.title}></img></div>
                        })
                     }
          </div>
