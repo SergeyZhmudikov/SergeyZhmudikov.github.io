@@ -16,6 +16,7 @@
 
 .mdb-nav-link:hover {
     color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
 }
 
 .mdb__item--hidden {

@@ -64,7 +64,35 @@
     display: inline-block;
 }
 
-.mdb-sidebar-icon {}
+.mdb-text:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
+
+.fa-bars:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
+
+.fa-film:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
+
+.fa-television:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
+
+.fa-bar-chart:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
+
+.fa-question-circle-o:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
 
 
 /* .mdb-sidebar__btn {

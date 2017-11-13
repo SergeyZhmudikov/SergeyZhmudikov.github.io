@@ -13,6 +13,6 @@ ReactDOM.render( < Complete / > , document.querySelector('.container'));
 
 
 
-// import SideBar from '../src/components/sidebar/sidebar.jsx';
+// import Header from '../src/components/example/header.jsx';
 
-// ReactDOM.render( < SideBar / > , document.querySelector('.container'));
+// ReactDOM.render( < Header / > , document.querySelector('.container'));

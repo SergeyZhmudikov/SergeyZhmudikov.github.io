@@ -43,12 +43,26 @@ form {
     /* margin-top: 90px; */
 }
 
-.genre {
+.mdb-genre {
     border: 1px solid white;
 }
 
 .genre__checkbox {
     display: inline;
+}
+
+.genre-column_container {
+    border: 1px solid white;
+    width: 250px;
+}
+
+.genre-column {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.genre-adult {
+    margin-top: 10px;
 }
 
 .mdb-addform__upload_bar {
@@ -103,4 +117,9 @@ form {
     background-color: red;
     width: 80px;
     height: 40px;
+}
+
+.mdb-form__error {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
 }
