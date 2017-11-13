@@ -3,7 +3,7 @@
     font-size: 18px;
     color: #047dbb;
     font-weight: bold;
-    display: inline;
+    display: inline-block;
     margin-right: 40px;
     float: right;
 }
@@ -18,6 +18,10 @@
     color: rgba(255, 153, 0, 0.548);
 }
 
+.mdb__item--hidden {
+    display: none;
+}
+
 a:visited {
     color: #047dbb;
 }
@@ -28,5 +32,5 @@ span {
 }
 
 .mdb-nav__dropdown {
-    height: 450px;
+    /* height: 450px; */
 }

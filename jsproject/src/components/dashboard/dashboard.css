@@ -13,7 +13,7 @@
 }
 
 .mdb-dashboard_content {
-    height: 100%;
+    /* height: 100%; */
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 20px;
@@ -21,7 +21,10 @@
 }
 
 .mdb-dashboard__movies {
-    top: 10%;
+    /* top: 10%; */
+    position: relative;
+    margin-left: 60px;
+    margin-right: 20px;
 }
 
 .mdb-dashboard__search {
@@ -31,3 +34,5 @@
 .mdb-dashboard__nav {
     display: inline;
 }
+
+.mdb-dashboard__dropdown {}

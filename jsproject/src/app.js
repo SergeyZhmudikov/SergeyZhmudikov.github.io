@@ -7,6 +7,12 @@ import Complete from './components/complete.jsx';
 ReactDOM.render( < Complete / > , document.querySelector('.container'));
 
 
-// import Addform from '../src/components/add_form/addform.jsx';
+// import Search from '../src/components/search/search.jsx';
 
-// ReactDOM.render( < Addform / > , document.querySelector('.container'));
+// ReactDOM.render( < Search / > , document.querySelector('.container'));
+
+
+
+// import SideBar from '../src/components/sidebar/sidebar.jsx';
+
+// ReactDOM.render( < SideBar / > , document.querySelector('.container'));

@@ -1,8 +1,9 @@
 .mdb-sidebar {
     background-color: #363947;
-    position: fixed;
+    /* position: fixed; */
     display: inline;
     /* width: 250px; */
+    /* max-height: 100%; */
 }
 
 .mdb-sidebar__icons {
@@ -14,11 +15,15 @@
 .mdb-container_side {
     /* flex: 1 1 150px; */
     min-height: 100%;
-    position: relative;
+    /* position: relative; */
     /* width: 240px; */
 }
 
-.fa {
+.fa-bars,
+.fa-film,
+.fa-television,
+.fa-bar-chart,
+.fa-question-circle-o {
     color: white;
     margin: 20px 20px 20px 20px;
 }
@@ -26,6 +31,7 @@
 .fa-plus-square-o {
     margin-bottom: 0px;
     margin-top: 0px;
+    color: white;
 }
 
 .mdb-text {
