@@ -1,42 +1,35 @@
 import React, { Component } from 'react';
-import './serials.css';
-import {getSerial} from "../service/service-serial.js"
+import './movie.css';
+
+import EntityService from './entity.service'
 
 
 
-export class Serials extends Component {
+export default class Movies extends Component {
     constructor(props){
       super(props);
       this.state = {
-        filmArray:[]
-                 
+        filmArray:[],                
       }
       
       
     }
-  
+  }
+   
 
-    componentWillMount(){
-        getSerial().then(response=>{
-            let arrFilm = JSON.parse(response).results;
-            let a = arrFilm.map((item)=>{
-                item.poster_path = 'https://image.tmdb.org/t/p/w500'+item.poster_path;
-                return item;
-            });
-             console.log(a);
-              this.setState({filmArray: arrFilm});
-            });
-    }
 
     render() {
      
       
       return (
-      <div className='mdb-serials'>
-        <div className='mdb-serials__container'>
+      <div className='mdb-movies'>
+        <div className='mdb-movies__container'>
         {this.state.filmArray.map((item,index)=>{
                     return(
-                      <img className='mdb-serials__movie' src={item.poster_path} title={item.name} key={item.id}></img>
+                      <img className='mdb-movies__movie' 
+                      src={item.poster_path} 
+                      title={item.title} 
+                      key={item.id}></img>
                     )
                 })}
           </div>

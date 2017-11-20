@@ -7,7 +7,7 @@ import "../../fonts/css/font-awesome.css";
 
 
 
-export default class Addform extends Component{
+export class Addform extends Component{
     constructor (props){
         super(props);
         this.state = {
@@ -64,9 +64,11 @@ export default class Addform extends Component{
               
               closeForm(e) {
                 e.preventDefault();
-                this.props.isOpened();
+                this.props.onClickCloseForm();
               }
-
+              componentWillMount(){
+        this.setState({isFormOpen: this.props.isFormOpen});
+    }
         
 
     // componentWillMount(){
@@ -93,7 +95,8 @@ export default class Addform extends Component{
     render(){
         
         return(
-        <div className="mdb-addform">
+        <div className={(this.props.openForm)?"mdb-addform":"mdb-addform-hide"}>
+        
          <form  action="" name="movie_form">
             <div className="mdb-addform__txtinput txtinput">
                     <p className="txtinput__header" >Add movie</p>

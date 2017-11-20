@@ -1,69 +1,75 @@
 import React, { Component } from "react";
 import './dashboard.css';
-import Search from '../search/search.jsx';
-import Navigation from '../navigation bar/nav.jsx';
-import Movies from '../movie list/movie.jsx';
-import Addform from '../add_form/addform.jsx';
-import SideBar from '../sidebar/sidebar.jsx';
-import Serials from '../serials/serials.jsx';
-// import data from "../../../data.json";
-// import getMovie from "../service/service-movie.js"
 
-export default class DashBoard extends Component{
+import {MovieView} from '../view/movie.view.jsx'
+
+
+import {Sidebar} from '../sidebar/sidebar.jsx';
+
+import {
+    menuView,
+    movieView,
+    showView, 
+    libraryView,
+    supportView,
+    formView} 
+    from '../../store/actions';
+
+
+import { connect } from 'react-redux';
+import {sidebar} from "../../store/reducers/index.js"
+
+
+class Dashboard extends Component{
+
     constructor(props){
         super(props);
-        this.state = {
-        isOpened:false,
-        isBackOpened:true}  
-}     
-        isOpened(){
-            this.setState({isOpened:!this.state.isOpened});
-            }
-        isBackOpened(){
-            this.setState({isBackOpened:!this.state.isBackOpened});
-                }
+        
+    }
+    
 
-        onClickCancelForm(){
-            this.setState({
-            isOpened: !this.state.isOpened
-                    });
-                }
         render()
 {
-        let dropdownForm;
-        if (this.state.isOpened){
-            dropdownForm = <Addform/>;
-        }
-        let slideMenu;
-        if (this.state.isBackOpened){
-            slideMenu =<Movies/> ;
-        }
-        else{
-            slideMenu=<Serials/>;
-        }
         
     return(
         <div className="container-flex">
-            <SideBar isBackOpened={this.isBackOpened.bind(this)} />  
-                <div className="mdb-container-dash mdb-dashboard">
-                <div className="mdb-dashboard_content">
-                <div className="mdb-dashboard__nav">
-                    <Navigation isOpened={this.isOpened.bind(this)}/>
+            
+            <Sidebar
+           
+           openSidebar={this.props.clickmenu}
+           movieView = {this.props.movieView}
+            menuView = {this.props.menuView}
+            showView = {this.props.showView}
+            libraryView = {this.props.libraryView}
+            supportView = {this.props.supportView} /> 
+                <div className="Navigation block">
+                <MovieView/>
+                
                 </div>
-                <div className="mdb-dashboard__search">
-                    <Search />
-                </div>
-                </div>
-                <div className="mdb-dashboard__dropdown">
-                {dropdownForm}
-                </div>
-                {slideMenu}
-                </div>
+            
         </div>          )
 }
 
 }
-
+const mapStateToProps = (state) => {
+       const clickmenu = state.sidebar.menu;
+       
+       return {
+         clickmenu,
+         
+    };
+    };
+    
+    const mapDispatchToProps = (dispatch) => ({
+        menuView: (menu) => dispatch(menuView(menu)),
+        movieView: (movie) => dispatch(movieView(movie)),
+        showView: (serial) => dispatch(showView(serial)),
+        libraryView: () => dispatch(libraryView()),
+        supportView: () => dispatch(supportView()),
+        // formView: (form) => dispatch(formView(form))
+    });
+    
+    export const Root = connect(mapStateToProps, mapDispatchToProps)(Dashboard);
 
 
 

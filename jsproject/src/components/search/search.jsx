@@ -5,7 +5,7 @@ import "../../fonts/css/font-awesome.css";
 
 
 
-export default class Search extends Component{
+export class Search extends Component{
     constructor(props){
         super(props);
         
@@ -18,7 +18,7 @@ handleSearch(event){
     if(this.props.onChange){
         this.props.onChange(event.target.value);
     }
-    console.log(event.target.value)
+    // console.log(event.target.value)
             }
    
 render(){

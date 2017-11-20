@@ -8,6 +8,7 @@
 
 .mdb-sidebar__icons {
     display: inline-block;
+    background-color: #363947;
 }
 
 .fa {}
@@ -37,11 +38,11 @@
 .mdb-text {
     color: white;
     font-size: 20px;
-    margin: 0px 20px 25px 20px;
+    margin: 0px 20px 23px 20px;
 }
 
 .mdb-text--big {
-    font-size: 30px;
+    font-size: 25px;
     color: grey;
 }
 
@@ -56,12 +57,17 @@
 .mdb-logo {
     margin-left: 13px;
     display: inline;
+    margin-bottom: 15px;
 }
 
-.mdb-sidebar__movies {}
-
 .mdb-hide {
+    display: none;
+}
+
+.mdb-show {
     display: inline-block;
+    margin: 0;
+    background-color: #363947;
 }
 
 .mdb-text:hover {
@@ -101,4 +107,14 @@
 
 .mdb-logo-container {
     margin: 0px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: flex-start;
 }

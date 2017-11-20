@@ -1,198 +1,57 @@
 import React, { Component } from 'react';
 import './movie.css';
-import getMovie from "../service/service-movie.js"
 
 
 
-export default class Movies extends Component {
+export class Movies extends Component {
     constructor(props){
       super(props);
       this.state = {
-        filmArray:[]
-                 
-      }
-      
-      
-    }
-  
+        isCardOpen:false,
+        } 
+    }  
 
-    componentWillMount(){
-            getMovie().then(response=>{
-            let arrFilm = JSON.parse(response).results;
-            let a = arrFilm.map((item)=>{
-                item.poster_path = 'https://image.tmdb.org/t/p/w500'+item.poster_path;
-                return item;
-            });
-            // console.log(a);
-              this.setState({filmArray: arrFilm});
-            });
+    // onClickOpenCard(){
+    //   if(this.props.AddCard){
+    //     this.props.AddCard();
+        
+    // }
+    //   };
+
+      onClickOpenCard(){
+        console.log(this.state.isCardOpen);
+        this.setState({
+          isCardOpen: !this.state.isCardOpen});
     }
+   
+    
 
     render() {
      
       
       return (
-      <div className='mdb-movies'>
-        <div className='mdb-movies__container'>
-        {this.state.filmArray.map((item,index)=>{
-                    return(
-                      <img className='mdb-movies__movie' src={item.poster_path} title={item.title} key={item.id}></img>
-                    )
-                })}
-          </div>
-      </div>
+
+    <div className='mdb-movies__container' >
+    <div className='mdb-movies__movie' 
+    style={{backgroundImage: `url(${this.props.poster})`}}
+    onClick={this.onClickOpenCard.bind(this)}></div>
+     
+     <div className={(this.state.isCardOpen)?"mdb-card":"mdb-card-hide"}>
+        {/* <img className='mdb-card__image'src={this.props.poster_path}/>  */}
+       <div className='mdb-card__title'>{this.props.name}</div>
+       <div className='mdb-card__overview'>{this.props.overview}</div>
+       <div className='mdb-card__genre'></div>
+       <div className='mdb-card__popularity'></div>
+       <div className='mdb-card__vote-average'></div> 
+       <div className='mdb-card__recomend'></div>     
+    </div>
+    </div>
+    
+    
+            
+                      
       );
     }
+
+
 }
-
-
-
-
-
-
-
-// import React, { Component } from 'react';
-// import './movie.css';
-
-
-// export default class Movies extends Component {
-//     constructor(props){
-//       super(props);
-//     }
-//     render() {
-//       const myArray = this.props.myMovies;
-//       // console.log(myArray);
-//       return (
-//       <div className='mdb-movies'>
-//         <div className='mdb-movies__container'>
-//           {
-//             myArray.map(function(item){
-//               return (
-//                 <img className='mdb-movies__movie' src={item.poster_path} title={item.title} key={item.id}></img>
-//               );
-//             })
-//           }
-//         </div>
-//       </div>
-//       );
-//     }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { Component } from "react";
-// import './movie.css';
-// import PropTypes from 'prop-types';
- 
-
-// export default function Movies(props){
-//     const data = require('../../../data.json');
-//     const moviesdb = data.movies;
-//     const titleName = moviesdb.map((name)=>
-//     <a key={name.id} href="" className="mdb-movie__item">
-//     <img className="mdb-movie__img" src={name.poster_path} title
-// ={name.title}/>
-    
-//   </a>
-//   );
-//   return (
-//     <div className="mdb-movie">{titleName}
-//     </div>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export default class Movies extends Component{
-//     	constructor(props) {
-// 		super(props);
-// 	}
-
-//     render(){
-
-// return (
-//   <div>
-//     {moviesdb.map((name) => <UserItem name={title}/>)}
-//   </div>
-// );
-// }}
-
-
-
-
-
-
-
-
-
-
-
-
-
-// data = JSON.parse(data);
-
-// alert( data[1] ); 
-
-// export default class Movies extends Component{
-    
-// 	constructor(props) {
-// 		super(props);
-// 	}
-
-//     render(){
-//         return(
-//             <div className="mdb-movie">
-//                 <div className="mdb-movie__item">
-//                      <div className="mdb-movie-img">{this.props.title}</div>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }

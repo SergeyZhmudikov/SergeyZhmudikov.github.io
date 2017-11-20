@@ -4,7 +4,7 @@ import './nav.css';
 
 
 
-export default class Navigation extends Component{
+export class Navigation extends Component{
     constructor(props){
         super(props);
         }
@@ -12,8 +12,8 @@ export default class Navigation extends Component{
     
 
     toggleState(){
-        if(this.props.isOpened){
-            this.props.isOpened();
+        if(this.props.AddMovie){
+            this.props.AddMovie();
         }
     }
     
@@ -23,7 +23,7 @@ render(){
     return(
     <div className="mdb-nav">
     <div>
-        <div className="mdb-nav__add mdb-nav-link" onClick={this.toggleState.bind(this)}>Add movie</div>
+        <div className="mdb-nav__add mdb-nav-link" onClick={this.formView}>Add movie</div>
         <span>|</span>
         <div className="mdb-nav__about mdb-nav-link">About</div>
         <span>|</span>

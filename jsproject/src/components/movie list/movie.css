@@ -19,11 +19,49 @@
     top: 5%;
 }
 
-.mdb-movies__container {}
+.mdb-movies__container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: flex-start;
+}
 
 .mdb-movies__movie {
     height: 275px;
-    /* width: 185px; */
-    flex: 1 1 185px;
+    width: 185px;
+    /* flex: 1 1 185px; */
     margin: 6px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.mdb-card {
+    border: 3px solid red;
+    height: 275px;
+    width: 200px;
+    overflow: auto;
+}
+
+.mdb-card-hide {
+    display: none;
+}
+
+.mdb-card__image {
+    height: 275px;
+    width: 185px;
+}
+
+.mdb-dashboard__films {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: flex-start;
+    margin-left: 30px;
+    margin-right: 20px;
+    top: 5%;
 }

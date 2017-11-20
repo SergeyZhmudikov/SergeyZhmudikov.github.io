@@ -3,6 +3,10 @@
     position: inherit;
 }
 
+.mdb-addform-hide {
+    display: none;
+}
+
 form {
     display: flex;
     flex-direction: row;

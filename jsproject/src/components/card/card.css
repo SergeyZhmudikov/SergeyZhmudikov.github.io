@@ -1,0 +1,8 @@
+.mdb-card {
+    border: 3px solid red;
+    height: 400px;
+}
+
+.mdb-card-hide {
+    display: none;
+}
