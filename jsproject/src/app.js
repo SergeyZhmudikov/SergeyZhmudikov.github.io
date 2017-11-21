@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import styles from '../src/app.css';
 
 // import { Root } from './components/dashboard/dashboard.jsx';
-import { Root } from './components/view/movie.view.jsx';
+import { Root } from './components/view/show.view.jsx';
 import { Provider } from 'react-redux';
 import { appStore } from './store/index';
 

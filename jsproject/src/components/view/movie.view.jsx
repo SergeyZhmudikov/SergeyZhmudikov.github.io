@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Movies } from '../movie list/movie.jsx';
-import {movieBackend} from '../../store/actions/dashboard.action';
-import {dashboard} from "../../store/reducers/index.js";
+import {movieBackend} from '../../store/actions/moviedata.action';
+import {movieData} from "../../store/reducers/index.js";
 import '../movie list/movie.css';
 import { Search } from "../search/search.jsx" ;
 import { Navigation } from "../navigation/nav.jsx" ;
@@ -16,18 +16,26 @@ class MovieView extends Component {
         super(props);
         this.props.movieBackend();
         this.state ={
-            Filmarray:[]
+            // Filmarray:[],
+            newevent: ''
         }
 }
 
 
     componentWillMount() {
         console.log(this.props)
+        
+        
     }
 
     onChange(event){
         let searchQuery = event.toLowerCase();
         console.log(searchQuery)
+        
+        this.setState({
+            newevent: searchQuery
+        });
+        
         
     }
           
@@ -45,7 +53,11 @@ class MovieView extends Component {
             <div>  </div>
              <div className = "mdb-dashboard__films"> 
              {this.props.dataarr
-                       
+            .filter((el)=>{
+            return el.name.indexOf(this.state.newevent)!==-1;
+             
+                })
+                    
              .map((item,index)=>
                 {
                     return(
@@ -56,6 +68,7 @@ class MovieView extends Component {
                     key={item.id}
                     />)
                 })}
+                
                         
                         
                 </div>
@@ -65,7 +78,8 @@ class MovieView extends Component {
     }
 
     const mapStateToProps = (state) =>{
-        let dataarr = state.dashboard.movies;
+        let dataarr = state.movieData.movies;
+        
         return{
             dataarr
         };

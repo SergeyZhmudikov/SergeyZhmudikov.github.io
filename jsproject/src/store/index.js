@@ -1,18 +1,14 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import logger from './middleware/logger.middleware.js';
+// import logger from './middleware/logger.middleware.js';
 import { appReducers } from './reducers';
-// import { logger } from './middleware';
-// logger
+import movieDataApi from './middleware/movie.middleware.js';
+import showDataApi from './middleware/show.middleware.js';
+
+
 export const appStore = createStore(
     appReducers,
-    composeWithDevTools(
-        applyMiddleware(store => next => action =>
-            typeof action === 'function' ?
-            action(store.dispatch, store.getState) :
-            next(action), logger
-        )
-    )
+    applyMiddleware(movieDataApi, showDataApi)
 
 
 )

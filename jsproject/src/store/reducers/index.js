@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import { sidebarReducer } from './sidebar.reducer';
-import { dashboardReducer } from './dashboard.reducer';
 
+import { movieDataReducer } from './moviedata.reducer';
+import { showDataReducer } from './showdata.reducer';
 export const appReducers = combineReducers({
-    sidebar: sidebarReducer,
-    dashboard: dashboardReducer
+
+    movieData: movieDataReducer,
+    showData: showDataReducer
 });
