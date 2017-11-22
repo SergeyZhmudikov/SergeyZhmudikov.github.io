@@ -13,7 +13,7 @@ import {
   NavLink,
   Switch
 } from 'react-router-dom';
-import {Addform} from '../add_form/addform.jsx'
+import {Form} from '../add_form/addform.jsx'
 
 
 
@@ -56,10 +56,11 @@ class MovieView extends Component {
             
             <div> 
             <Search onChange={this.onChange.bind(this)}/>
-            <Navigation/> 
+            <Navigation /> 
+            <Form/>  
             </div>
             <div>
-            <Addform/>  
+            
             </div>
              <div className = "mdb-dashboard__films"> 
              {this.props.dataarr

@@ -2,20 +2,22 @@ import React, { Component } from "react";
 import './nav.css';
 // import Addform from "../add_form/addform.jsx"
 
+import {connect} from "react-redux";
+import { toggleForm } from "../../store/actions"; 
 
 
-export class Navigation extends Component{
+export class Nav extends Component{
     constructor(props){
         super(props);
         }
 
     
 
-    toggleState(){
-        if(this.props.AddMovie){
-            this.props.AddMovie();
-        }
-    }
+    // toggleState(){
+    //     if(this.props.AddMovie){
+    //         this.props.AddMovie();
+    //     }
+    // }
     
 
 render(){
@@ -23,7 +25,7 @@ render(){
     return(
     <div className="mdb-nav">
     <div>
-        <div className="mdb-nav__add mdb-nav-link" onClick={this.formView}>Add movie</div>
+        <div className="mdb-nav__add mdb-nav-link" onClick={this.props.toggleForm}>Add movie</div>
         <span>|</span>
         <div className="mdb-nav__about mdb-nav-link">About</div>
         <span>|</span>
@@ -37,7 +39,18 @@ render(){
             
 }
 }
+const mapDispatchToProps = (dispatch) => ({
+    toggleForm: () => dispatch(toggleForm())
+});
 
+const mapStateToProps = (state) =>{
+    var isOpened= state.form.isFormOpened;
+    return{
+        isOpened
+    };
+};
+
+export const Navigation = connect(mapStateToProps,mapDispatchToProps)(Nav);
 
 
 // export default class Navigation extends Component{

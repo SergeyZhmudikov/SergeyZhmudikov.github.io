@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import './addform.css';
 import "../../fonts/css/font-awesome.css";
 // import getGenre from "../service/service-genre.js";
+import {
+    closeForm
+
+} from "../../store/actions";
+import {connect} from "react-redux";
 
 
 
@@ -95,7 +100,7 @@ export class Addform extends Component{
     render(){
         
         return(
-        <div className={(this.props.openForm)?"mdb-addform":"mdb-addform-hide"}>
+        <div className={(this.props.isOpened)?"mdb-addform":"mdb-addform-hide"}>
         
          <form  action="" name="movie_form">
             <div className="mdb-addform__txtinput txtinput">
@@ -208,6 +213,22 @@ export class Addform extends Component{
         </div>
     )}
 }
+
+const mapStateToProps = (state) =>{
+    var isOpened = state.form.isFormOpen;
+    return{
+        isOpened
+    };
+};
+
+const mapDispatchToProps = (dispatch) =>({
+    closeForm: (event)=> {
+        dispatch(closeForm())
+        event.preventDefault();
+    }    
+})
+
+export const Form = connect(mapStateToProps, mapDispatchToProps)(Addform);
 
 
 
