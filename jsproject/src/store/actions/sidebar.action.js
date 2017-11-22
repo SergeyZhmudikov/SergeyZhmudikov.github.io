@@ -3,7 +3,7 @@ import {
     MENU_MOVIE_CLICK,
     MENU_SHOW_CLICK,
     MENU_LIBRARY_CLICK,
-    MENU_SUPPORT_CLICK,
+    MENU_SUPPORT_CLICK
 } from './sidebar.types';
 
 export function menuView(menu) {

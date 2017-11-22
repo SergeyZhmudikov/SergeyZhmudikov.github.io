@@ -6,6 +6,13 @@ import {showData} from "../../store/reducers/index.js";
 import '../movie list/movie.css';
 import { Search } from "../search/search.jsx" ;
 import { Navigation } from "../navigation/nav.jsx" ;
+import './show.view.style.css';
+import {
+  HashRouter as Router,
+  Route,
+  NavLink,
+  Switch
+} from 'react-router-dom'
 
 
 
@@ -44,7 +51,7 @@ class ShowView extends Component {
     render() {
 
         return ( 
-            <div className = "container-flex">
+            <div className = "mdb_showView_container">
             
             <div> 
             <Search onChange={this.onChange.bind(this)}/>
@@ -61,12 +68,13 @@ class ShowView extends Component {
              .map((item,index)=>
                 {
                     return(
+                        <NavLink to={`/shows/${item.id}`} key={item.name+"card"}>
                     <Movies 
                     poster={item.poster} 
                     name={item.name}
-                    overview={item.overview} 
+                    data={item} 
                     key={item.id}
-                    />)
+                    /></NavLink>)
                 })}
                 
                         
@@ -89,4 +97,4 @@ class ShowView extends Component {
         showBackend: ()=> {dispatch(showBackend());
         }
     })
-    export const Root = connect(mapStateToProps, mapDispatchToProps)(ShowView);
+    export const ShowContainer = connect(mapStateToProps, mapDispatchToProps)(ShowView);

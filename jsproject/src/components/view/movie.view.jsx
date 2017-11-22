@@ -6,6 +6,14 @@ import {movieData} from "../../store/reducers/index.js";
 import '../movie list/movie.css';
 import { Search } from "../search/search.jsx" ;
 import { Navigation } from "../navigation/nav.jsx" ;
+import './movie.view.style.css';
+import {
+  HashRouter as Router,
+  Route,
+  NavLink,
+  Switch
+} from 'react-router-dom';
+import {Addform} from '../add_form/addform.jsx'
 
 
 
@@ -44,13 +52,15 @@ class MovieView extends Component {
     render() {
 
         return ( 
-            <div className = "container-flex">
+            <div className = "mdb_movieView_container">
             
             <div> 
             <Search onChange={this.onChange.bind(this)}/>
             <Navigation/> 
             </div>
-            <div>  </div>
+            <div>
+            <Addform/>  
+            </div>
              <div className = "mdb-dashboard__films"> 
              {this.props.dataarr
             .filter((el)=>{
@@ -61,15 +71,17 @@ class MovieView extends Component {
              .map((item,index)=>
                 {
                     return(
+                        <NavLink to={`/movies/${item.id}`} key={item.name + "card"}>
                     <Movies 
                     poster={item.poster} 
                     name={item.name}
-                    overview={item.overview} 
                     key={item.id}
-                    />)
+                    
+                    /></NavLink>)
                 })}
                 
-                        
+                
+                                
                         
                 </div>
                 </div> )
@@ -89,4 +101,4 @@ class MovieView extends Component {
         movieBackend: ()=> {dispatch(movieBackend());
         }
     })
-    export const Root = connect(mapStateToProps, mapDispatchToProps)(MovieView);
+    export const MovieContainer = connect(mapStateToProps, mapDispatchToProps)(MovieView);

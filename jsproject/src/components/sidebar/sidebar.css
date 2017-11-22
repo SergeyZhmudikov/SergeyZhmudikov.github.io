@@ -1,9 +1,9 @@
 .mdb-sidebar {
     background-color: #363947;
-    /* position: fixed; */
+    position: static;
     display: inline;
     /* width: 250px; */
-    /* max-height: 100%; */
+    max-height: 100%;
 }
 
 .mdb-sidebar__icons {
