@@ -1,6 +1,7 @@
 import {
     MOVIE_DATA_BACKEND,
-    GET_MOVIE_DATA
+    GET_MOVIE_DATA,
+    ADD_MOVIE
 } from './../actions';
 
 const initialState = {
@@ -15,7 +16,11 @@ export function movieDataReducer(state = initialState, action) {
                 ...state,
                 movies: action.payload
             };
-
+        case ADD_MOVIE:
+            return {
+                ...state,
+                movies: [...state.movies, action.payload]
+            };
 
         default:
             return state;

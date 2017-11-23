@@ -7,6 +7,7 @@ import {
 
 } from "../../store/actions";
 import {connect} from "react-redux";
+import {Genres } from '../genres/genres.jsx'
 
 
 
@@ -28,12 +29,12 @@ export class Addform extends Component{
         this.changeGenre = this.changeGenre.bind(this);
         this.uploadPicture = this.uploadPicture.bind(this);
         this.validationForm = this.validationForm.bind(this);
-        this.closeForm = this.closeForm.bind(this);
+        // this.closeForm = this.closeForm.bind(this);
         
                };
                handleTitleChange(e) {
                 let val = e.target.value;
-                this.setState({title: val});
+                this.setState({name: val});
               }
           
               onOverviewChange(e) {
@@ -42,7 +43,7 @@ export class Addform extends Component{
               }
           
               changeGenre(e) {
-                let valueName = e.target.value;
+                let valueName = e.target;
                 if(e.target.checked === true) {
                   this.setState((array) => ({
                     genres: array.genres.concat(valueName)
@@ -66,56 +67,40 @@ export class Addform extends Component{
                 }
                 return true;
               }
-              
-              closeForm(e) {
-                e.preventDefault();
-                this.props.onClickCloseForm();
+
+              handleSubmitForm(event){
+                event.preventDefault(); 
+                let item = {
+                    id: new Date().valueOf(),
+                    name: this.state.name,
+                    description: this.state.description,
+                    genre: this.genre,
+                    poster: this.state.poster
               }
-              componentWillMount(){
-        this.setState({isFormOpen: this.props.isFormOpen});
-    }
-        
+            }
 
-    // componentWillMount(){
-    //     getGenre().then(response=>{
-    //         let arr = JSON.parse(response).genres;
-    //         console.log(arr);
-    //           this.setState({genresArr: arr});
-    //         });
-    // }
-//     handleCloseAddMovieForm(e) {
-//         e.preventDefault();
-//         this.props.handleCloseAddMovieForm();
-//     }
-
-//     handleSubmit(event) {
-//   console.log('form is submitted',this.state.title);
-//   event.preventDefault();
-// }
-
-// handleTitleChange(event) {
-//   console.log('TitleChange', event.target.value);
-//   this.setState({title: event.target.value});
-// }
     render(){
         
         return(
         <div className={(this.props.isOpened)?"mdb-addform":"mdb-addform-hide"}>
         
-         <form  action="" name="movie_form">
+         <form  action="" name="movie_form" onSubmit={this.handleSubmitForm.bind(this)}>
+           
             <div className="mdb-addform__txtinput txtinput">
                     <p className="txtinput__header" >Add movie</p>
                          <hr/>
+                    
                     <p className="txtinput__subheader">Title</p>
                         <input 
                             className="txtinput__field" 
                             type="text" 
                             name="movie_text" 
                             onChange={this.handleTitleChange}
-                            value={this.state.title} 
+                            value={this.state.name} 
                             required/>
-                            {!this.state.title && <p className='mdb-form__error'>Please, enter title</p>}
-                    <p className="txtinput__subheader">Overview</p>
+                            {!this.state.name && <p className='mdb-form__error'>Please, enter title</p>}
+                
+                <p className="txtinput__subheader">Overview</p>               
                 <textarea className="txtinput__area" 
                 name="movie_area"
                 cols="30" 
@@ -123,9 +108,11 @@ export class Addform extends Component{
                 onChange={this.onOverviewChange}>
                 </textarea>
             </div>
+
+
             <div className="mdb-addform__genre txtinput" >
                 <p className="txtinput__subheader">Genre</p>
-                <div className="genre" onClick={this.changeGenre}>
+                <div className="genre" >
                 {/* {this.state.genresArr.map((item,index)=>{
                     return(
                     <div key={item.id} className="genre__checkbox">
@@ -137,52 +124,8 @@ export class Addform extends Component{
                     )
                 })} */}
                 <div className="genre-column_container">
-                <div className="genre-column">
-                    <div>
-                        <input type="checkbox" name="genre" id="Action"/>
-                        <label>Action</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="genre" id="Adventure"/>
-                        <label>Adventure</label>
-                    </div>
-                        <div>
-                        <input type="checkbox" name="genre" id="Thriller"/>
-                        <label>Thriller</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="genre" id="Comedy"/>
-                        <label>Comedy</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="genre" id="Fantasy"/>
-                        <label>Fantasy</label>
-                    </div>
                 
-                </div>
-                <div className="genre-column">
-                    <div>
-                        <input type="checkbox" name="genre" id="Drama"/>
-                        <label>Drama</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="genre" id="Horror"/>
-                        <label>Horror</label>
-                    </div>
-                        <div>
-                        <input type="checkbox" name="genre" id="Crime"/>
-                        <label>Crime</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="genre" id="War"/>
-                        <label>War</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="genre" id="Documentary"/>
-                        <label>Documentary</label>
-                    </div>
-                
-                </div>
+                <Genres onChange={this.changeGenre}/>
                
                 </div>
                 {this.state.genres.length===0 && <p className='mdb-form__error'>Please, select genre</p>}
@@ -208,14 +151,14 @@ export class Addform extends Component{
             </div>
             <div className="scroll_bar"></div>
             <button className="mdb-addform__btn mdb-addform__btn--big" disabled={this.validationForm()}>Add</button>
-            <button className="mdb-addform__btn mdb-addform__btn--small" onClick={this.closeForm}>Cancel</button></div>
+            <button className="mdb-addform__btn mdb-addform__btn--small" onClick={this.props.closeForm}>Cancel</button></div>
             </form>
         </div>
     )}
 }
 
 const mapStateToProps = (state) =>{
-    var isOpened = state.form.isFormOpen;
+    let isOpened = state.form.isFormOpen;
     return{
         isOpened
     };

@@ -12,7 +12,8 @@ import {
   Route,
   NavLink,
   Switch
-} from 'react-router-dom'
+} from 'react-router-dom';
+import {Form} from '../add_form/addform.jsx'
 
 
 
@@ -56,6 +57,7 @@ class ShowView extends Component {
             <div className = 'mdb-header'> 
             <Search onChange={this.onChange.bind(this)}/>
             <Navigation/> 
+            <Form/> 
             </div>
             <div>  </div>
              <div className = "mdb-dashboard__films"> 

@@ -5,3 +5,5 @@ export * from './moviedata.types';
 export * from './showdata.types';
 export * from './form.action';
 export * from './form.types';
+export * from './genre.action';
+export * from './genre.types';

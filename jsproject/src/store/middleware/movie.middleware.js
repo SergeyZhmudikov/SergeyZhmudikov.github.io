@@ -22,6 +22,7 @@ const movieDataApi = store => next => action => {
                 let data = movies;
 
 
+
                 store.dispatch({
                     type: GET_MOVIE_DATA,
                     payload: data

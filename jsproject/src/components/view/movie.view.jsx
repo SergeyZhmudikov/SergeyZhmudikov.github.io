@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Movies } from '../movie list/movie.jsx';
 import {movieBackend} from '../../store/actions/moviedata.action';
 import {movieData} from "../../store/reducers/index.js";
+
 import '../movie list/movie.css';
 import { Search } from "../search/search.jsx" ;
 import { Navigation } from "../navigation/nav.jsx" ;
@@ -23,6 +24,7 @@ class MovieView extends Component {
     constructor(props) {
         super(props);
         this.props.movieBackend();
+        // this.props.addMovie();
         this.state ={
             // Filmarray:[],
             newevent: ''
@@ -32,6 +34,7 @@ class MovieView extends Component {
 
     componentWillMount() {
         console.log(this.props)
+        
         
         
     }
@@ -57,7 +60,7 @@ class MovieView extends Component {
             <div className = "mdb-header"> 
             <Search onChange={this.onChange.bind(this)}/>
             <Navigation /> 
-            <Form/>  
+            <Form />  
             </div>
             <div>
             
@@ -99,7 +102,8 @@ class MovieView extends Component {
     };
     
     const mapDispatchToProps = (dispatch) =>({
-        movieBackend: ()=> {dispatch(movieBackend());
-        }
+        movieBackend: ()=> dispatch(movieBackend()),
+        // addMovie: ()=> dispatch(addMovie()),
+        
     })
     export const MovieContainer = connect(mapStateToProps, mapDispatchToProps)(MovieView);

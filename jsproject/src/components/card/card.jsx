@@ -6,6 +6,7 @@ import {
     NavLink,
     Switch
   } from 'react-router-dom';
+  import "../../fonts/css/font-awesome.css";
 
 
 
@@ -32,8 +33,8 @@ export class Card extends Component {
                         })
                         .map((item)=>{
                             return( 
-                              <div>
-                              <div className='container' key={item.id}>
+                              <div key={item.id}>
+                              <div className='container'>
                               <img className='mdb-card__image' src={item.poster} ></img>
                               <div className='review'>
                               <div className='mdb-card__title'>{item.name}</div>
@@ -46,7 +47,19 @@ export class Card extends Component {
                               <div className='mdb-card__popularity'>Popularity: {item.popularity}</div>
                               <div className='mdb-card__vote-average'> Vote average: {item.voteaverage}</div> 
                               </div>
-                              <div className='mdb-card__recomend'></div> 
+                              <div className='mdb-card__recomend'> We also recomended: </div>
+                              <div className='mdb-card__recomend_array'>  
+                              {this.props.movieArray
+                              .map((item)=>{
+                               return( 
+                                <div key={item.id}>
+                                <img className='mdb-card__image-small' src={item.poster} ></img>
+                              
+                                </div>
+                              );
+                        })
+                }
+                              </div> 
                               
                               </div>
                               );

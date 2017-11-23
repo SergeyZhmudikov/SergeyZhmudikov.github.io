@@ -1,5 +1,6 @@
 import {
-    MOVIE_DATA_BACKEND
+    MOVIE_DATA_BACKEND,
+    ADD_MOVIE
 } from './moviedata.types';
 
 export function movieBackend() {
@@ -8,5 +9,11 @@ export function movieBackend() {
 
 
 
+    }
+}
+export function addMovie(payload) {
+    return {
+        type: ADD_MOVIE,
+        payload
     }
 }

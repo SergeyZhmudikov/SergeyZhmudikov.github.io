@@ -55,7 +55,7 @@ const mapStateToProps = (state) => {
        const clickmenu = state.sidebar.menu;
        
        return {
-         clickmenu,
+         clickmenu
          
     };
     };

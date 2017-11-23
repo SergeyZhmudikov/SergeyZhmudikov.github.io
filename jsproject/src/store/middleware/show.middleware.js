@@ -20,7 +20,7 @@ const showDataApi = store => next => action => {
 
                 });
                 let data = movies;
-
+                // localStorage.setItem('Shows', JSON.stringify(data));
 
                 store.dispatch({
                     type: GET_SHOW_DATA,

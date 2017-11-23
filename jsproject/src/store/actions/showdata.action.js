@@ -10,3 +10,9 @@ export function showBackend() {
 
     }
 }
+export function showView(show) {
+    return {
+        type: MENU_SHOW_CLICK,
+        payload: show
+    }
+}
