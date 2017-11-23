@@ -25,14 +25,35 @@ export class Card extends Component {
 
     
     <div className="mdb-card">
-        
-       <div className='mdb-card__image'>{this.props.poster}</div> 
-       <div className='mdb-card__title'>{this.props.name}</div>
-       <div className='mdb-card__overview'>{this.props.overview}</div>
-       <div className='mdb-card__genre'>{this.props.genre}</div>
-       <div className='mdb-card__popularity'>{this.props.popularity}</div>
-       <div className='mdb-card__vote-average'>{this.props.voteaverage}</div> 
-       <div className='mdb-card__recomend'>Some text</div>     
+        {
+                    this.props.movieArray
+                        .filter((item)=>{
+                            return item.id === parseInt(this.props.match.params.id);
+                        })
+                        .map((item)=>{
+                            return( 
+                              <div>
+                              <div className='container' key={item.id}>
+                              <img className='mdb-card__image' src={item.poster} ></img>
+                              <div className='review'>
+                              <div className='mdb-card__title'>{item.name}</div>
+                               <div className='mdb-card__overview'>{item.overview}</div>
+                               </div>
+                               </div>
+                               <div className='review_vote'>
+                              <div className='mdb-card__genre'>Genre: {item.genre}</div>
+                              
+                              <div className='mdb-card__popularity'>Popularity: {item.popularity}</div>
+                              <div className='mdb-card__vote-average'> Vote average: {item.voteaverage}</div> 
+                              </div>
+                              <div className='mdb-card__recomend'></div> 
+                              
+                              </div>
+                              );
+                        })
+                }
+       
+            
     </div>
             
                       

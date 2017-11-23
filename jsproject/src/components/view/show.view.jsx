@@ -53,7 +53,7 @@ class ShowView extends Component {
         return ( 
             <div className = "mdb_showView_container">
             
-            <div> 
+            <div className = 'mdb-header'> 
             <Search onChange={this.onChange.bind(this)}/>
             <Navigation/> 
             </div>

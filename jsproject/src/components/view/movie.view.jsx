@@ -54,7 +54,7 @@ class MovieView extends Component {
         return ( 
             <div className = "mdb_movieView_container">
             
-            <div> 
+            <div className = "mdb-header"> 
             <Search onChange={this.onChange.bind(this)}/>
             <Navigation /> 
             <Form/>  

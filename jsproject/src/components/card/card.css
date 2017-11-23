@@ -1,8 +1,59 @@
-.mdb-card {
-    border: 3px solid red;
-    height: 400px;
-}
-
-.mdb-card-hide {
-    display: none;
-}
+    .mdb-card {
+        border: 1px solid rgb(255, 255, 255);
+        min-height: 600px;
+        position: absolute;
+        display: inline-block;
+        width: 85%;
+        top: 7%;
+        background-color: #363947;
+        color: white;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        align-content: stretch;
+        justify-content: flex-start;
+    }
+    
+    .mdb-card-hide {
+        display: none;
+    }
+    
+    .mdb-card__image {
+        margin-left: 20px;
+        margin-top: 20px;
+        display: inline;
+        height: 300px;
+        width: 200px;
+        flex: 1 1 200px;
+    }
+    
+    .card__img {}
+    
+    .review {
+        margin: 20px;
+        display: inline;
+        flex: 6 1 800px;
+    }
+    
+    .mdb-card__title {
+        /* display: inline-block; */
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    .mdb-card__overview {
+        /* display: inline-block; */
+        overflow: auto;
+    }
+    
+    .review_vote {
+        /* display: inline; */
+        margin: 20px;
+    }
+    
+    .mdb-card__genre {}

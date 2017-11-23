@@ -26,14 +26,18 @@ export const Sidebar = (props) => {
                     </i>
                 </div>
                 <div className="mdb-sidebar-icon">
+                <NavLink to="/movies" activeClassName="active-link">
                     <i className="fa  fa-film" aria-hidden="true" 
                      onClick={props.movieView}>
                     </i>
+                    </NavLink>
                 </div>
                 <div className="mdb-sidebar-icon">
+                <NavLink to="/shows" activeClassName="active-link">
                     <i className="fa  fa-television" aria-hidden="true" 
                     onClick={props.showView}>
                     </i>
+                    </NavLink>
                 </div>
                 <div className="mdb-sidebar-icon">
                     <i className="fa  fa-bar-chart" aria-hidden="true" 
@@ -51,10 +55,15 @@ export const Sidebar = (props) => {
             
                 <div className="mdb-logo"> <i className="fa fa-2x fa-plus-square-o" aria-hidden="true"></i></div>
                 <div className="mdb-logo mdb-text mdb-text--big">Logo</div>
-            
+                <NavLink to="/movies">
                 <div className="mdb-text" onClick={props.movieView} >Movies </div>
+                </NavLink>
+                <NavLink to="/shows">
                 <div className="mdb-text" onClick={props.showView} >TV Shows </div>
+                </NavLink>
+                <NavLink to="/library">
                 <div className="mdb-text" onClick={props.libraryView}>My Library</div>
+                </NavLink>
                 <div className="mdb-text" onClick={props.supportView} >Support</div>
         </div>
 </div> 

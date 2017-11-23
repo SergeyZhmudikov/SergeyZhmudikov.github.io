@@ -6,7 +6,7 @@ import { mdbUrl } from "../../service/url.api"
 let dataMovie = new DataService();
 
 const movieDataApi = store => next => action => {
-    console.log(action.type);
+    // console.log(action.type);
 
 
     if (action.type === MOVIE_DATA_BACKEND) {
@@ -14,7 +14,7 @@ const movieDataApi = store => next => action => {
             .then((result) => {
 
                 let arr = JSON.parse(result).results;
-
+                console.log(arr);
                 let movies = arr.map((item) => {
                     return new MovieEntityDto(item);
 
