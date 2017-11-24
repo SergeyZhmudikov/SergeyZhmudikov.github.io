@@ -1,0 +1,18 @@
+.mdb_movieView_container {
+    background-color: #363947;
+    display: inline-block;
+    position: absolute;
+    min-width: 90%;
+    min-height: 100%;
+}
+
+.mdb-dashboard__films {
+    overflow: auto;
+    /* position: absolute; */
+}
+
+.mdb-header {
+    /* position: relative; */
+    margin-left: 60px;
+    margin-top: 20px;
+}
