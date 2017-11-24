@@ -1,12 +1,16 @@
 .mdb-sidebar {
     background-color: #363947;
-    position: fixed;
-    display: inline;
+    position: relative;
+    display: inline-block;
     /* width: 250px; */
+    height: 1200px;
+    /* z-index: 500; */
 }
 
 .mdb-sidebar__icons {
     display: inline-block;
+    background-color: #363947;
+    /* position: relative; */
 }
 
 .fa {}
@@ -14,11 +18,15 @@
 .mdb-container_side {
     /* flex: 1 1 150px; */
     min-height: 100%;
-    position: relative;
+    /* position: relative; */
     /* width: 240px; */
 }
 
-.fa {
+.fa-bars,
+.fa-film,
+.fa-television,
+.fa-bar-chart,
+.fa-question-circle-o {
     color: white;
     margin: 20px 20px 20px 20px;
 }
@@ -26,16 +34,17 @@
 .fa-plus-square-o {
     margin-bottom: 0px;
     margin-top: 0px;
+    color: white;
 }
 
 .mdb-text {
     color: white;
     font-size: 20px;
-    margin: 0px 20px 25px 20px;
+    margin: 0px 20px 23px 20px;
 }
 
 .mdb-text--big {
-    font-size: 30px;
+    font-size: 25px;
     color: grey;
 }
 
@@ -50,15 +59,49 @@
 .mdb-logo {
     margin-left: 13px;
     display: inline;
+    margin-bottom: 15px;
 }
-
-.mdb-sidebar__movies {}
 
 .mdb-hide {
-    display: inline-block;
+    display: none;
 }
 
-.mdb-sidebar-icon {}
+.mdb-show {
+    display: inline-block;
+    margin: 0;
+    background-color: #363947;
+    /* position: relative; */
+}
+
+.mdb-text:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
+
+.fa-bars:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
+
+.fa-film:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
+
+.fa-television:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
+
+.fa-bar-chart:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
+
+.fa-question-circle-o:hover {
+    color: rgba(255, 153, 0, 0.548);
+    cursor: pointer;
+}
 
 
 /* .mdb-sidebar__btn {
@@ -67,4 +110,14 @@
 
 .mdb-logo-container {
     margin: 0px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: flex-start;
 }

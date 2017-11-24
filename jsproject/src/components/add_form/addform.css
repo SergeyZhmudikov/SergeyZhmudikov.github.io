@@ -1,40 +1,129 @@
 .mdb-addform {
-    /* display: flex;
+    margin-left: 50px;
+    position: inherit;
+}
+
+.mdb-addform-hide {
+    display: none;
+}
+
+form {
+    display: flex;
     flex-direction: row;
     align-items: stretch;
     margin: 0 auto;
     flex-wrap: wrap;
     align-content: stretch;
-    justify-content: flex-start; */
-    height: 450px;
-    color: #ffffff;
+    justify-content: flex-start;
+    /* height: 450px; */
+    color: #777272;
+    width: 100%;
 }
 
-.mdb-addform__txtinput {
-    /* flex: 1 1 100px; */
-    display: inline-block;
+.mdb-addform__txtinput {}
+
+.txtinput {
     margin-right: 50px;
 }
 
-.txtinput {}
-
-.txtinput__header {}
+.txtinput__header {
+    font-size: 24px;
+}
 
 .txtinput__subheader {}
 
-.txtinput__field {}
-
-.txtinput__area {}
-
-.mdb-addform__genre {
-    /* flex: 1 1 100px; */
-    display: inline-block;
-    margin-right: 50px;
+.txtinput__field {
+    width: 100%;
 }
 
-.genre {}
+.txtinput__area {
+    width: 100%;
+}
+
+.mdb-addform__genre {
+    flex: 1 1 100px;
+    display: inline-block;
+    margin-right: 50px;
+    /* margin-top: 90px; */
+}
+
+.mdb-genre {
+    border: 1px solid white;
+}
+
+.genre__checkbox {
+    display: inline;
+}
+
+.genre-column_container {
+    border: 1px solid white;
+    width: 250px;
+}
+
+.genre-column {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.genre-adult {
+    margin-top: 10px;
+}
 
 .mdb-addform__upload_bar {
-    /* flex: 1 1 100px; */
+    flex: 1 1 100px;
     display: inline-block;
+}
+
+.upload_bar {
+    width: 350px;
+    height: 60px;
+    border: 1px solid white;
+    margin-bottom: 20px;
+}
+
+.slide_bar {}
+
+.poster_bar__poster {
+    border: 1px solid white;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.slide_bar__item {
+    border: 1px solid white;
+    width: 60px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.slide_bar {
+    margin-bottom: 30px;
+}
+
+.scroll_bar {
+    border: 1px solid white;
+    width: 350px;
+    height: 10px;
+    display: inline-block;
+}
+
+.mdb-addform__btn--big {
+    background-color: green;
+    width: 120px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.mdb-addform__btn--small {
+    background-color: red;
+    width: 80px;
+    height: 40px;
+}
+
+.mdb-form__error {
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
 }

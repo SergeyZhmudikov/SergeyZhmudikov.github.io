@@ -1,0 +1,3 @@
+export const OPEN_FORM = "[MOVIE_DB][FORM] OPEN_FORM";
+export const CLOSE_FORM = "[MOVIE_DB][FORM] CLOSE_FORM";
+export const TOGGLE_FORM = "[MOVIE_DB][FORM] TOGGLE_FORM";

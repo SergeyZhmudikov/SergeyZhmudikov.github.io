@@ -2,11 +2,32 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styles from '../src/app.css';
 
-import Complete from './components/complete.jsx';
+import { Root } from './container/main.jsx';
+// import { ShowContainer } from './components/view/show.view.jsx';
+import { Provider } from 'react-redux';
+import { appStore } from './store/index';
 
-ReactDOM.render( < Complete / > , document.querySelector('.container'));
+ReactDOM.render( < Provider store = { appStore } >
+        <
+        Root / >
+        <
+        /Provider> , document.querySelector('.container'));
 
 
-// import Addform from '../src/components/add_form/addform.jsx';
 
-// ReactDOM.render( < Addform / > , document.querySelector('.container'));
+
+
+
+
+
+
+
+        // import Search from '../src/components/search/search.jsx';
+
+        // ReactDOM.render( < Search / > , document.querySelector('.container'));
+
+
+
+        // import EntityService from '../src/components/service/entity.service.js';
+
+        // ReactDOM.render( < EntityService / > , document.querySelector('.container'));
