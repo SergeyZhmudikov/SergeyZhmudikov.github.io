@@ -4,7 +4,7 @@ import { Movies } from '../movie list/movie.jsx';
 import {showBackend} from '../../store/actions/showdata.action';
 import {showData} from "../../store/reducers/index.js";
 import '../movie list/movie.css';
-import { Search } from "../search/search.jsx" ;
+// import { Search } from "../search/search.jsx" ;
 import { Navigation } from "../navigation/nav.jsx" ;
 import './show.view.style.css';
 import {
@@ -13,7 +13,11 @@ import {
   NavLink,
   Switch
 } from 'react-router-dom';
-import {Form} from '../add_form/addform.jsx'
+import {Form} from '../add_form/addform.jsx';
+import {SearchButton} from '../../components/subcomponents/buttons/search.btn.jsx';
+import {SuperSearch} from '../advanced.search/advanced.search.jsx';
+import {Inputblock} from '../../components/subcomponents/input/input.block.jsx';
+
 
 
 
@@ -55,12 +59,24 @@ class ShowView extends Component {
             <div className = "mdb_showView_container">
             
             <div className = 'mdb-header'> 
-            <Search onChange={this.onChange.bind(this)}/>
+            <Inputblock 
+            placeholder = 'Search...'
+            inputtype = 'search'
+            onChange={this.onChange.bind(this)}
+            inputstyle = {{width: 250+'px',
+            height: 30+'px',
+            
+            }}/>
+            
+            <SearchButton 
+                       
+            />
             <Navigation/> 
+            <SuperSearch/>
             <Form/> 
             </div>
             <div>  </div>
-             <div className = "mdb-dashboard__films"> 
+             <div className = "mdb-dashboard__shows"> 
              {this.props.dataarr
             .filter((el)=>{
             return el.name.indexOf(this.state.newevent)!==-1;

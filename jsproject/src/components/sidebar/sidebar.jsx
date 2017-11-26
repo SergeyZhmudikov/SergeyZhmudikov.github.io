@@ -40,9 +40,11 @@ export const Sidebar = (props) => {
                     </NavLink>
                 </div>
                 <div className="mdb-sidebar-icon">
+                <NavLink to="/library">
                     <i className="fa  fa-bar-chart" aria-hidden="true" 
                 onClick={props.libraryView}>
                     </i>
+                    </NavLink>
                 </div>
                 <div className="mdb-sidebar-icon">
                     <i className="fa  fa-question-circle-o" aria-hidden="true" 
@@ -53,8 +55,8 @@ export const Sidebar = (props) => {
 
         <div className={(props.openSidebar)?"mdb-show":"mdb-hide"}>
             
-                <div className="mdb-logo"> <i className="fa fa-2x fa-plus-square-o" aria-hidden="true"></i></div>
-                <div className="mdb-logo mdb-text mdb-text--big">Logo</div>
+                {/* <div className="mdb-logo"> </div> */}
+                <div className="mdb-logo mdb-text mdb-text--big"><i className="fa fa-plus-square-o" aria-hidden="true"></i>Logo</div>
                 <NavLink to="/movies">
                 <div className="mdb-text" onClick={props.movieView} >Movies </div>
                 </NavLink>

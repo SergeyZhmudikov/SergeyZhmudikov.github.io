@@ -34,23 +34,7 @@
     /* flex: 1 1 185px; */
     margin: 6px;
     background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-.mdb-card {
-    border: 3px solid red;
-    height: 275px;
-    width: 200px;
-    overflow: auto;
-}
-
-.mdb-card-hide {
-    display: none;
-}
-
-.mdb-card__image {
-    height: 275px;
-    width: 185px;
+    background-size: cover;
 }
 
 .mdb-dashboard__films {

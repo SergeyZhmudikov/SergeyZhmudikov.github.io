@@ -1,17 +1,16 @@
-.mdb_movieView_container {
+.mdb_libraryView_container {
     background-color: #262830;
     display: inline-block;
     position: absolute;
-    /* width: 100%; */
     min-height: 100%;
 }
 
-.mdb-dashboard__films {
+.mdb-dashboard__library {
     /* overflow: auto; */
     /* position: absolute; */
     display: flex;
     flex-wrap: wrap;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     height: 570px;
     width: 1250px;
 }

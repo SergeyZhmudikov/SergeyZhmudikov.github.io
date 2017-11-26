@@ -1,88 +1,90 @@
-    .mdb-card {
-        border: 1px solid rgb(255, 255, 255);
-        min-height: 700px;
-        position: absolute;
-        display: inline-block;
-        width: 85%;
-        top: 7%;
-        background-color: #363947;
-        color: white;
-    }
-    
-    .container {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        margin: 0 auto;
-        flex-wrap: wrap;
-        align-content: stretch;
-        justify-content: flex-start;
-    }
-    
-    .mdb-card-hide {
-        display: none;
-    }
-    
-    .mdb-card__image {
-        margin-left: 20px;
-        margin-top: 20px;
-        display: inline;
-        height: 300px;
-        width: 200px;
-        flex: 1 1 200px;
-    }
-    
-    .card__img {}
-    
-    .review {
-        margin: 20px;
-        display: inline;
-        flex: 6 1 800px;
-    }
-    
-    .mdb-card__title {
-        /* display: inline-block; */
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-    
-    .mdb-card__overview {
-        /* display: inline-block; */
-        overflow: auto;
-    }
-    
-    .review_vote {
-        /* display: inline; */
-        margin: 20px;
-    }
-    
-    .mdb-card__genre {}
-    /* .fa-times {
-        float: right;
-        margin-right: 15px;
-        margin-top: 15px;
-    } */
-    
-    .mdb-card__recomend {
-        font-size: 22px;
-        margin-left: 20px;
-    }
-    
-    .mdb-card__recomend_array {
-        overflow: auto;
-        height: 150px;
-        width: 90%;
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        margin: 0 auto;
-        /* flex-wrap: wrap; */
-        align-content: stretch;
-        justify-content: flex-start;
-    }
-    
-    .mdb-card__image-small {
-        width: 80px;
-        height: 100px;
-        margin: 10px;
-    }
+.mdb-card-container {
+    min-height: 620px;
+    position: absolute;
+    display: inline-block;
+    width: 95%;
+    min-height: 100%;
+    background-color: #262830;
+    color: white;
+}
+
+.mdb-card-header {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.mdb-card {
+    /* border: 1px solid rgb(255, 255, 255); */
+    min-height: 620px;
+    /* position: absolute; */
+    display: inline-block;
+    width: 95%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: flex-start;
+}
+
+.mdb-card__image {
+    margin-left: 30px;
+    margin-top: 30px;
+    display: inline;
+    height: 300px;
+    /* width: 150px; */
+    flex: 1 1 150px;
+}
+
+.card__img {}
+
+.review {
+    margin: 20px 20px 0 20px;
+    display: inline;
+    flex: 6 1 600px;
+}
+
+.mdb-card__title {
+    /* display: inline-block; */
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.mdb-card__overview {
+    /* display: inline-block; */
+    overflow-y: auto;
+    height: 250px;
+}
+
+.review_vote {
+    /* display: inline; */
+    margin: 10px 30px 10px 30px;
+}
+
+.mdb-card__recomend {
+    font-size: 22px;
+    margin-left: 30px;
+}
+
+.mdb-card__recomend_array {
+    overflow: auto;
+    height: 160px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0 auto;
+    /* flex-wrap: wrap; */
+    align-content: stretch;
+    justify-content: flex-start;
+}
+
+.mdb-card__image-small {
+    width: 80px;
+    height: 100px;
+    margin: 10px;
+}

@@ -5,6 +5,7 @@ import { showDataReducer } from './showdata.reducer';
 import { sidebarReducer } from './sidebar.reducer';
 import { formReducer } from './form.reducer';
 import { genreReducer } from './genre.reducer';
+import { searchReducer } from './advanced.search.reducer';
 
 export const appReducers = combineReducers({
 
@@ -12,6 +13,7 @@ export const appReducers = combineReducers({
     showData: showDataReducer,
     sidebar: sidebarReducer,
     form: formReducer,
-    genre: genreReducer
+    genre: genreReducer,
+    search: searchReducer
 
 });

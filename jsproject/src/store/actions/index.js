@@ -7,3 +7,5 @@ export * from './form.action';
 export * from './form.types';
 export * from './genre.action';
 export * from './genre.types';
+export * from './advanced.search.types';
+export * from './advanced.search.action';

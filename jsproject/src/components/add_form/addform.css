@@ -20,10 +20,12 @@ form {
     width: 100%;
 }
 
-.mdb-addform__txtinput {}
+.mdb-addform__txtinput {
+    flex: 1 1 100px;
+}
 
 .txtinput {
-    margin-right: 50px;
+    /* margin-right: 50px; */
 }
 
 .txtinput__header {
@@ -43,7 +45,7 @@ form {
 .mdb-addform__genre {
     flex: 1 1 100px;
     display: inline-block;
-    margin-right: 50px;
+    /* margin-right: 50px; */
     /* margin-top: 90px; */
 }
 

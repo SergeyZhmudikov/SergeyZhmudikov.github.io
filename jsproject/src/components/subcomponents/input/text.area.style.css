@@ -1,0 +1,38 @@
+.mdb-input__field {
+    background-color: #314052;
+    color: white;
+    border: 0.5px solid black;
+    outline: none;
+    padding-left: 5px;
+    padding-top: 5px;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mdb-input__field::-webkit-input-placeholder {
+    color: #969799;
+    font-size: 14px;
+    padding-left: 5px;
+    font-family: 'Kalam', cursive;
+}
+
+.mdb-input__field::-moz-placeholder {
+    color: #969799;
+    font-size: 14px;
+    padding-left: 5px;
+    font-family: 'Kalam', cursive;
+}
+
+.mdb-input__field:-moz-placeholder {
+    color: #969799;
+    font-size: 14px;
+    padding-left: 5px;
+    font-family: 'Kalam', cursive;
+}
+
+.mdb-input__field:-ms-input-placeholder {
+    color: #969799;
+    font-size: 14px;
+    padding-left: 5px;
+    font-family: 'Kalam', cursive;
+}

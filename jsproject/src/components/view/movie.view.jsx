@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Movies } from '../movie list/movie.jsx';
 import {movieBackend} from '../../store/actions/moviedata.action';
 import {movieData} from "../../store/reducers/index.js";
-
+import "../../fonts/css/font-awesome.css";
 import '../movie list/movie.css';
-import { Search } from "../search/search.jsx" ;
+
 import { Navigation } from "../navigation/nav.jsx" ;
 import './movie.view.style.css';
 import {
@@ -14,7 +14,12 @@ import {
   NavLink,
   Switch
 } from 'react-router-dom';
-import {Form} from '../add_form/addform.jsx'
+import {Form} from '../add_form/addform.jsx';
+// import {Button} from '../../components/subcomponents/buttons/button.jsx';
+import {SearchButton} from '../../components/subcomponents/buttons/search.btn.jsx';
+import {SuperSearch} from '../advanced.search/advanced.search.jsx';
+import {Inputblock} from '../../components/subcomponents/input/input.block.jsx';
+
 
 
 
@@ -58,8 +63,25 @@ class MovieView extends Component {
             <div className = "mdb_movieView_container">
             
             <div className = "mdb-header"> 
-            <Search onChange={this.onChange.bind(this)}/>
-            <Navigation /> 
+            <Inputblock 
+            placeholder = 'Search...'
+            inputtype = 'search'
+            onChange={this.onChange.bind(this)}
+            inputstyle = {{width: 250+'px',
+            height: 30+'px',
+            
+            }}/>
+            
+            <SearchButton 
+            // searchstyle = {{width: 30+'px',
+            // height: 30+'px',
+            // display: 'inline', 
+            // backgroundColor: 'white',
+            // }}
+            
+            />
+            <Navigation />
+            <SuperSearch/>
             <Form />  
             </div>
             <div>

@@ -1,0 +1,36 @@
+.mdb-advanced-search-hide {
+    display: none;
+}
+
+.mdb-advanced-search {
+    /* display: inline-block; */
+    width: 600px;
+    height: 500px;
+    border: 1px solid rgb(122, 116, 226);
+    position: absolute;
+    background-color: #2b2424;
+    margin: 0 auto;
+    left: 30%;
+    color: rgb(102, 95, 95);
+}
+
+hr {
+    width: 580px;
+    background-color: rgb(102, 95, 95);
+}
+
+.mdb-advanced-search__header {
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 26px;
+}
+
+.mdb-advanced-search__title {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.mdb-advanced-search__overview {
+    margin-left: 10px;
+    font-size: 20px;
+}

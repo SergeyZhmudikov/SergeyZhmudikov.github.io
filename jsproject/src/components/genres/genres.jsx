@@ -8,12 +8,13 @@ class Genreblock extends Component {
     constructor(props) {
     super(props);
     this.props.genreDataInit();
-    this.genres = [];
+    this.arrgenres = [];
   }
 
   handleGenreChange(event) {
     if (this.props.onChange) {
-      this.props.onChange(event.target.name);
+      this.props.onChange(event.target);
+      // console.log(event.target.name);
     }
     
   }
@@ -26,7 +27,9 @@ class Genreblock extends Component {
         {this.props.arrgenres.map(item => {
           return (
             <div key={item.name}>
-              <input type="checkbox" name={item.id} value={item.name}/>
+              <input type="checkbox" 
+              name={item.id} 
+              value={item.name}/>
               <label>{item.name}</label>
             </div>
           );

@@ -7,6 +7,7 @@ import {
     Switch
   } from 'react-router-dom';
   import "../../fonts/css/font-awesome.css";
+  import {Navigation} from '../navigation/nav.jsx'
 
 
 
@@ -23,8 +24,10 @@ export class Card extends Component {
      
       
       return (
-
-    
+<div className="mdb-card-container">
+<div className = "mdb-card-header">
+      <Navigation  hideAddMovie={true} />
+      </div>
     <div className="mdb-card">
         {
                     this.props.movieArray
@@ -68,7 +71,7 @@ export class Card extends Component {
        
             
     </div>
-            
+    </div>      
                       
       );
     }

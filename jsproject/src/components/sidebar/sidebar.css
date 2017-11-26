@@ -1,23 +1,28 @@
 .mdb-sidebar {
     background-color: #363947;
-    position: relative;
+    /* position: relative; */
     display: inline-block;
     /* width: 250px; */
-    height: 1200px;
+    /* min-height: 100%; */
     /* z-index: 500; */
+    /* width: 100%; */
+    height: 100vh;
+    /* position: absolute; */
+    /* overflow: auto; */
 }
 
 .mdb-sidebar__icons {
     display: inline-block;
     background-color: #363947;
     /* position: relative; */
+    height: 100vh;
 }
 
 .fa {}
 
 .mdb-container_side {
     /* flex: 1 1 150px; */
-    min-height: 100%;
+    /* height: 100vh; */
     /* position: relative; */
     /* width: 240px; */
 }
@@ -56,21 +61,19 @@
     margin-left: 5px;
 }
 
-.mdb-logo {
-    margin-left: 13px;
-    display: inline;
-    margin-bottom: 15px;
-}
+.mdb-logo {}
 
 .mdb-hide {
     display: none;
+    /* height: 100vh; */
 }
 
 .mdb-show {
     display: inline-block;
     margin: 0;
     background-color: #363947;
-    /* position: relative; */
+    /* position: absolute; */
+    height: 100vh;
 }
 
 .mdb-text:hover {
