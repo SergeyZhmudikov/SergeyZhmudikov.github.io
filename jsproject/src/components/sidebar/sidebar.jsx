@@ -47,9 +47,11 @@ export const Sidebar = (props) => {
                     </NavLink>
                 </div>
                 <div className="mdb-sidebar-icon">
+                <NavLink to="/support">
                     <i className="fa  fa-question-circle-o" aria-hidden="true" 
                      onClick={props.supportView}>
                     </i>
+                    </NavLink>
                 </div>
         </div>
 
@@ -66,7 +68,9 @@ export const Sidebar = (props) => {
                 <NavLink to="/library">
                 <div className="mdb-text" onClick={props.libraryView}>My Library</div>
                 </NavLink>
+                <NavLink to="/support">
                 <div className="mdb-text" onClick={props.supportView} >Support</div>
+                </NavLink>
         </div>
 </div> 
             )

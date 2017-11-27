@@ -1,0 +1,62 @@
+.mdb_aboutView_container {
+    background-color: #262830;
+    display: inline-block;
+    position: absolute;
+    /* width: 100%; */
+    min-height: 100%;
+    width: 95%;
+}
+
+.mdb-about-header {
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.mdb-dashboard__about {
+    min-width: 95%;
+    color: grey;
+    margin-left: 60px;
+}
+
+.about-block {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: flex-start;
+}
+
+.about-title {
+    margin-top: 100px;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.about-block__descriptoon {
+    font-size: 14px;
+    height: 400px;
+    overflow-y: auto;
+    flex: 1 1 100px;
+}
+
+.fa-hand-peace-o {
+    color: white;
+}
+
+.about-picture_block {
+    flex: 1 1 100px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-picture {
+    /* position: absolute; */
+    width: 300px;
+    height: 400px;
+    background-image: url(../../fonts/bad.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

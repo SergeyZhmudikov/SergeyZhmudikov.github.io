@@ -19,7 +19,7 @@ export class Button extends Component{
         
         return(
                         
-                           <button className="mdb-btn"
+                           <button className={this.props.className}
                            style = {this.props.addstyle}
                                
                             // style={{

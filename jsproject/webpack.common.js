@@ -18,7 +18,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['build']),
         new HtmlWebpackPlugin({
-            title: 'FrontEnd',
+            title: 'Movie DB',
             template: './src/index.html'
         })
     ],

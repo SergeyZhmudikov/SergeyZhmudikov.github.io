@@ -25,7 +25,7 @@ render(){
     
     return(
     <div className="mdb-input">
-        <form action="" className="mdb-input__form">
+       
             <input className="mdb-input__field"
             style = {this.props.inputstyle} 
             type={this.props.inputtype} 
@@ -33,7 +33,7 @@ render(){
             
  
             onChange={this.handleInput.bind(this)}/>
-        </form>
+        
          
     </div>  
             )

@@ -79,7 +79,7 @@ form {
 .upload_bar {
     width: 350px;
     height: 60px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     margin-bottom: 20px;
 }
 

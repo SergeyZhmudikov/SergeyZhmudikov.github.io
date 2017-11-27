@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Movies } from '../movie list/movie.jsx';
-import {movieBackend} from '../../store/actions/moviedata.action';
+import {movieBackend,addMovie} from '../../store/actions/moviedata.action';
 import {movieData} from "../../store/reducers/index.js";
 import "../../fonts/css/font-awesome.css";
 import '../movie list/movie.css';
@@ -73,16 +73,11 @@ class MovieView extends Component {
             }}/>
             
             <SearchButton 
-            // searchstyle = {{width: 30+'px',
-            // height: 30+'px',
-            // display: 'inline', 
-            // backgroundColor: 'white',
-            // }}
-            
+                       
             />
             <Navigation />
             <SuperSearch/>
-            <Form />  
+            <Form addItem={this.props.addMovie}/>  
             </div>
             <div>
             
@@ -125,7 +120,7 @@ class MovieView extends Component {
     
     const mapDispatchToProps = (dispatch) =>({
         movieBackend: ()=> dispatch(movieBackend()),
-        // addMovie: ()=> dispatch(addMovie()),
+        addMovie: (item) => dispatch(addMovie(item))
         
     })
     export const MovieContainer = connect(mapStateToProps, mapDispatchToProps)(MovieView);
