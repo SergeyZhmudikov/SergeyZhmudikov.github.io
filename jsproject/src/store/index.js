@@ -5,7 +5,10 @@ import { appReducers } from './reducers';
 import movieDataApi from './middleware/movie.middleware.js';
 import showDataApi from './middleware/show.middleware.js';
 import genreDataApi from './middleware/genre.middleware.js';
-import addMovieReducer from './middleware/addmovie.middleware.js';
+import addMovieMiddle from './middleware/addmovie.middleware.js';
+import addShowMiddle from './middleware/addshow.middleware.js';
+import libraryData from './middleware/library.middleware.js';
+import libraryMotionsMiddlware from './middleware/library.motions.middleware.js'
 
 
 export const appStore = createStore(
@@ -14,7 +17,11 @@ export const appStore = createStore(
         movieDataApi,
         showDataApi,
         genreDataApi,
-        addMovieReducer)
+        addMovieMiddle,
+        addShowMiddle,
+        libraryData,
+        libraryMotionsMiddlware
+    )
 
 
 )

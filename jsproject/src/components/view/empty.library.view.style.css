@@ -1,0 +1,28 @@
+.mdb_empty_libraryView_container {
+    background-color: #262830;
+    display: inline-block;
+    position: absolute;
+    min-height: 100%;
+}
+
+.mdb-dashboard__empty_library {
+    /* overflow: auto; */
+    /* position: absolute; */
+    display: flex;
+    flex-wrap: wrap;
+    /* overflow-y: scroll; */
+    height: 570px;
+    width: 1250px;
+}
+
+.mdb-header_library {
+    /* position: absolute; */
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.mdb-library_header {
+    font-size: 30px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -22,7 +22,7 @@ import {showBackend} from '../store/actions/showdata.action';
 import {showData} from "../store/reducers/index.js";
 import {movieBackend} from '../store/actions/moviedata.action';
 import {movieData} from "../store/reducers/index.js";
-import {LibraryView} from "../components/view/library.view.jsx";
+import {LibraryContainer} from "../components/view/library.view.jsx";
 import {SupportView} from "../components/view/support.view.jsx";
 import {AboutView} from "../components/view/about.view.jsx";
 
@@ -72,7 +72,7 @@ export class App extends React.Component{
                 {this.props.showarr} {...props}/>}/>
 
 
-                <Route path="/library" component={LibraryView}/>
+                <Route path="/library" component={LibraryContainer}/>
                 <Route path="/support" component={SupportView}/>
                 <Route path="/about" component={AboutView}/>
                 </Switch>

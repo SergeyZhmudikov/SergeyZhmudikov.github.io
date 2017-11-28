@@ -21,34 +21,39 @@ export const Sidebar = (props) => {
       <div className="mdb-container_side mdb-sidebar" >
         <div className="mdb-sidebar__icons">
                 <div className="mdb-sidebar-icon">
-                    <i className="fa  fa-bars" aria-hidden="true" 
+                    <i className="fa  fa-bars" aria-hidden="true"
+
                     onClick={props.menuView}>
                     </i>
                 </div>
                 <div className="mdb-sidebar-icon">
                 <NavLink to="/movies" activeClassName="active-link">
-                    <i className="fa  fa-film" aria-hidden="true" 
+                    <i className="fa  fa-film" aria-hidden="true"
+                    title='Movies' 
                      onClick={props.movieView}>
                     </i>
                     </NavLink>
                 </div>
                 <div className="mdb-sidebar-icon">
                 <NavLink to="/shows" activeClassName="active-link">
-                    <i className="fa  fa-television" aria-hidden="true" 
+                    <i className="fa  fa-television" aria-hidden="true"
+                    title='TV-shows'  
                     onClick={props.showView}>
                     </i>
                     </NavLink>
                 </div>
                 <div className="mdb-sidebar-icon">
                 <NavLink to="/library">
-                    <i className="fa  fa-bar-chart" aria-hidden="true" 
+                    <i className="fa  fa-bar-chart" aria-hidden="true"
+                    title='Library' 
                 onClick={props.libraryView}>
                     </i>
                     </NavLink>
                 </div>
                 <div className="mdb-sidebar-icon">
                 <NavLink to="/support">
-                    <i className="fa  fa-question-circle-o" aria-hidden="true" 
+                    <i className="fa  fa-question-circle-o" aria-hidden="true"
+                    title='Support'  
                      onClick={props.supportView}>
                     </i>
                     </NavLink>

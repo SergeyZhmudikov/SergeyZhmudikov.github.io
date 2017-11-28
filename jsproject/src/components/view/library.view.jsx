@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-// import { Movies } from '../movie list/movie.jsx';
-// import {movieBackend} from '../../store/actions/moviedata.action';
+import { Movies } from '../movie list/movie.jsx';
+
 // import {movieData} from "../../store/reducers/index.js";
 
 // import '../movie list/movie.css';
@@ -17,6 +17,9 @@ import {
 import {SearchButton} from '../../components/subcomponents/buttons/search.btn.jsx';
 import {SuperSearch} from '../advanced.search/advanced.search.jsx';
 import {Inputblock} from '../../components/subcomponents/input/input.block.jsx';
+import {EmptyLibraryView} from './empty.library.view.jsx';
+import {library} from "../../store/reducers/index.js";
+import {initLibrary} from '../../store/actions';
 
 
 
@@ -24,7 +27,11 @@ import {Inputblock} from '../../components/subcomponents/input/input.block.jsx';
 
 
 
-export class LibraryView extends Component {
+
+
+
+
+class LibraryView extends Component {
     constructor(props) {
         super(props);
         
@@ -57,6 +64,13 @@ export class LibraryView extends Component {
 
 
     render() {
+        // let libraryArray = localStorage.getItem("library");
+        // if(libraryArray==="[]"){
+        //     return(
+        //         <EmptyLibraryView/>
+        //     );
+        // }
+        
 
         return ( 
             <div className = "mdb_libraryView_container">
@@ -72,15 +86,49 @@ export class LibraryView extends Component {
             />
             
             <SearchButton/>
-            <Navigation />
+            <Navigation hideAddMovie = { true }/>
             <SuperSearch/>
             
             </div>
             <div className = "mdb-dashboard__library"> 
-    
+            
+            {this.props.datalib
+            .filter((el)=>{
+            return el.name.indexOf(this.state.newevent)!==-1;
+             
+                })
+                    
+             .map((item,index)=>
+                {
+                    return(
+                       
+                    <Movies 
+                    poster={item.poster} 
+                    name={item.name}
+                    overview={item.overview}
+                    data={item} 
+                    key={item.id}
+                    />)
+                })}
                 </div>
             
              
             </div> )
+            
         }
     }
+ 
+    const mapStateToProps = (state) =>{
+        let datalib = state.library.library;
+        
+        return{
+            datalib
+        };
+    };
+    
+    const mapDispatchToProps = (dispatch) =>({
+        initLibrary: ()=> dispatch(initLibrary())
+       
+    
+    })
+    export const LibraryContainer = connect(mapStateToProps, mapDispatchToProps)(LibraryView);   

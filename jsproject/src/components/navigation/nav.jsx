@@ -26,7 +26,7 @@ render(){
     return(
     <div className="mdb-nav">
     <div>
-        <div className={this.props.hideAddMovie?"mdb-nav__add--hide mdb-nav-link":"mdb-nav__add mdb-nav-link"} onClick={this.props.toggleForm}>Add movie</div>
+        <div className={this.props.hideAddMovie?"mdb-nav__add--hide mdb-nav-link":"mdb-nav__add mdb-nav-link"} onClick={this.props.toggleForm}>Add {this.props.tag}</div>
         <span className={this.props.hideAddMovie?"mdb-span-hide":"mdb-span-visible"} >|</span>
         <NavLink to="/about">
         <div className="mdb-nav__about mdb-nav-link">About</div>

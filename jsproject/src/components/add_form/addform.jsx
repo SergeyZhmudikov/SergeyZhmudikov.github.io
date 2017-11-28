@@ -21,14 +21,15 @@ export class Addform extends Component{
         this.state = {
             name: '',
             overview: '',
-            genre: [] 
+            genre: [] ,
+            poster: 0
         };
         this.onTitleChange = this.onTitleChange.bind(this);       
         this.onOverviewChange = this.onOverviewChange.bind(this);
         this.handleGenreChange = this.handleGenreChange.bind(this);
         this.validationForm = this.validationForm.bind(this);
         this.closeForm = this.closeForm.bind(this);
-        
+        // this.uploadPicture = this.uploadPicture.bind(this);
         };
 
 
@@ -91,14 +92,21 @@ export class Addform extends Component{
                 return true;
               }
 
+            //   uploadPicture(event){
+            //     let inputimg = event;
+            //     console.log(inputimg);
+            //     this.setState({poster: inputimg});
+            // }
+
               handleSubmitForm(event){
                 event.preventDefault(); 
                 let item = {
-                    id: new Date().valueOf(),
+                    
                     name: this.state.name,
                     overview: this.state.overview,
-                    genre: this.state.genre
-
+                    genre: this.state.genre,
+                    // poster: this.state.poster,
+                    id: new Date().valueOf()
                     // genre: this.genre,
                     // poster: this.state.poster
               }
@@ -130,10 +138,10 @@ export class Addform extends Component{
         return(
         <div className={(this.props.isOpened)?"mdb-addform":"mdb-addform-hide"}>
         
-         <form  name="movie_form" >
+         <form name="movie_form" >
            
             <div className="mdb-addform__txtinput txtinput">
-                    <p className="txtinput__header" >Add movie</p>
+                    <p className="txtinput__header" >{this.props.header}</p>
                          {/* <hr/> */}
                     
                  <p className="txtinput__subheader">Title</p>
@@ -154,7 +162,7 @@ export class Addform extends Component{
                 placeholder = 'Overview'
                 rows = '6'
                 txtareastyle = {{width: 250+'px'}}/>
-            {!this.state.overview && <p className='mdb-form__error'>Please, enter Overview</p>}
+            {!this.state.overview && <p className='mdb-form__error'>Please, enter overview</p>}
 
             </div>
 
@@ -180,7 +188,10 @@ export class Addform extends Component{
             </div>
             <div className="mdb-addform__upload_bar txtinput">
             <div className="upload_bar">
-            <input className='mdb-form__upload' id='file' type="file" multiple onChange={this.uploadPicture}/></div>
+            <input className='mdb-form__upload' 
+            name='file' 
+            type="file"
+             multiple onChange={this.uploadPicture}/></div>
             {/* <div className="poster_bar">
                 <div className="poster_bar__poster"></div>
                 <div className="poster_bar__poster"></div>

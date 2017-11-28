@@ -1,4 +1,4 @@
-import { SHOW_DATA_BACKEND, GET_SHOW_DATA, MENU_SHOW_CLICK } from "../actions";
+import { SHOW_DATA_BACKEND, GET_SHOW_DATA } from "../actions";
 import { DataService } from "../../service/data.service.js";
 // import { ShowEntityDto } from "../../service/show-entity.dto";
 // import { mdbUrl } from "../../service/url.api"
@@ -25,10 +25,14 @@ const showDataApi = store => next => action => {
                     if (userShows) {
                         let customShows = JSON.parse(userShows);
                         data = show.concat(customShows);
-                    }
-                    let dataString = JSON.stringify(data);
-                    localStorage.setItem('shows', dataString);
+                        let dataString = JSON.stringify(data);
+                        localStorage.setItem('shows', dataString);
 
+                        store.dispatch({
+                            type: GET_SHOW_DATA,
+                            payload: data
+                        });
+                    }
                     store.dispatch({
                         type: GET_SHOW_DATA,
                         payload: data

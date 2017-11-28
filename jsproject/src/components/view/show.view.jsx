@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Movies } from '../movie list/movie.jsx';
-import {showBackend} from '../../store/actions/showdata.action';
+import {showBackend,addShow} from '../../store/actions/showdata.action';
 import {showData} from "../../store/reducers/index.js";
 import '../movie list/movie.css';
 // import { Search } from "../search/search.jsx" ;
@@ -71,9 +71,12 @@ class ShowView extends Component {
             <SearchButton 
                        
             />
-            <Navigation/> 
+            <Navigation
+            tag='show'/> 
             <SuperSearch/>
-            <Form/> 
+            <Form
+             header='Add show'
+            addItem={this.props.addShow}/> 
             </div>
             <div>  </div>
              <div className = "mdb-dashboard__shows"> 
@@ -90,6 +93,7 @@ class ShowView extends Component {
                     <Movies 
                     poster={item.poster} 
                     name={item.name}
+                    overview={item.overview}
                     data={item} 
                     key={item.id}
                     /></NavLink>)
@@ -112,7 +116,8 @@ class ShowView extends Component {
     };
     
     const mapDispatchToProps = (dispatch) =>({
-        showBackend: ()=> {dispatch(showBackend());
-        }
+        showBackend: ()=> dispatch(showBackend()),
+        addShow: (item) => dispatch(addShow(item))
+    
     })
     export const ShowContainer = connect(mapStateToProps, mapDispatchToProps)(ShowView);

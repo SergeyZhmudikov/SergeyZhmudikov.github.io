@@ -22,14 +22,25 @@ const movieDataApi = store => next => action => {
 
                     let userMovies = localStorage.getItem("userMovies");
 
+
                     if (userMovies) {
                         let customMovies = JSON.parse(userMovies);
                         data = movie.concat(customMovies);
+                        let dataString = JSON.stringify(data);
+                        localStorage.setItem('movies', dataString);
+                        console.log('backend-added', dataString);
+
+
+                        store.dispatch({
+                            type: GET_MOVIE_DATA,
+                            payload: data
+                        });
+
                     }
 
-                    let dataString = JSON.stringify(data);
-                    localStorage.setItem('movies', dataString);
-                    console.log('backend-added', dataString);
+                    // let dataString = JSON.stringify(data);
+                    // localStorage.setItem('movies', dataString);
+                    // console.log('backend-added', dataString);
 
 
                     store.dispatch({
@@ -39,6 +50,7 @@ const movieDataApi = store => next => action => {
 
                 });
         } else {
+
             let moviesFromLocal = localStorage.getItem('movies');
             let movies = JSON.parse(moviesFromLocal);
             store.dispatch({

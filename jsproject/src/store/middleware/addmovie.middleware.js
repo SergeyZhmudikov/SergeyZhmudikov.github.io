@@ -1,6 +1,6 @@
 import { ADD_MOVIE } from "../actions/index";
 
-const addMovieReducer = store => next => action => {
+const addMovieMiddle = store => next => action => {
 
     if (action.type === ADD_MOVIE) {
         var localUserMoviesSTR = localStorage.getItem("userMovies");
@@ -21,4 +21,4 @@ const addMovieReducer = store => next => action => {
     return next(action);
 };
 
-export default addMovieReducer;
+export default addMovieMiddle;

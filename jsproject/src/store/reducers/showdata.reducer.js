@@ -1,6 +1,7 @@
 import {
     SHOW_DATA_BACKEND,
-    GET_SHOW_DATA
+    GET_SHOW_DATA,
+    ADD_SHOW
 } from './../actions';
 
 const initialState = {
@@ -15,7 +16,11 @@ export function showDataReducer(state = initialState, action) {
                 ...state,
                 show: action.payload
             };
-
+        case ADD_SHOW:
+            return {
+                ...state,
+                show: [...state.show, action.payload]
+            };
 
         default:
             return state;

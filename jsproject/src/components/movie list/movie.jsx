@@ -1,53 +1,53 @@
 import React, { Component } from 'react';
 import './movie.css';
-
+import '../../fonts/css/font-awesome.css'
 
 
 export class Movies extends Component {
     constructor(props){
       super(props);
-      // this.state = {
-      //   isCardOpen:false,
-      //   },
+      // this.state={
+      //   isHover: false
+      // }
          
-    }  
+    } 
+    
+    
+    addItemToLibrary(){
+        if(this.props.addToLibrary){
+            this.props.addToLibrary(this.props.data);
+        }
+    }
 
-    // onClickOpenCard(){
-    //   if(this.props.AddCard){
-    //     this.props.AddCard();
-        
-    // }
-    //   };
 
-    //   onClickOpenCard(){
-    //     console.log(this.state.isCardOpen);
-    //     this.setState({
-    //       isCardOpen: !this.state.isCardOpen});
+    
+    // isHoverMouse(){
+    //   this.setState({
+                
+    //     isHover:!this.state.isHover});
     // }
-    // onClick={this.onClickOpenCard.bind(this)}
-    // <div className={(this.state.isCardOpen)?"mdb-card":"mdb-card-hide"}>
-    //     {/* <img className='mdb-card__image'src={this.props.poster_path}/>  */}
-    //    <div className='mdb-card__title'>{this.props.name}</div>
-    //    <div className='mdb-card__overview'>{this.props.overview}</div>
-    //    <div className='mdb-card__genre'></div>
-    //    <div className='mdb-card__popularity'></div>
-    //    <div className='mdb-card__vote-average'></div> 
-    //    <div className='mdb-card__recomend'></div>     
-    // </div>
 
     render() {
      
       
       return (
 
+
+
+
     <div className='mdb-movies__container' >
-    <div className='mdb-movies__movie' 
-    style={{backgroundImage: `url(${this.props.poster})`}}
-    title={this.props.name}
-    >
+   
+          <div className='mdb-movies__movie' 
+          style={{backgroundImage: `url(${this.props.poster})`}}
+          title={this.props.name}
+          >
+           <div className='mdb-movies_hover'>
+            <div className='mdb-movies_icons'>
+          <i className="fa fa-floppy-o" aria-hidden="true" onClick={this.addItemToLibrary.bind(this)}></i> 
+         <i className="fa fa-info" aria-hidden="true"title={this.props.overview}></i>
+          </div>
     </div>
-     
-     
+          </div>
     </div>
     
     
@@ -58,3 +58,7 @@ export class Movies extends Component {
 
 
 }
+
+{/* <i class="fa fa-floppy-o" aria-hidden="true"></i> */}
+{/* <i class="fa fa-info" aria-hidden="true"></i> */}
+{/* <i class="fa fa-trash-o" aria-hidden="true"></i> */}

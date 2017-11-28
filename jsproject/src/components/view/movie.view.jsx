@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Movies } from '../movie list/movie.jsx';
-import {movieBackend,addMovie} from '../../store/actions/moviedata.action';
+import {movieBackend,addMovie,addMovieToLibrary} from '../../store/actions';
 import {movieData} from "../../store/reducers/index.js";
 import "../../fonts/css/font-awesome.css";
 import '../movie list/movie.css';
@@ -42,6 +42,7 @@ class MovieView extends Component {
         
         
         
+        
     }
 
     onChange(event){
@@ -54,7 +55,9 @@ class MovieView extends Component {
         
         
     }
-          
+    addMovieToLibrary(item){
+        this.props.addMovieToLibrary(item);
+    }    
 
 
     render() {
@@ -75,9 +78,12 @@ class MovieView extends Component {
             <SearchButton 
                        
             />
-            <Navigation />
+            <Navigation 
+            tag='movie'/>
             <SuperSearch/>
-            <Form addItem={this.props.addMovie}/>  
+            <Form 
+            header='Add movie'
+            addItem={this.props.addMovie}/>  
             </div>
             <div>
             
@@ -93,9 +99,12 @@ class MovieView extends Component {
                 {
                     return(
                         <NavLink to={`/movies/${item.id}`} key={item.name + "card"}>
-                    <Movies 
+                    <Movies
+                    addToLibrary={this.addMovieToLibrary.bind(this)}
                     poster={item.poster} 
                     name={item.name}
+                    data = {item}
+                    overview={item.overview}
                     key={item.id}
                     
                     /></NavLink>)
@@ -120,7 +129,8 @@ class MovieView extends Component {
     
     const mapDispatchToProps = (dispatch) =>({
         movieBackend: ()=> dispatch(movieBackend()),
-        addMovie: (item) => dispatch(addMovie(item))
+        addMovie: (item) => dispatch(addMovie(item)),
+        addMovieToLibrary: (item) => dispatch(addMovieToLibrary(item))
         
     })
     export const MovieContainer = connect(mapStateToProps, mapDispatchToProps)(MovieView);

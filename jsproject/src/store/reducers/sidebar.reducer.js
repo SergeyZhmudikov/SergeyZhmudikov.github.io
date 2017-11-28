@@ -7,7 +7,7 @@ import {
 } from './../actions';
 
 const initialState = {
-    state: 'INITIAL',
+
     menu: false,
     movie: false,
     serial: false,

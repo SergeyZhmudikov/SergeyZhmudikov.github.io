@@ -50,3 +50,46 @@
     margin-right: 20px;
     margin-top: 20px;
 }
+
+
+/* .mdb-movies__container:hover {
+    opacity: 0.5;
+} */
+
+.mdb-movies_hover:hover {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    /* display: block;
+    position: absolute; */
+}
+
+.fa-floppy-o {
+    float: right;
+    display: inline;
+    margin-right: 10px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.fa-info {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: inline;
+    position: relative;
+}
+
+.mdb-movies_hover {
+    /* display: none; */
+    height: 15%;
+    width: 100%;
+    opacity: 0;
+}
+
+.mdb-movies_icons {
+    height: 15%;
+    width: 100%;
+    color: white;
+    /* opacity: 0.2; */
+    background-color: rgba(102, 195, 238, 0.5);
+}
