@@ -13,7 +13,8 @@ import {ShowContainer} from "../components/view/show.view.jsx";
 import {Card} from "../components/card/card.jsx"
 import {Sidebar} from "../components/sidebar/sidebar.jsx";
 import {menuView,movieView} from '../store/actions/sidebar.action';
-
+import {library} from "../store/reducers/index.js";
+import {initLibrary} from '../store/actions';
 
 import { connect } from 'react-redux';
 import { sidebar } from "../store/reducers/index";
@@ -25,6 +26,8 @@ import {movieData} from "../store/reducers/index.js";
 import {LibraryContainer} from "../components/view/library.view.jsx";
 import {SupportView} from "../components/view/support.view.jsx";
 import {AboutView} from "../components/view/about.view.jsx";
+import { Notfound} from '../components/view/page-not-found.view.jsx'
+
 
 
 export class App extends React.Component{
@@ -72,9 +75,13 @@ export class App extends React.Component{
                 {this.props.showarr} {...props}/>}/>
 
 
-                <Route path="/library" component={LibraryContainer}/>
+                <Route exact path="/library" component={LibraryContainer}/>
+                <Route path="/library/:id" render={(props)=>
+                <Card movieArray=
+                {this.props.datalib} {...props}/>}/>
                 <Route path="/support" component={SupportView}/>
                 <Route path="/about" component={AboutView}/>
+                <Route path="*" component={Notfound} />
                 </Switch>
                 </div>
               </Router>             
@@ -87,10 +94,12 @@ const mapStateToProps = (state) => {
        const clickmenu = state.sidebar.menu;
        let showarr = state.showData.show;
        let moviearr = state.movieData.movies;
+       let datalib = state.library.library;
        return {
          clickmenu,
          showarr,
-         moviearr
+         moviearr,
+         datalib
     };
     };
     
@@ -98,7 +107,8 @@ const mapStateToProps = (state) => {
         menuView: (menu) => dispatch(menuView(menu)),
         movieView: (movie) => dispatch(movieView(movie)),
         showBackend: ()=> dispatch(showBackend()),
-        movieBackend: ()=> dispatch(movieBackend())
+        movieBackend: ()=> dispatch(movieBackend()),
+        initLibrary: ()=> dispatch(initLibrary())
         // formView: (form) => dispatch(formView(form))
     });
     

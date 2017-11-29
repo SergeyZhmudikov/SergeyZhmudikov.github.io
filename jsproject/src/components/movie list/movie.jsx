@@ -19,7 +19,11 @@ export class Movies extends Component {
         }
     }
 
-
+    deleteItemFromLibrary(){
+      if(this.props.addToLibrary){
+          this.props.deleteFromLibrary(this.props.data);
+      }
+  }
     
     // isHoverMouse(){
     //   this.setState({
@@ -42,11 +46,12 @@ export class Movies extends Component {
           title={this.props.name}
           >
            <div className='mdb-movies_hover'>
-            <div className='mdb-movies_icons'>
-          <i className="fa fa-floppy-o" aria-hidden="true" onClick={this.addItemToLibrary.bind(this)}></i> 
-         <i className="fa fa-info" aria-hidden="true"title={this.props.overview}></i>
-          </div>
-    </div>
+             
+                <i className="fa fa-trash-o" aria-hidden="true" onClick={this.deleteItemFromLibrary.bind(this)}></i> 
+                <i className={this.props.hideSaveIcon?"fa fa-floppy-o":"fa fa-floppy-o__hide"} aria-hidden="true" onClick={this.addItemToLibrary.bind(this)}></i> 
+                <i className="fa fa-info" aria-hidden="true"title={this.props.overview}></i>
+              
+         </div>
           </div>
     </div>
     
@@ -59,6 +64,4 @@ export class Movies extends Component {
 
 }
 
-{/* <i class="fa fa-floppy-o" aria-hidden="true"></i> */}
-{/* <i class="fa fa-info" aria-hidden="true"></i> */}
-{/* <i class="fa fa-trash-o" aria-hidden="true"></i> */}
+

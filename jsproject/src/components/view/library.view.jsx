@@ -19,7 +19,7 @@ import {SuperSearch} from '../advanced.search/advanced.search.jsx';
 import {Inputblock} from '../../components/subcomponents/input/input.block.jsx';
 import {EmptyLibraryView} from './empty.library.view.jsx';
 import {library} from "../../store/reducers/index.js";
-import {initLibrary} from '../../store/actions';
+import {initLibrary, deleteMovieFromLibrary, deleteShowFromLibrary} from '../../store/actions';
 
 
 
@@ -34,10 +34,8 @@ import {initLibrary} from '../../store/actions';
 class LibraryView extends Component {
     constructor(props) {
         super(props);
-        
-        // this.props.addMovie();
-        this.state ={
-            // Filmarray:[],
+        this.props.initLibrary();
+            this.state ={
             newevent: ''
         }
 }
@@ -45,8 +43,6 @@ class LibraryView extends Component {
 
     componentWillMount() {
         console.log(this.props)
-        
-        
         
     }
 
@@ -57,9 +53,18 @@ class LibraryView extends Component {
         this.setState({
             newevent: searchQuery
         });
-        
-        
+               
     }
+
+    deleteMovieFromLibrary(item){
+        this.props.deleteMovieFromLibrary(item);
+    } 
+
+    deleteShowFromLibrary(item){
+        this.props.deleteShowFromLibrary(item);
+    } 
+
+
           
 
 
@@ -101,14 +106,27 @@ class LibraryView extends Component {
              .map((item,index)=>
                 {
                     return(
-                       
+                        <NavLink to={`/library/${item.id}`} key={item.name+"card"}> 
                     <Movies 
+                    
+                    // deleteFromLibrary={this.deleteShowFromLibrary.bind(this)}
+                    // deleteFromLibrary={item.type==='movie'?
+                    //             this.deleteMovieFromLibrary.bind(this):
+                    //             this.deleteShowFromLibrary.bind(this)}
+                    
+                    
+                    
+                    
+                    
+                    
+                    hideSaveIcon={false}
                     poster={item.poster} 
                     name={item.name}
                     overview={item.overview}
                     data={item} 
+                    deleteFromLibrary={this.deleteMovieFromLibrary.bind(this)}
                     key={item.id}
-                    />)
+                    /></NavLink>)
                 })}
                 </div>
             
@@ -127,7 +145,9 @@ class LibraryView extends Component {
     };
     
     const mapDispatchToProps = (dispatch) =>({
-        initLibrary: ()=> dispatch(initLibrary())
+        initLibrary: ()=> dispatch(initLibrary()),
+        deleteMovieFromLibrary: (item) => dispatch(deleteMovieFromLibrary(item)),
+        deleteShowFromLibrary: (item) => dispatch(deleteShowFromLibrary(item))
        
     
     })

@@ -5,14 +5,13 @@ const addShowMiddle = store => next => action => {
     if (action.type === ADD_SHOW) {
         var localAddShow = localStorage.getItem("userShows");
         let item = action.payload;
-        
+
         if (!localAddShow) {
             var tempArray = [];
             tempArray.push(item);
             let tempArrayStr = JSON.stringify(tempArray);
             localStorage.setItem("userShows", tempArrayStr);
-        }
-         else {
+        } else {
 
             var localUserShow = JSON.parse(localAddShow);
             localUserShow.push(item);

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Movies } from '../movie list/movie.jsx';
-import {showBackend,addShow} from '../../store/actions/showdata.action';
+import {showBackend,addShow,addShowToLibrary,deleteShowFromLibrary} from '../../store/actions';
 import {showData} from "../../store/reducers/index.js";
 import '../movie list/movie.css';
 // import { Search } from "../search/search.jsx" ;
@@ -50,7 +50,12 @@ class ShowView extends Component {
         
         
     }
-          
+    addShowToLibrary(item){
+        this.props.addShowToLibrary(item);
+    }        
+    deleteShowFromLibrary(item){
+        this.props.deleteShowFromLibrary(item);
+    } 
 
 
     render() {
@@ -91,6 +96,9 @@ class ShowView extends Component {
                     return(
                         <NavLink to={`/shows/${item.id}`} key={item.name+"card"}>
                     <Movies 
+                    hideSaveIcon={true}
+                    addToLibrary={this.addShowToLibrary.bind(this)}
+                    deleteFromLibrary={this.deleteShowFromLibrary.bind(this)}
                     poster={item.poster} 
                     name={item.name}
                     overview={item.overview}
@@ -117,7 +125,9 @@ class ShowView extends Component {
     
     const mapDispatchToProps = (dispatch) =>({
         showBackend: ()=> dispatch(showBackend()),
-        addShow: (item) => dispatch(addShow(item))
+        addShow: (item) => dispatch(addShow(item)),
+        addShowToLibrary: (item) => dispatch(addShowToLibrary(item)),
+        deleteShowFromLibrary: (item) => dispatch(deleteShowFromLibrary(item))
     
     })
     export const ShowContainer = connect(mapStateToProps, mapDispatchToProps)(ShowView);

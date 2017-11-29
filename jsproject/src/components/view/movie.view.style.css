@@ -4,6 +4,7 @@
     position: absolute;
     /* width: 100%; */
     min-height: 100%;
+    min-width: 95%;
 }
 
 .mdb-dashboard__films {

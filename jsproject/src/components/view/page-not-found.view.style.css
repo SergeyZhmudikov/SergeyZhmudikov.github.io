@@ -1,0 +1,32 @@
+.mdb_not-found_container {
+    background-color: #262830;
+    display: inline-block;
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.mdb_error_message {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-top: 150px;
+    min-height: 100%;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.mdb_error_message__header {
+    font-size: 80px;
+    margin-bottom: 30px;
+}
+
+.mdb_error_message__reason {
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.mdb_error_message__description {
+    font-size: 20px;
+}

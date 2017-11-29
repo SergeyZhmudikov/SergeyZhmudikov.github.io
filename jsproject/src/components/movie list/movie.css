@@ -6,19 +6,6 @@
     margin: 5px;
 }
 
-.mdb-movies {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    align-content: stretch;
-    justify-content: flex-start;
-    margin-left: 30px;
-    margin-right: 20px;
-    top: 5%;
-}
-
 .mdb-movies__container {
     display: flex;
     flex-direction: row;
@@ -36,19 +23,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid white;
-}
-
-.mdb-dashboard__films {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    align-content: stretch;
-    justify-content: flex-start;
-    margin-left: 30px;
-    margin-right: 20px;
-    margin-top: 20px;
+    /* position: absolute; */
 }
 
 
@@ -56,12 +31,43 @@
     opacity: 0.5;
 } */
 
+
+/* .mdb-movies__container:hover .mdb-movies_hover {
+    display: flex;
+} */
+
 .mdb-movies_hover:hover {
-    height: 100%;
-    width: 100%;
     opacity: 1;
-    /* display: block;
-    position: absolute; */
+    /* display: block; */
+}
+
+.mdb-movies_hover {
+    /* display: none; */
+    height: 15%;
+    width: 100%;
+    opacity: 0;
+    z-index: 1000;
+    background-color: rgba(80, 154, 186, 0.5);
+    color: white;
+    /* position: relative; */
+}
+
+
+/* .mdb-movies_icons {
+    height: 15%;
+    width: 100%;
+    color: white;
+    opacity: 0.2;
+    background-color: rgba(102, 195, 238, 0.5);
+    z-index: 10;
+} */
+
+.fa-trash-o {
+    float: right;
+    display: inline;
+    margin-right: 10px;
+    margin-top: 10px;
+    position: relative;
 }
 
 .fa-floppy-o {
@@ -72,24 +78,25 @@
     position: relative;
 }
 
+.fa-floppy-o__hide {
+    display: none;
+}
+
 .fa-info {
     margin-left: 10px;
     margin-top: 10px;
     display: inline;
-    position: relative;
+    /* position: absolute; */
 }
 
-.mdb-movies_hover {
-    /* display: none; */
-    height: 15%;
-    width: 100%;
-    opacity: 0;
+.fa-info:hover {
+    color: red;
 }
 
-.mdb-movies_icons {
-    height: 15%;
-    width: 100%;
-    color: white;
-    /* opacity: 0.2; */
-    background-color: rgba(102, 195, 238, 0.5);
+.fa-floppy-o:hover {
+    color: red;
+}
+
+.fa-trash-o:hover {
+    color: red;
 }

@@ -11,8 +11,10 @@
     display: flex;
     flex-wrap: wrap;
     /* overflow-y: scroll; */
-    height: 570px;
+    /* height: 570px; */
     width: 1250px;
+    margin-left: 35px;
+    margin-top: 20px;
 }
 
 .mdb-header {

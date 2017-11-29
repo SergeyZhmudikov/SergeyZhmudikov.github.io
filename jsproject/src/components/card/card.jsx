@@ -26,7 +26,7 @@ export class Card extends Component {
       return (
 <div className="mdb-card-container">
 <div className = "mdb-card-header">
-      <Navigation  hideAddMovie={true} />
+      <Navigation hideAddMovie={true} />
       </div>
     <div className="mdb-card">
         {
@@ -52,9 +52,11 @@ export class Card extends Component {
                               </div>
                               <div className='mdb-card__recomend'> We also recomended: </div>
                               <div className='mdb-card__recomend_array'>  
+                              
                               {this.props.movieArray
                               .map((item)=>{
                                return( 
+                                 
                                 <div key={item.id}>
                                 <img className='mdb-card__image-small' src={item.poster} ></img>
                               
