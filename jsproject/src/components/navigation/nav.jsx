@@ -9,7 +9,7 @@ import {
   } from 'react-router-dom';
 
 import {connect} from "react-redux";
-import { toggleForm } from "../../store/actions"; 
+import { toggleForm,toggleAbout } from "../../store/actions"; 
 
 
 export class Nav extends Component{
@@ -29,7 +29,7 @@ render(){
         <div className={this.props.hideAddMovie?"mdb-nav__add--hide mdb-nav-link":"mdb-nav__add mdb-nav-link"} onClick={this.props.toggleForm}>Add {this.props.tag}</div>
         <span className={this.props.hideAddMovie?"mdb-span-hide":"mdb-span-visible"} >|</span>
         <NavLink to="/about">
-        <div className="mdb-nav__about mdb-nav-link">About</div>
+        <div className="mdb-nav__about mdb-nav-link" onClick={this.props.toggleAbout}>About</div>
         </NavLink>
         </div>       
                      
@@ -39,13 +39,17 @@ render(){
 }
 }
 const mapDispatchToProps = (dispatch) => ({
-    toggleForm: () => dispatch(toggleForm())
+    toggleForm: () => dispatch(toggleForm()),
+    toggleAbout: () => dispatch(toggleAbout())
 });
 
 const mapStateToProps = (state) =>{
-    var isOpened= state.form.isFormOpened;
+    let isOpened= state.form.isFormOpened;
+    let isAbout = state.about.isAboutOpen;
+
     return{
-        isOpened
+        isOpened,
+        isAbout
     };
 };
 

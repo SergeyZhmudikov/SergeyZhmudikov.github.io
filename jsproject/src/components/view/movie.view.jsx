@@ -100,18 +100,19 @@ class MovieView extends Component {
              .map((item,index)=>
                 {
                     return(
-                        <NavLink to={`/movies/${item.id}`} key={item.name + "card"}>
+                        
                     <Movies
                     hideSaveIcon={true}
                     deleteFromLibrary={this.deleteMovieFromLibrary.bind(this)}
                     addToLibrary={this.addMovieToLibrary.bind(this)}
-                    poster={item.poster} 
-                    name={item.name}
+                    poster={item.poster}  
                     data = {item}
                     overview={item.overview}
-                    key={item.id}
-                    
-                    /></NavLink>)
+                    key={item.id}>
+                    <NavLink to={`/movies/${item.id}`} key={item.name + "card"}>
+                    <div className="mdb-movies_title" title={item.name}></div>
+                     </NavLink>
+                    </Movies>)
                 })}
                 
                 

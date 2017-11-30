@@ -79,6 +79,9 @@ export class EmptyLibraryView extends Component {
             <div className = "mdb-dashboard__empty_library"> 
                 <div className='mdb-library_header'>
                 Sorry, library is empty...</div>
+                
+                <div className='mdb-library_image'>
+                </div>
 
             </div>
             

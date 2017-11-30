@@ -94,17 +94,19 @@ class ShowView extends Component {
              .map((item,index)=>
                 {
                     return(
-                        <NavLink to={`/shows/${item.id}`} key={item.name+"card"}>
+                        
                     <Movies 
                     hideSaveIcon={true}
                     addToLibrary={this.addShowToLibrary.bind(this)}
                     deleteFromLibrary={this.deleteShowFromLibrary.bind(this)}
                     poster={item.poster} 
-                    name={item.name}
                     overview={item.overview}
                     data={item} 
-                    key={item.id}
-                    /></NavLink>)
+                    key={item.id}>
+                    <NavLink to={`/shows/${item.id}`} key={item.name + "card"}>
+                    <div className="mdb-movies_title" title={item.name}></div>
+                     </NavLink>
+                    </Movies>)
                 })}
                 
                         

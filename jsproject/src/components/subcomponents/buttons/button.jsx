@@ -7,11 +7,6 @@ export class Button extends Component{
         super(props);}
         
         
-        // btnclick() {
-        //     if (this.props.onChange) {
-        //         this.props.onChange(event.target.value);
-        //     }
-        // }
         
         
 
@@ -22,11 +17,7 @@ export class Button extends Component{
                            <button className={this.props.className}
                            style = {this.props.addstyle}
                                
-                            // style={{
-                            //     width: `${this.props.width}`,
-                            //     height: `${this.props.height}`,
-                            //     backgroundColor: `${this.props.backgroundColor}`}}
- 
+                            
                             onClick={this.props.btnclick}>
                             {this.props.btnname}
                            </button>

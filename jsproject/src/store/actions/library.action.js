@@ -3,7 +3,8 @@ import {
     ADD_MOVIE_TO_LIBRARY,
     ADD_SHOW_TO_LIBRARY,
     DELETE_MOVIE_FROM_LIBRARY,
-    DELETE_SHOW_FROM_LIBRARY
+    DELETE_SHOW_FROM_LIBRARY,
+    DELETE_ITEM_FROM_LIBRARY
 } from './library.types';
 
 export function initLibrary() {
@@ -36,6 +37,13 @@ export function deleteMovieFromLibrary(payload) {
 export function deleteShowFromLibrary(payload) {
     return {
         type: DELETE_SHOW_FROM_LIBRARY,
+        payload
+    }
+}
+
+export function deleteItemFromLibrary(payload) {
+    return {
+        type: DELETE_ITEM_FROM_LIBRARY,
         payload
     }
 }

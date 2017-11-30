@@ -13,3 +13,5 @@ export * from './advanced.search.types';
 export * from './advanced.search.action';
 export * from './library.types';
 export * from './library.action';
+export * from './about.action';
+export * from './about.types';

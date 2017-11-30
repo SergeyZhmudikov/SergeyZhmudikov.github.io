@@ -7,7 +7,7 @@
     display: none;
 }
 
-form {
+.movie_form {
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -59,7 +59,8 @@ form {
 
 .genre-column_container {
     border: 1px solid white;
-    width: 250px;
+    width: 280px;
+    height: 250px;
 }
 
 .genre-column {

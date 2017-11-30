@@ -107,8 +107,7 @@ export class Addform extends Component{
                     genre: this.state.genre,
                     // poster: this.state.poster,
                     id: new Date().valueOf()
-                    // genre: this.genre,
-                    // poster: this.state.poster
+                    
               }
 
 
@@ -138,7 +137,7 @@ export class Addform extends Component{
         return(
         <div className={(this.props.isOpened)?"mdb-addform":"mdb-addform-hide"}>
         
-         <form name="movie_form" >
+         <form className="movie_form" >
            
             <div className="mdb-addform__txtinput txtinput">
                     <p className="txtinput__header" >{this.props.header}</p>
@@ -191,6 +190,7 @@ export class Addform extends Component{
             <input className='mdb-form__upload' 
             name='file' 
             type="file"
+            disabled
              multiple onChange={this.uploadPicture}/></div>
             {/* <div className="poster_bar">
                 <div className="poster_bar__poster"></div>

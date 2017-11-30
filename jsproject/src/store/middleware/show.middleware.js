@@ -8,7 +8,7 @@ import { ShowEntityUI } from "../../service/show-entity.ui";
 let dataMovie = new ShowEntityUI();
 
 const showDataApi = store => next => action => {
-    console.log(action.type);
+    // console.log(action.type);
 
 
     if (action.type === SHOW_DATA_BACKEND) {

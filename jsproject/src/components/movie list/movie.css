@@ -1,7 +1,5 @@
 .mdb-movie__item {
-    /* width: 100px; */
     height: 275px;
-    /* background-color: white; */
     border: 1px solid black;
     margin: 5px;
 }
@@ -18,27 +16,25 @@
 .mdb-movies__movie {
     height: 275px;
     width: 185px;
-    /* flex: 1 1 185px; */
     margin: 6px;
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid white;
-    /* position: absolute; */
 }
 
+.mdb-movies_title {
+    height: 85%;
+    width: 100%;
+    opacity: 0;
+    z-index: 1;
+}
 
-/* .mdb-movies__container:hover {
-    opacity: 0.5;
-} */
-
-
-/* .mdb-movies__container:hover .mdb-movies_hover {
-    display: flex;
-} */
+.mdb-movies_title:hover {
+    opacity: 1;
+}
 
 .mdb-movies_hover:hover {
     opacity: 1;
-    /* display: block; */
 }
 
 .mdb-movies_hover {
@@ -46,21 +42,10 @@
     height: 15%;
     width: 100%;
     opacity: 0;
-    z-index: 1000;
+    z-index: 1;
     background-color: rgba(80, 154, 186, 0.5);
     color: white;
-    /* position: relative; */
 }
-
-
-/* .mdb-movies_icons {
-    height: 15%;
-    width: 100%;
-    color: white;
-    opacity: 0.2;
-    background-color: rgba(102, 195, 238, 0.5);
-    z-index: 10;
-} */
 
 .fa-trash-o {
     float: right;
@@ -86,7 +71,6 @@
     margin-left: 10px;
     margin-top: 10px;
     display: inline;
-    /* position: absolute; */
 }
 
 .fa-info:hover {

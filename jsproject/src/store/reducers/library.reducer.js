@@ -6,7 +6,8 @@ import {
     DELETE_MOVIE_FROM_LIBRARY,
     DELETE_SHOW_FROM_LIBRARY,
     MOVIE_WAS_DELETE_FROM_LIBRARY,
-    SHOW_WAS_DELETE_FROM_LIBRARY
+    SHOW_WAS_DELETE_FROM_LIBRARY,
+    DELETE_ITEM_FROM_LIBRARY
 } from '../actions';
 
 const initialState = {
@@ -55,6 +56,16 @@ export function libraryReducer(state = initialState, action) {
                 library: newShows
             }
 
+        case DELETE_ITEM_FROM_LIBRARY:
+            let a = localStorage.getItem('library');
+            let newItem = state.library.filter(v => v.id !== action.payload.id);
+            let curLibItemString = JSON.stringify(newItem);
+            localStorage.removeItem('library');
+            localStorage.setItem('library', curLibItemString);
+            return {
+                ...state,
+                library: newItem
+            }
 
 
         default:

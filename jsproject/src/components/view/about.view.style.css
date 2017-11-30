@@ -9,7 +9,7 @@
 
 .mdb-about-header {
     margin-left: 40px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .mdb-dashboard__about {
@@ -53,10 +53,9 @@
 }
 
 .about-picture {
-    /* position: absolute; */
     width: 300px;
     height: 400px;
-    background-image: url(../../fonts/giphy.gif);
+    background-image: url(../../fonts/Facepalm.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
 }

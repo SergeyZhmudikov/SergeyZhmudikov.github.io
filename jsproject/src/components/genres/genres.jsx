@@ -26,7 +26,7 @@ class Genreblock extends Component {
         onChange={this.handleGenreChange.bind(this)}>        
         {this.props.arrgenres.map(item => {
           return (
-            <div key={item.name}>
+            <div className="mdb__genre-item" key={item.name}>
               <input type="checkbox" 
               name={item.id} 
               value={item.name}/>
