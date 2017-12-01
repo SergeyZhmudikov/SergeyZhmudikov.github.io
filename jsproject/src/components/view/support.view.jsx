@@ -86,6 +86,7 @@ export class SupportView extends Component {
             
             <div className = "mdb-dashboard__support"> 
             <div className="support-title">Request</div>
+            
             <form name="support_form" >
             <div className="support-name_block">
             <div className="support-name">Name</div>

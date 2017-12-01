@@ -9,23 +9,91 @@ import {Button} from '../subcomponents/buttons/button.jsx'
 
 class AdvancedSearch extends Component{
     constructor (props){
-        super(props);}
-       
+        super(props);
+        this.state = {
+            name: '',
+            overview: '',
+            genre: [] ,
+            remember: '',
+            remValue: true
+        };
+        this.onTitleSearchChange = this.onTitleSearchChange.bind(this); 
+        this.onOverviewSearchChange = this.onOverviewSearchChange.bind(this); 
+        this.handleGenreSearchChange = this.handleGenreSearchChange.bind(this); 
+        this.handleAdultGenreSearchChange = this.handleAdultGenreSearchChange.bind(this); 
+        this.handleRememberSearchChange = this.handleRememberSearchChange.bind(this); 
+        this.handleSubmitSearch = this.handleSubmitSearch.bind(this); 
+    }
 
-
-        handleAdultGenreChange(event){
-            // const targetAdult = event.target.name;
-            // const valueAdult = event.target.id;
-            // // console.log('targetAdult',targetAdult);
-            // // console.log('valueAdult',valueAdult);
-            // this.setState((prevState) => ({
-            //     genre: prevState.genre.concat(valueAdult)
-            //     }));
-            //     console.log(this.state.genre)
+        onTitleSearchChange(value){
+                let inputTitle = value;
+                console.log(inputTitle);
+                this.setState({name: inputTitle});
+            }
+          
+            onOverviewSearchChange(value){
+                let inputOverview = value;
+                console.log(inputOverview);
+                this.setState({overview: inputOverview});
+            }
+            handleGenreSearchChange(event){
+                const target = event.name;
+                const value = event.value;
+                // console.log('target',target);
+                // console.log('valuevalue', value);              
+                if (event.checked === true) {
+                    this.setState((prevState) => ({
+                        genre: prevState.genre.concat(value)
+                        }));
+                        console.log(this.state.genre)
+                } else {
+                    this.setState((prevState) => ({
+                        genre: prevState.genre.filter((item) => {
+                    return item !== value;
+                })
+                    }));
+                
+            }
         }
-        handleRememberChange(event){
+            
+            handleAdultGenreSearchChange(event){
+                const targetAdult = event.target.name;
+                const valueAdult = event.target.id;
+                // console.log('targetAdult',targetAdult);
+                // console.log('valueAdult',valueAdult);
+                this.setState((prevState) => ({
+                    genre: prevState.genre.concat(valueAdult)
+                    }));
+                    console.log(this.state.genre)
+            }
 
-        }
+
+            handleRememberSearchChange(event){
+                const saveData = event.target.checked;
+                // console.log(saveData);
+                // event.preventDefault(); 
+            //     let saveitem = {
+            //         name: this.state.name,
+            //         overview: this.state.overview,
+            //         genre: this.state.genre,
+            //         poster: this.state.poster,
+            //         // id: new Date().valueOf()
+                    
+            //   }
+                if(saveData === true){
+                    this.setState({ remValue: false });
+                    console.log(this.state.remValue);
+                    
+                }
+                else{
+                   
+                    
+                }
+
+            }
+            handleSubmitSearch(){
+
+            }
 
     render(){
        
@@ -39,6 +107,7 @@ class AdvancedSearch extends Component{
            <div className="mdb-advanced-search__title">
            <div className="search-title">Title</div>
            <Inputblock
+           onChange={this.onTitleSearchChange.bind(this)}
            placeholder = 'Title'
            inputtype = 'text'
             inputstyle = {{width: 250+'px',
@@ -49,6 +118,7 @@ class AdvancedSearch extends Component{
            <div className="search-title">Overview</div>
            
            <Textarea
+            onChange={this.onOverviewSearchChange.bind(this)}
            placeholder = 'Overview'
            rows = '6'
            txtareastyle = {{width: 250+'px'
@@ -57,7 +127,8 @@ class AdvancedSearch extends Component{
            </div>
            <div className="mdb-advanced-search__genres">
            <div className="mdb_search_genres__title">Genres</div>
-           <div className="mdb_search_genres__list"><Genres/></div>    
+           <div className="mdb_search_genres__list"><Genres
+           onChange={this.handleGenreSearchChange.bind(this)}/></div>    
            </div>
            </div>
            
@@ -66,9 +137,10 @@ class AdvancedSearch extends Component{
            <div className="genre-adult__title">Adult</div>
            <div className="genre-adult__checkbox">
            <input type="checkbox" 
-                            onChange={this.handleAdultGenreChange.bind(this)}
-                            name="Adult" 
-                            id="18+"/>
+            onChange={this.handleAdultGenreSearchChange.bind(this)}
+            name="Adult" 
+            value={this.remValue}
+            id="18+"/>
            </div>                
                             
                         
@@ -81,9 +153,10 @@ class AdvancedSearch extends Component{
            <div className="genre-adult__title">Remember inputs</div>
            <div className="genre-adult__checkbox">
            <input type="checkbox" 
-            onChange={this.handleRememberChange.bind(this)}
-                            name="Remember" 
-                            id="SS"/>
+            onChange={this.handleRememberSearchChange.bind(this)}
+            name="Remember" 
+            
+            id="SS"/>
            </div>                
                             
                 
@@ -91,7 +164,8 @@ class AdvancedSearch extends Component{
            <div className="mdb-advanced-search__search_button">
            <Button
            className='mdb-advanced-btn'
-            btnname='Search'/>
+            btnname='Search'
+            btnclick={this.handleSubmitSearch.bind(this)}/>
            </div>
 
             </div>

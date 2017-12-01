@@ -30,7 +30,7 @@ render(){
             style = {this.props.inputstyle} 
             type={this.props.inputtype} 
             placeholder={this.props.placeholder}
-            
+            value = {this.props.inputvalue}
  
             onChange={this.handleInput.bind(this)}/>
         

@@ -8,7 +8,8 @@ import genreDataApi from './middleware/genre.middleware.js';
 import addMovieMiddle from './middleware/addmovie.middleware.js';
 import addShowMiddle from './middleware/addshow.middleware.js';
 import libraryData from './middleware/library.middleware.js';
-import libraryMotionsMiddlware from './middleware/library.motions.middleware.js'
+import libraryMotionsMiddlware from './middleware/library.motions.middleware.js';
+import recomDataApi from './middleware/recommendation.middleware.js'
 
 
 export const appStore = createStore(
@@ -20,7 +21,8 @@ export const appStore = createStore(
         addMovieMiddle,
         addShowMiddle,
         libraryData,
-        libraryMotionsMiddlware
+        libraryMotionsMiddlware,
+        recomDataApi
     )
 
 

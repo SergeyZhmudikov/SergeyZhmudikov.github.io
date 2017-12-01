@@ -75,6 +75,7 @@
 .mdb-addform__upload_bar {
     flex: 1 1 100px;
     display: inline-block;
+    margin-top: 100px;
 }
 
 .upload_bar {
@@ -118,12 +119,18 @@
     width: 120px;
     height: 40px;
     margin-right: 20px;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Kalam', cursive;
 }
 
 .mdb-addform__btn--small {
     background-color: red;
     width: 80px;
     height: 40px;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Kalam', cursive;
 }
 
 .mdb-form__error {

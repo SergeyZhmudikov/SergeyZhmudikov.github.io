@@ -15,3 +15,5 @@ export * from './library.types';
 export * from './library.action';
 export * from './about.action';
 export * from './about.types';
+export * from './recomdata.action';
+export * from './recomdata.types';

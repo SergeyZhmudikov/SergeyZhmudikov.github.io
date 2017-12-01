@@ -48,13 +48,16 @@ class LibraryView extends Component {
 
     render() {
         let libraryArray = localStorage.getItem("library");
-        if(libraryArray==="[]"){
+        if(libraryArray === null){
+            return(
+                <EmptyLibraryView/>
+            );
+        }else if (libraryArray === "[]"){
             return(
                 <EmptyLibraryView/>
             );
         }
         
-
         return ( 
             <div className = "mdb_libraryView_container">
             

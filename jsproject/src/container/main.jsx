@@ -26,7 +26,9 @@ import {movieData} from "../store/reducers/index.js";
 import {LibraryContainer} from "../components/view/library.view.jsx";
 import {SupportView} from "../components/view/support.view.jsx";
 import {AboutView} from "../components/view/about.view.jsx";
-import { Notfound} from '../components/view/page-not-found.view.jsx'
+import { Notfound} from '../components/view/page-not-found.view.jsx';
+import {recomBackend} from '../store/actions/recomdata.action';
+import {recomData} from "../store/reducers/index.js";
 
 
 
@@ -35,6 +37,7 @@ export class App extends React.Component{
         super(props);   
         this.props.showBackend();  
         this.props.movieBackend();
+        this.props.recomBackend();
     };
 
     componentWillMount(){
@@ -56,29 +59,41 @@ export class App extends React.Component{
                 <Switch>
 
                 <Route exact path="/" render={() =>
-                                <Redirect to="/movies"/>
-                            }/>
+                <Redirect to="/movies"/>}/>
                 
 
                 <Route exact path="/movies" render={(props)=>
                 <MovieContainer {...props}/>}/>
                 
                 <Route path="/movies/:id" render={(props)=>
-                <Card movieArray=
-                {this.props.moviearr} {...props}/>}/>
+                <Card 
+                movieArray={this.props.moviearr} 
+                recomArr={this.props.recomArr}
+                {...props}/>}/>
                 
                 <Route exact path="/shows" render={(props)=>
                 <ShowContainer {...props}/>}/>          
                 
                 <Route path="/shows/:id" render={(props)=>
-                <Card movieArray=
-                {this.props.showarr} {...props}/>}/>
+                <Card 
+                movieArray={this.props.showarr} 
+                recomArr = {this.props.recomArr}
+                {...props}/>}/>
 
 
                 <Route exact path="/library" component={LibraryContainer}/>
                 <Route path="/library/:id" render={(props)=>
-                <Card movieArray=
-                {this.props.datalib} {...props}/>}/>
+                <Card 
+                movieArray={this.props.datalib} 
+                recomArr = {this.props.recomArr} {...props}/>}/>
+
+                <Route path="/recommendations/:id" render={(props)=>
+                <Card 
+                hideRecommend = {false}
+                movieArray={this.props.recomArr}
+                recomArr = {this.props.recomArr} {...props}/>}/>                   
+
+
                 <Route path="/support" component={SupportView}/>
                 <Route path="/about" component={AboutView}/>
                 <Route path="*" component={Notfound} />
@@ -95,11 +110,13 @@ const mapStateToProps = (state) => {
        let showarr = state.showData.show;
        let moviearr = state.movieData.movies;
        let datalib = state.library.library;
+       let recomArr = state.recomData.recommend;
        return {
          clickmenu,
          showarr,
          moviearr,
-         datalib
+         datalib,
+         recomArr
     };
     };
     
@@ -108,7 +125,8 @@ const mapStateToProps = (state) => {
         movieView: (movie) => dispatch(movieView(movie)),
         showBackend: ()=> dispatch(showBackend()),
         movieBackend: ()=> dispatch(movieBackend()),
-        initLibrary: ()=> dispatch(initLibrary())
+        initLibrary: ()=> dispatch(initLibrary()),
+        recomBackend: ()=> dispatch(recomBackend())
         // formView: (form) => dispatch(formView(form))
     });
     

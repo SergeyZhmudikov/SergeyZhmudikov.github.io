@@ -50,17 +50,19 @@ export class Card extends Component {
                               <div className='mdb-card__popularity'>Popularity: {item.popularity}</div>
                               <div className='mdb-card__vote-average'> Vote average: {item.voteaverage}</div> 
                               </div>
-                              <div className='mdb-card__recomend'> We also recomended: </div>
-                              <div className='mdb-card__recomend_array'>  
+                              <div className={this.props.hideRecommend?'mdb-card__recomend--hide':'mdb-card__recomend'}> We also recomended: </div>
+                              <div className={this.props.hideRecommend?"mdb-card__recomend_array--hide":"mdb-card__recomend_array"}>  
                               
-                              {this.props.movieArray
+                              {this.props.recomArr
                               .map((item)=>{
                                return( 
-                                 
+                                <NavLink to={`/recommendations/${item.id}`} key={item.name + "card"}>
+                    
                                 <div key={item.id}>
-                                <img className='mdb-card__image-small' src={item.poster} ></img>
+                                <img className='mdb-card__image-small' title={item.name} src={item.poster} ></img>
                               
                                 </div>
+                                </NavLink>
                               );
                         })
                 }

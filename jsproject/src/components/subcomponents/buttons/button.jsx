@@ -5,10 +5,8 @@ import React, { Component } from "react";
 export class Button extends Component{
     constructor (props){
         super(props);}
-        
-        
-        
-        
+             
+               
 
     render(){
         
@@ -16,7 +14,7 @@ export class Button extends Component{
                         
                            <button className={this.props.className}
                            style = {this.props.addstyle}
-                               
+                           disabled={this.props.disabled}
                             
                             onClick={this.props.btnclick}>
                             {this.props.btnname}

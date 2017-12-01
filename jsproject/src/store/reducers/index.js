@@ -8,6 +8,7 @@ import { genreReducer } from './genre.reducer';
 import { searchReducer } from './advanced.search.reducer';
 import { libraryReducer } from './library.reducer';
 import { aboutReducer } from './about.reducer';
+import { recomDataReducer } from './recomdata.reducer';
 export const appReducers = combineReducers({
 
     movieData: movieDataReducer,
@@ -17,6 +18,7 @@ export const appReducers = combineReducers({
     genre: genreReducer,
     search: searchReducer,
     library: libraryReducer,
-    about: aboutReducer
+    about: aboutReducer,
+    recomData: recomDataReducer
 
 });

@@ -23,6 +23,7 @@ export class Textarea extends Component{
                             className="mdb-input__field"
                             style = {this.props.txtareastyle} 
                             type={this.props.inputtype}
+                            value = {this.props.inputAreaValue}
                             name={this.props.inputname}
                             placeholder={this.props.placeholder}
                             onChange={this.handleOverviewChange.bind(this)}

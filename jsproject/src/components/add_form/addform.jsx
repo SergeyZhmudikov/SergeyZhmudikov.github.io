@@ -9,7 +9,7 @@ import {connect} from "react-redux";
 import {Genres } from '../genres/genres.jsx';
 import {Textarea} from '../../components/subcomponents/input/text.area.jsx';
 import {Inputblock} from '../../components/subcomponents/input/input.block.jsx'
-
+import {Button} from '../subcomponents/buttons/button.jsx'
 
 
 
@@ -29,7 +29,7 @@ export class Addform extends Component{
         this.handleGenreChange = this.handleGenreChange.bind(this);
         this.validationForm = this.validationForm.bind(this);
         this.closeForm = this.closeForm.bind(this);
-        // this.uploadPicture = this.uploadPicture.bind(this);
+        this.uploadPicture = this.uploadPicture.bind(this);
         };
 
 
@@ -72,18 +72,16 @@ export class Addform extends Component{
                         console.log(this.state.genre)
                 } else {
                     this.setState((prevState) => ({
-                        genre: prevState.genre
+                        genre: prevState.genre.filter((item) => {
+                    return item !== value;
+                })
                     }));
-                    // console.log('No')
-                //     this.setState({
-                //         genre_val: genre_val.pop() 
-                //          });
-                // }
+                
             }}
           
            
               validationForm() {
-                // let validCheck = this.state.genres.length;
+                
                 let validName = !!this.state.name;
                 let validOverview = !!this.state.overview;
                 if (validName && validOverview === true) {
@@ -92,11 +90,11 @@ export class Addform extends Component{
                 return true;
               }
 
-            //   uploadPicture(event){
-            //     let inputimg = event;
-            //     console.log(inputimg);
-            //     this.setState({poster: inputimg});
-            // }
+              uploadPicture(event){
+                let inputimg = event;
+                // console.log(inputimg);
+                this.setState({poster: inputimg});
+            }
 
               handleSubmitForm(event){
                 event.preventDefault(); 
@@ -105,29 +103,14 @@ export class Addform extends Component{
                     name: this.state.name,
                     overview: this.state.overview,
                     genre: this.state.genre,
-                    // poster: this.state.poster,
+                    poster: this.state.poster,
                     id: new Date().valueOf()
                     
               }
 
-
-             
-            //   let genresString = JSON.stringify(item);
-              
-            //   localStorage.setItem('Library', genresString);
-            //   let getStorage = localStorage.getItem('Library');
-            //   console.log(getStorage);
-
-
-            //   let aba = localStorage.setItem('Library', getStorage.concat(aba));
-            //   let asd = localStorage.getItem('Library');
-            //   console.log(asd);
-            
             if(this.props.addItem){
                 this.props.addItem(item); 
-                // this.props.closeForm;
-            }
-                // this.props.addNewItemToArray(newItem);
+              }
                 this.closeForm();
             
             }
@@ -191,7 +174,7 @@ export class Addform extends Component{
             name='file' 
             type="file"
             disabled
-             multiple onChange={this.uploadPicture}/></div>
+             multiple onLoad={this.uploadPicture}/></div>
             {/* <div className="poster_bar">
                 <div className="poster_bar__poster"></div>
                 <div className="poster_bar__poster"></div>
@@ -205,8 +188,17 @@ export class Addform extends Component{
                 <div className="slide_bar__item"></div>
             </div>
             <div className="scroll_bar"></div> */}
-            <button className="mdb-addform__btn mdb-addform__btn--big" disabled={this.validationForm()} onClick={this.handleSubmitForm.bind(this)} >Add</button>
-            <button className="mdb-addform__btn mdb-addform__btn--small" onClick={this.closeForm}>Cancel</button></div>
+            <Button 
+            className={"mdb-addform__btn mdb-addform__btn--big"} 
+            disabled={this.validationForm()} 
+            btnname = {'Add'} 
+            btnclick={this.handleSubmitForm.bind(this)} />
+            
+            <Button 
+            className={"mdb-addform__btn mdb-addform__btn--small"}
+            btnname = {'Cancel'} 
+            btnclick={this.closeForm}/>
+            </div>
             </form>
         </div>
     )}
