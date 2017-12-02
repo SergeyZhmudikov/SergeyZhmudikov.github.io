@@ -55,6 +55,7 @@ export class App extends React.Component{
                  openSidebar={this.props.clickmenu}
                  menuView = {this.props.menuView}
                  movieView = {this.props.movieView}
+                 
                             /> 
                 <Switch>
 

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Movies } from '../movie list/movie.jsx';
-import {movieBackend,addMovie,addMovieToLibrary,deleteMovieFromLibrary} from '../../store/actions';
+import {movieBackend,addMovie,addMovieToLibrary,deleteMovieFromLibrary,doSearch} from '../../store/actions';
 import {movieData} from "../../store/reducers/index.js";
 import "../../fonts/css/font-awesome.css";
 import '../movie list/movie.css';
-
 import { Navigation } from "../navigation/nav.jsx" ;
 import './movie.view.style.css';
 import {
@@ -22,39 +21,35 @@ import {Inputblock} from '../../components/subcomponents/input/input.block.jsx';
 
 
 
-
-
-
 class MovieView extends Component {
     constructor(props) {
         super(props);
         this.props.movieBackend();
-        
         this.state ={
-            
             newevent: ''
         }
 }
 
-
     componentWillMount() {
         console.log(this.props)
-        
-        
-        
-        
     }
 
     onChange(event){
         let searchQuery = event.toLowerCase();
         console.log(searchQuery)
-        
         this.setState({
             newevent: searchQuery
         });
-        
-        
     }
+    //     doSearch(saveitem){
+    //         let saved = saveitem;
+    //         console.log('asda', saved)
+    //         this.setState({
+    //             newevent: saved
+    //         });   
+
+        
+    // }
     addMovieToLibrary(item){
         this.props.addMovieToLibrary(item);
     }    
@@ -77,30 +72,27 @@ class MovieView extends Component {
             
             }}/>
             
-            <SearchButton 
-                       
+            <SearchButton     
             />
             <Navigation 
             tag='movie'/>
-            <SuperSearch/>
+            <SuperSearch
+            searchItemsAdvanced = {this.props.doSearch}
+            />
             <Form 
             header='Add movie'
             addItem={this.props.addMovie}/>  
             </div>
             <div>
-            
             </div>
              <div className = "mdb-dashboard__films"> 
              {this.props.dataarr
             .filter((el)=>{
             return el.name.indexOf(this.state.newevent)!==-1;
-             
-                })
-                    
+             })   
              .map((item,index)=>
                 {
-                    return(
-                        
+                    return(  
                     <Movies
                     hideSaveIcon={true}
                     deleteFromLibrary={this.deleteMovieFromLibrary.bind(this)}
@@ -114,10 +106,6 @@ class MovieView extends Component {
                      </NavLink>
                     </Movies>)
                 })}
-                
-                
-                                
-                        
                 </div>
                 </div> )
         }
@@ -126,7 +114,6 @@ class MovieView extends Component {
 
     const mapStateToProps = (state) =>{
         let dataarr = state.movieData.movies;
-        
         return{
             dataarr
         };
@@ -136,7 +123,7 @@ class MovieView extends Component {
         movieBackend: ()=> dispatch(movieBackend()),
         addMovie: (item) => dispatch(addMovie(item)),
         addMovieToLibrary: (item) => dispatch(addMovieToLibrary(item)),
-        deleteMovieFromLibrary: (item) => dispatch(deleteMovieFromLibrary(item))
-        
+        deleteMovieFromLibrary: (item) => dispatch(deleteMovieFromLibrary(item)),
+        doSearch: (saveitem) => dispatch(doSearch(saveitem))
     })
     export const MovieContainer = connect(mapStateToProps, mapDispatchToProps)(MovieView);

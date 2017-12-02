@@ -1,11 +1,17 @@
 .mdb-app {
-    width: 100%;
+    min-width: 100%;
     height: 100vh;
     margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    /* flex-wrap: wrap; */
+    align-content: stretch;
+    justify-content: flex-start;
 }
 
 .mdb-app_container {
-    position: relative;
-    width: 100%;
+    /* position: relative;
     height: 100vh;
+    min-width: 100%; */
 }

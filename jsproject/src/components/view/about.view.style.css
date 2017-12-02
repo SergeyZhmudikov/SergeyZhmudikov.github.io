@@ -1,10 +1,13 @@
 .mdb_aboutView_container {
-    background-color: #262830;
+    /* background-color: #262830;
     display: inline-block;
     position: absolute;
-    /* width: 100%; */
+   
     min-height: 100%;
-    width: 95%;
+    width: 95%; */
+    background-color: #262830;
+    min-height: 100%;
+    flex: 1 1 100px;
 }
 
 .mdb-about-header {

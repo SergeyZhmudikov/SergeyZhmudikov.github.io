@@ -1,99 +1,135 @@
 import React, { Component } from "react";
 import './advanced.search.style.css';
-import {CLOSE_ADVANCED_SEARCH} from "../../store/actions";
+import {advancedMovieGenre,
+    advancedMovieAdult,
+    advancedMovieTitle,
+    advancedMovieOverview,
+    saveMovieSearchConfig
+} from "../../store/actions";
 import {connect} from "react-redux";
 import {Textarea} from '../../components/subcomponents/input/text.area.jsx';
 import {Inputblock} from '../../components/subcomponents/input/input.block.jsx'
 import {Genres} from '../genres/genres.jsx'
 import {Button} from '../subcomponents/buttons/button.jsx'
 
+
+
 class AdvancedSearch extends Component{
     constructor (props){
         super(props);
-        this.state = {
-            name: '',
-            overview: '',
-            genre: [] ,
-            remember: '',
-            remValue: true
-        };
-        this.onTitleSearchChange = this.onTitleSearchChange.bind(this); 
-        this.onOverviewSearchChange = this.onOverviewSearchChange.bind(this); 
-        this.handleGenreSearchChange = this.handleGenreSearchChange.bind(this); 
-        this.handleAdultGenreSearchChange = this.handleAdultGenreSearchChange.bind(this); 
-        this.handleRememberSearchChange = this.handleRememberSearchChange.bind(this); 
-        this.handleSubmitSearch = this.handleSubmitSearch.bind(this); 
+        // this.state = {
+        //     isConfigSaved: false
+        // };
+
+
+        // this.state = {
+        //     name: '',
+        //     overview: '',
+        //     genre: [] ,
+        //     remember: '',
+        //     // remValue: true
+        // };
+        // this.onTitleSearchChange = this.onTitleSearchChange.bind(this); 
+        // this.onOverviewSearchChange = this.onOverviewSearchChange.bind(this); 
+        // this.handleGenreSearchChange = this.handleGenreSearchChange.bind(this); 
+        // this.handleAdultGenreSearchChange = this.handleAdultGenreSearchChange.bind(this); 
+        // this.handleRememberSearchChange = this.handleRememberSearchChange.bind(this); 
+        // this.handleSubmitSearch = this.handleSubmitSearch.bind(this); 
+        
     }
 
         onTitleSearchChange(value){
-                let inputTitle = value;
-                console.log(inputTitle);
-                this.setState({name: inputTitle});
+            this.props.advancedMovieTitle(value);
+                // let inputTitle = value;
+                // console.log(inputTitle);
+                // this.setState({name: inputTitle});
             }
           
             onOverviewSearchChange(value){
-                let inputOverview = value;
-                console.log(inputOverview);
-                this.setState({overview: inputOverview});
+                this.props.advancedMovieOverview(value);
+                // let inputOverview = value;
+                // console.log(inputOverview);
+                // this.setState({overview: inputOverview});
             }
             handleGenreSearchChange(event){
-                const target = event.name;
-                const value = event.value;
-                // console.log('target',target);
-                // console.log('valuevalue', value);              
-                if (event.checked === true) {
-                    this.setState((prevState) => ({
-                        genre: prevState.genre.concat(value)
-                        }));
-                        console.log(this.state.genre)
-                } else {
-                    this.setState((prevState) => ({
-                        genre: prevState.genre.filter((item) => {
-                    return item !== value;
-                })
-                    }));
+
+
+
+            //     const target = event.name;
+            //     const value = event.name;
+            //     // console.log('target',target);
+            //     // console.log('valuevalue', value);              
+            //     if (event.checked === true) {
+            //         this.setState((prevState) => ({
+            //             genre: prevState.genre.concat(value)
+            //             }));
+            //             console.log(this.state.genre)
+            //     } else {
+            //         this.setState((prevState) => ({
+            //             genre: prevState.genre.filter((item) => {
+            //         return item !== value;
+            //     })
+            //         }));
                 
-            }
+            // }
         }
             
             handleAdultGenreSearchChange(event){
-                const targetAdult = event.target.name;
-                const valueAdult = event.target.id;
-                // console.log('targetAdult',targetAdult);
-                // console.log('valueAdult',valueAdult);
-                this.setState((prevState) => ({
-                    genre: prevState.genre.concat(valueAdult)
-                    }));
-                    console.log(this.state.genre)
+
+                
+                // const targetAdult = event.target.name;
+                // const valueAdult = event.target.name;
+                // // console.log('targetAdult',targetAdult);
+                // // console.log('valueAdult',valueAdult);
+                // this.setState((prevState) => ({
+                //     genre: prevState.genre.concat(valueAdult)
+                //     }));
+                //     console.log(this.state.genre)
             }
 
 
             handleRememberSearchChange(event){
-                const saveData = event.target.checked;
-                // console.log(saveData);
-                // event.preventDefault(); 
+            //     const saveData = event.target.checked;
+            //     // console.log(saveData);
+            //     // event.preventDefault(); 
             //     let saveitem = {
             //         name: this.state.name,
             //         overview: this.state.overview,
             //         genre: this.state.genre,
             //         poster: this.state.poster,
             //         // id: new Date().valueOf()
-                    
             //   }
-                if(saveData === true){
-                    this.setState({ remValue: false });
-                    console.log(this.state.remValue);
-                    
-                }
-                else{
-                   
-                    
-                }
+            //     if(saveData){
+            //         let saveString = JSON.stringify(saveitem);
+            //         sessionStorage.setItem('SaveSearch', saveString);
+            //     }
+            //     else{                   
+            //     }
 
             }
             handleSubmitSearch(){
+                this.props.saveMovieSearchConfig();
 
+            //     e.preventDefault();
+            //     let saveitem = {
+            //         name: this.state.name,
+            //         overview: this.state.overview,
+            //         genre: this.state.genre,
+            //         poster: this.state.poster,
+            //         // id: new Date().valueOf()
+            //   }
+            //   let saveString = JSON.stringify(saveitem);
+            //   localStorage.setItem('AdvancedSearch', saveString)
+            //   this.props.searchItemsAdvanced(saveitem);
             }
+
+
+
+
+            // if(this.props.searchItemsAdvanced){
+            //     this.props.searchItemsAdvanced(saveitem);
+            //   }
+
 
     render(){
        
@@ -139,7 +175,7 @@ class AdvancedSearch extends Component{
            <input type="checkbox" 
             onChange={this.handleAdultGenreSearchChange.bind(this)}
             name="Adult" 
-            value={this.remValue}
+            // value={this.remValue}
             id="18+"/>
            </div>                
                             
@@ -179,16 +215,31 @@ class AdvancedSearch extends Component{
 
 const mapStateToProps = (state) =>{
     let isAdvSearchOpened = state.search.isSearchOpen;
+    let genresMovieSearch = state.search.genresMovieAdv;
+    let adultMovieSearch = state.search.adultMovieAdv;
+    let titleMovieSearch = state.search.titleMovieSAdv;
+    let overviewMovieSearch = state.search.overviewMovieAdv;
     return{
-        isAdvSearchOpened
+        isAdvSearchOpened,
+        genresMovieSearch,
+        adultMovieSearch,
+        titleMovieSearch,
+        overviewMovieSearch
     };
 };
 
 const mapDispatchToProps = (dispatch) =>({
-    closeSearch: (event)=> {
-        dispatch(closeSearch())
-        event.preventDefault();
-    }    
+    // closeSearch: (event)=> {
+    //     dispatch(closeSearch())
+    //     event.preventDefault(),
+
+        advancedMovieGenre:() => dispatch(advancedMovieGenre()),
+        advancedMovieAdult:() => dispatch(advancedMovieAdult()),
+        advancedMovieTitle:() => dispatch(advancedMovieTitle()),
+        advancedMovieOverview:() => dispatch(advancedMovieOverview()),
+        saveMovieSearchConfig:() => dispatch(saveMovieSearchConfig())
+
+       
 })
 
 export const SuperSearch = connect(mapStateToProps, mapDispatchToProps)(AdvancedSearch);

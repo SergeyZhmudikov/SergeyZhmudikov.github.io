@@ -1,8 +1,7 @@
 .mdb_libraryView_container {
     background-color: #262830;
-    display: inline-block;
-    position: absolute;
     min-height: 100%;
+    flex: 1 1 100px;
 }
 
 .mdb-dashboard__library {
@@ -10,10 +9,11 @@
     /* position: absolute; */
     display: flex;
     flex-wrap: wrap;
-    /* overflow-y: scroll; */
-    /* height: 570px; */
-    width: 1250px;
+    overflow-y: scroll;
+    height: 570px;
+    /* width: 90%; */
     margin-left: 35px;
+    margin-right: 20px;
     margin-top: 20px;
 }
 

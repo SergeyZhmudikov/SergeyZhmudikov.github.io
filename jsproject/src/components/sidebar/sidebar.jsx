@@ -7,30 +7,38 @@ import {
     NavLink,
     Switch
   } from 'react-router-dom';
+  import { connect } from 'react-redux';
+  import {library} from "../../store/reducers/index.js";
 
 
 
-
-export const Sidebar = (props) => {
+// const Sidebarblock = (props) => {
     
-    
+
+class Sidebarblock extends Component {
+    constructor(props) {
+        super(props);
+       
+        }
+
+
    
 
-            
+render(){     
     return(
       <div className="mdb-container_side mdb-sidebar" >
         <div className="mdb-sidebar__icons">
                 <div className="mdb-sidebar-icon">
                     <i className="fa  fa-bars" aria-hidden="true"
 
-                    onClick={props.menuView}>
+                    onClick={this.props.menuView}>
                     </i>
                 </div>
                 <div className="mdb-sidebar-icon">
                 <NavLink to="/movies" activeClassName="active-link">
                     <i className="fa  fa-film" aria-hidden="true"
                     title='Movies' 
-                     onClick={props.movieView}>
+                     onClick={this.props.movieView}>
                     </i>
                     </NavLink>
                 </div>
@@ -38,51 +46,60 @@ export const Sidebar = (props) => {
                 <NavLink to="/shows" activeClassName="active-link">
                     <i className="fa  fa-television" aria-hidden="true"
                     title='TV-shows'  
-                    onClick={props.showView}>
+                    onClick={this.props.showView}>
                     </i>
                     </NavLink>
                 </div>
                 <div className="mdb-sidebar-icon">
-                <NavLink to="/library">
+                <NavLink to="/library" activeClassName="active-link">
                     <i className="fa  fa-bar-chart" aria-hidden="true"
                     title='Library' 
-                onClick={props.libraryView}>
+                onClick={this.props.libraryView}
+                > 
+                {(this.props.addLib.length > 0) ?`(${this.props.addLib.length})`:''}
                     </i>
                     </NavLink>
                 </div>
                 <div className="mdb-sidebar-icon">
-                <NavLink to="/support">
+                <NavLink to="/support" activeClassName="active-link">
                     <i className="fa  fa-question-circle-o" aria-hidden="true"
                     title='Support'  
-                     onClick={props.supportView}>
+                     onClick={this.props.supportView}>
                     </i>
                     </NavLink>
                 </div>
         </div>
 
-        <div className={(props.openSidebar)?"mdb-show":"mdb-hide"}>
+        <div className={(this.props.openSidebar)?"mdb-show":"mdb-hide"}>
             
                 {/* <div className="mdb-logo"> </div> */}
                 <div className="mdb-logo mdb-text mdb-text--big"><i className="fa fa-plus-square-o" aria-hidden="true"></i>Logo</div>
-                <NavLink to="/movies">
-                <div className="mdb-text" onClick={props.movieView} >Movies </div>
+                <NavLink to="/movies" activeClassName="active-link">
+                <div className="mdb-text" onClick={this.props.movieView} >Movies </div>
                 </NavLink>
-                <NavLink to="/shows">
-                <div className="mdb-text" onClick={props.showView} >TV Shows </div>
+                <NavLink to="/shows" activeClassName="active-link">
+                <div className="mdb-text" onClick={this.props.showView} >TV Shows </div>
                 </NavLink>
-                <NavLink to="/library">
-                <div className="mdb-text" onClick={props.libraryView}>My Library</div>
+                <NavLink to="/library" activeClassName="active-link">
+                <div className="mdb-text" onClick={this.props.libraryView}>My Library</div>
                 </NavLink>
-                <NavLink to="/support">
-                <div className="mdb-text" onClick={props.supportView} >Support</div>
+                <NavLink to="/support" activeClassName="active-link"> 
+                <div className="mdb-text" onClick={this.props.supportView} >Support</div>
                 </NavLink>
         </div>
 </div> 
             )
 
 }
+}
+const mapStateToProps = (state) => {
+    var addLib = state.library.library;
+    return {
+        addLib
+    };
+}
 
-
+export const Sidebar = connect(mapStateToProps)(Sidebarblock);
 
 
 

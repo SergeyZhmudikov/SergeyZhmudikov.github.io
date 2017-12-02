@@ -19,7 +19,8 @@ const movieDataApi = store => next => action => {
 
                     let data = movie;
                     console.log('backend-movie', data);
-
+                    let dataString = JSON.stringify(data);
+                    localStorage.setItem('forSearchmovies', dataString);
                     let userMovies = localStorage.getItem("userMovies");
 
 

@@ -1,13 +1,15 @@
 .mdb_empty_libraryView_container {
-    background-color: #262830;
+    /* background-color: #262830;
     display: inline-block;
     position: absolute;
     min-height: 100%;
-    width: 95%;
+    width: 95%; */
+    background-color: #262830;
+    min-height: 100%;
+    flex: 1 1 100px;
 }
 
 .mdb-dashboard__empty_library {
-    width: 1250px;
     margin-top: 150px;
 }
 

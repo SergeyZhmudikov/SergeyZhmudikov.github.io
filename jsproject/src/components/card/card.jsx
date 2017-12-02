@@ -37,7 +37,7 @@ export class Card extends Component {
                         .map((item)=>{
                             return( 
                               <div key={item.id}>
-                              <div className='container'>
+                              <div className='mcontainer'>
                               <img className='mdb-card__image' src={item.poster} ></img>
                               <div className='review'>
                               <div className='mdb-card__title'>{item.name}</div>

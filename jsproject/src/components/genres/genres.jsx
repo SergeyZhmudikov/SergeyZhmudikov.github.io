@@ -29,7 +29,8 @@ class Genreblock extends Component {
             <div className="mdb__genre-item" key={item.name}>
               <input type="checkbox" 
               name={item.id} 
-              value={this.props.genrevalue}/>
+              
+              value={item.name}/>
               <label>{item.name}</label>
             </div>
           );

@@ -22,7 +22,7 @@ export class Addform extends Component{
             name: '',
             overview: '',
             genre: [] ,
-            poster: 0
+            // poster: 0
         };
         this.onTitleChange = this.onTitleChange.bind(this);       
         this.onOverviewChange = this.onOverviewChange.bind(this);

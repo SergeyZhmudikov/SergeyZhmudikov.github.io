@@ -1,10 +1,7 @@
 .mdb_supportView_container {
     background-color: #262830;
-    display: inline-block;
-    position: absolute;
-    /* width: 100%; */
-    min-height: 100vh;
-    width: 95%;
+    min-height: 100%;
+    flex: 1 1 100px;
 }
 
 .mdb-support-header {
@@ -13,7 +10,7 @@
 }
 
 .mdb-dashboard__support {
-    min-width: 95%;
+    /* display: flex; */
     color: grey;
     margin-left: 40px;
 }
