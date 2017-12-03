@@ -7,6 +7,7 @@ import {
     Switch
   } from 'react-router-dom';
   import "../../fonts/css/font-awesome.css";
+  import {Navigation} from '../navigation/nav.jsx'
 
 
 
@@ -23,8 +24,10 @@ export class Card extends Component {
      
       
       return (
-
-    
+<div className="mdb-card-container">
+<div className = "mdb-card-header">
+      <Navigation hideAddMovie={true} />
+      </div>
     <div className="mdb-card">
         {
                     this.props.movieArray
@@ -34,7 +37,7 @@ export class Card extends Component {
                         .map((item)=>{
                             return( 
                               <div key={item.id}>
-                              <div className='container'>
+                              <div className='mcontainer'>
                               <img className='mdb-card__image' src={item.poster} ></img>
                               <div className='review'>
                               <div className='mdb-card__title'>{item.name}</div>
@@ -47,15 +50,19 @@ export class Card extends Component {
                               <div className='mdb-card__popularity'>Popularity: {item.popularity}</div>
                               <div className='mdb-card__vote-average'> Vote average: {item.voteaverage}</div> 
                               </div>
-                              <div className='mdb-card__recomend'> We also recomended: </div>
-                              <div className='mdb-card__recomend_array'>  
-                              {this.props.movieArray
+                              <div className={this.props.hideRecommend?'mdb-card__recomend--hide':'mdb-card__recomend'}> We also recomended: </div>
+                              <div className={this.props.hideRecommend?"mdb-card__recomend_array--hide":"mdb-card__recomend_array"}>  
+                              
+                              {this.props.recomArr
                               .map((item)=>{
                                return( 
+                                <NavLink to={`/recommendations/${item.id}`} key={item.name + "card"}>
+                    
                                 <div key={item.id}>
-                                <img className='mdb-card__image-small' src={item.poster} ></img>
+                                <img className='mdb-card__image-small' title={item.name} src={item.poster} ></img>
                               
                                 </div>
+                                </NavLink>
                               );
                         })
                 }
@@ -68,7 +75,7 @@ export class Card extends Component {
        
             
     </div>
-            
+    </div>      
                       
       );
     }

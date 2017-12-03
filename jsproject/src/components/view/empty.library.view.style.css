@@ -1,0 +1,36 @@
+.mdb_empty_libraryView_container {
+    /* background-color: #262830;
+    display: inline-block;
+    position: absolute;
+    min-height: 100%;
+    width: 95%; */
+    background-color: #262830;
+    min-height: 100%;
+    flex: 1 1 100px;
+}
+
+.mdb-dashboard__empty_library {
+    margin-top: 150px;
+}
+
+.mdb-header_library {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.mdb-library_header {
+    font-size: 22px;
+    min-height: 100%;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.mdb-library_image {
+    width: 300px;
+    height: 400px;
+    background-image: url(https://media.giphy.com/media/hEc4k5pN17GZq/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+}

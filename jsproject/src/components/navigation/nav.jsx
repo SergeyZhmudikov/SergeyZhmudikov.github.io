@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import './nav.css';
-// import Addform from "../add_form/addform.jsx"
+import {
+    HashRouter as Router,
+    Route,
+    NavLink,
+    Switch,
+    Redirect
+  } from 'react-router-dom';
 
 import {connect} from "react-redux";
-import { toggleForm } from "../../store/actions"; 
+import { toggleForm,toggleAbout } from "../../store/actions"; 
 
 
 export class Nav extends Component{
@@ -13,11 +19,6 @@ export class Nav extends Component{
 
     
 
-    // toggleState(){
-    //     if(this.props.AddMovie){
-    //         this.props.AddMovie();
-    //     }
-    // }
     
 
 render(){
@@ -25,13 +26,11 @@ render(){
     return(
     <div className="mdb-nav">
     <div>
-        <div className="mdb-nav__add mdb-nav-link" onClick={this.props.toggleForm}>Add movie</div>
-        <span>|</span>
-        <div className="mdb-nav__about mdb-nav-link">About</div>
-        <span>|</span>
-        <div className="mdb-nav__priority mdb-nav-link">Pricing</div>
-        <span>|</span>
-        <div className="mdb-nav__blog mdb-nav-link">Blog</div>
+        <div className={this.props.hideAddMovie?"mdb-nav__add--hide mdb-nav-link":"mdb-nav__add mdb-nav-link"} onClick={this.props.toggleForm}>Add {this.props.tag}</div>
+        <span className={this.props.hideAddMovie?"mdb-span-hide":"mdb-span-visible"} >|</span>
+        <NavLink to="/about">
+        <div className="mdb-nav__about mdb-nav-link" onClick={this.props.toggleAbout}>About</div>
+        </NavLink>
         </div>       
                      
     </div> 
@@ -40,51 +39,20 @@ render(){
 }
 }
 const mapDispatchToProps = (dispatch) => ({
-    toggleForm: () => dispatch(toggleForm())
+    toggleForm: () => dispatch(toggleForm()),
+    toggleAbout: () => dispatch(toggleAbout())
 });
 
 const mapStateToProps = (state) =>{
-    var isOpened= state.form.isFormOpened;
+    let isOpened= state.form.isFormOpened;
+    let isAbout = state.about.isAboutOpen;
+
     return{
-        isOpened
+        isOpened,
+        isAbout
     };
 };
 
 export const Navigation = connect(mapStateToProps,mapDispatchToProps)(Nav);
 
-
-// export default class Navigation extends Component{
-//     constructor(props){
-//         super(props);
-//         this.state = {isOpened:false};
-//     }
-
-//     toggleState(){
-//         this.setState({isOpened:!this.state.isOpened});
-//     }
-
-    
-
-// render(){
-//     let dropdownForm;
-//     if (this.state.isOpened){
-//         dropdownForm = <Addform/>;
-//     }
-//     return(
-//     <div className="mdb-nav">
-//     <div>
-//         <div className="mdb-nav__add mdb-nav-link" onClick={this.toggleState.bind(this)}>Add movie</div>
-//         <span>|</span>
-//         <div className="mdb-nav__about mdb-nav-link">About</div>
-//         <span>|</span>
-//         <div className="mdb-nav__priority mdb-nav-link">Pricing</div>
-//         <span>|</span>
-//         <div className="mdb-nav__blog mdb-nav-link">Blog</div>
-//         </div>       
-//         <div className="mdb-nav__dropdown">{dropdownForm}</div>             
-//     </div> 
-//     )
-            
-// }
-// }
 

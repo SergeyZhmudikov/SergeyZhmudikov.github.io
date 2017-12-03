@@ -1,0 +1,64 @@
+.mdb_aboutView_container {
+    /* background-color: #262830;
+    display: inline-block;
+    position: absolute;
+   
+    min-height: 100%;
+    width: 95%; */
+    background-color: #262830;
+    min-height: 100%;
+    flex: 1 1 100px;
+}
+
+.mdb-about-header {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.mdb-dashboard__about {
+    min-width: 95%;
+    color: grey;
+    margin-left: 60px;
+}
+
+.about-block {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: flex-start;
+}
+
+.about-title {
+    margin-top: 100px;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.about-block__descriptoon {
+    font-size: 14px;
+    height: 400px;
+    overflow-y: auto;
+    flex: 1 1 100px;
+}
+
+.fa-hand-peace-o {
+    color: white;
+}
+
+.about-picture_block {
+    flex: 1 1 100px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-picture {
+    width: 300px;
+    height: 400px;
+    background-image: url(http://i0.kym-cdn.com/entries/icons/original/000/000/554/facepalm.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

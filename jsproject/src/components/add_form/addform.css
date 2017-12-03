@@ -7,7 +7,7 @@
     display: none;
 }
 
-form {
+.movie_form {
     display: flex;
     flex-direction: row;
     align-items: stretch;
@@ -20,10 +20,12 @@ form {
     width: 100%;
 }
 
-.mdb-addform__txtinput {}
+.mdb-addform__txtinput {
+    flex: 1 1 100px;
+}
 
 .txtinput {
-    margin-right: 50px;
+    /* margin-right: 50px; */
 }
 
 .txtinput__header {
@@ -43,7 +45,7 @@ form {
 .mdb-addform__genre {
     flex: 1 1 100px;
     display: inline-block;
-    margin-right: 50px;
+    /* margin-right: 50px; */
     /* margin-top: 90px; */
 }
 
@@ -57,7 +59,8 @@ form {
 
 .genre-column_container {
     border: 1px solid white;
-    width: 250px;
+    width: 280px;
+    height: 250px;
 }
 
 .genre-column {
@@ -72,12 +75,13 @@ form {
 .mdb-addform__upload_bar {
     flex: 1 1 100px;
     display: inline-block;
+    margin-top: 100px;
 }
 
 .upload_bar {
     width: 350px;
     height: 60px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     margin-bottom: 20px;
 }
 
@@ -115,12 +119,18 @@ form {
     width: 120px;
     height: 40px;
     margin-right: 20px;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Kalam', cursive;
 }
 
 .mdb-addform__btn--small {
     background-color: red;
     width: 80px;
     height: 40px;
+    border-radius: 5px;
+    outline: none;
+    font-family: 'Kalam', cursive;
 }
 
 .mdb-form__error {

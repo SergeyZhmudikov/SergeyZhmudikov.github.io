@@ -11,10 +11,12 @@ export class DataService {
                     var error = new Error(this.statusText);
                     error.code = this.status;
                     reject(error);
+
                 }
             };
             xhr.onerror = function() {
                 reject(new Error("Network Error"));
+                alert("Server doesn't response. How about tea break?");
             };
             xhr.send();
         });

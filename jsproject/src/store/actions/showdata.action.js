@@ -1,5 +1,6 @@
 import {
-    SHOW_DATA_BACKEND
+    SHOW_DATA_BACKEND,
+    ADD_SHOW
 } from './showdata.types';
 
 export function showBackend() {
@@ -10,9 +11,9 @@ export function showBackend() {
 
     }
 }
-export function showView(show) {
+export function addShow(payload) {
     return {
-        type: MENU_SHOW_CLICK,
-        payload: show
+        type: ADD_SHOW,
+        payload
     }
 }

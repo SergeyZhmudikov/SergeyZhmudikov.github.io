@@ -1,123 +1,138 @@
-.mdb-sidebar {
-    background-color: #363947;
-    position: relative;
-    display: inline-block;
-    /* width: 250px; */
-    height: 1200px;
-    /* z-index: 500; */
-}
-
-.mdb-sidebar__icons {
-    display: inline-block;
-    background-color: #363947;
-    /* position: relative; */
-}
-
-.fa {}
-
-.mdb-container_side {
-    /* flex: 1 1 150px; */
-    min-height: 100%;
-    /* position: relative; */
-    /* width: 240px; */
-}
-
-.fa-bars,
-.fa-film,
-.fa-television,
-.fa-bar-chart,
-.fa-question-circle-o {
-    color: white;
-    margin: 20px 20px 20px 20px;
-}
-
-.fa-plus-square-o {
-    margin-bottom: 0px;
-    margin-top: 0px;
-    color: white;
-}
-
-.mdb-text {
-    color: white;
-    font-size: 20px;
-    margin: 0px 20px 23px 20px;
-}
-
-.mdb-text--big {
-    font-size: 25px;
-    color: grey;
-}
-
-.mdb-size {
-    display: inline-block;
-}
-
-.mdb-sidebar__support {
-    margin-left: 5px;
-}
-
-.mdb-logo {
-    margin-left: 13px;
-    display: inline;
-    margin-bottom: 15px;
-}
-
-.mdb-hide {
-    display: none;
-}
-
-.mdb-show {
-    display: inline-block;
-    margin: 0;
-    background-color: #363947;
-    /* position: relative; */
-}
-
-.mdb-text:hover {
-    color: rgba(255, 153, 0, 0.548);
-    cursor: pointer;
-}
-
-.fa-bars:hover {
-    color: rgba(255, 153, 0, 0.548);
-    cursor: pointer;
-}
-
-.fa-film:hover {
-    color: rgba(255, 153, 0, 0.548);
-    cursor: pointer;
-}
-
-.fa-television:hover {
-    color: rgba(255, 153, 0, 0.548);
-    cursor: pointer;
-}
-
-.fa-bar-chart:hover {
-    color: rgba(255, 153, 0, 0.548);
-    cursor: pointer;
-}
-
-.fa-question-circle-o:hover {
-    color: rgba(255, 153, 0, 0.548);
-    cursor: pointer;
-}
-
-
-/* .mdb-sidebar__btn {
+        .mdb-sidebar {
+            background-color: #363947;
+            /* position: relative; */
+            /* display: inline-block; */
+            /* width: 250px; */
+            /* min-height: 100%; */
+            /* z-index: 500; */
+            /* width: 100%; */
+            min-height: 100vh;
+            /* flex: 1 1 100px; */
+            /* position: absolute; */
+            /* overflow: auto; */
+        }
+        
+        .mdb-hide {
+            display: none;
+            /* height: 100vh; */
+        }
+        
+        .mdb-show {
+            display: inline-block;
+            margin: 0;
+            flex: 1 1 100px;
+            background-color: #363947;
+            position: relative;
+            height: 100vh;
+        }
+        
+        .mdb-sidebar__icons {
+            display: inline-block;
+            background-color: #363947;
+            /* position: relative; */
+            height: 100vh;
+        }
+        
+        .fa {}
+        
+        .mdb-container_side {
+            /* flex: 1 1 150px; */
+            /* height: 100vh; */
+            /* position: relative; */
+            /* width: 240px; */
+        }
+        
+        .fa-bars,
+        .fa-film,
+        .fa-television,
+        .fa-bar-chart,
+        .fa-question-circle-o {
+            color: white;
+            margin: 20px 20px 20px 20px;
+        }
+        
+        .fa-plus-square-o {
+            margin-bottom: 0px;
+            margin-top: 0px;
+            color: white;
+        }
+        
+        .mdb-text {
+            color: white;
+            font-size: 20px;
+            margin: 0px 20px 23px 20px;
+        }
+        
+        .mdb-text--big {
+            font-size: 25px;
+            color: grey;
+        }
+        
+        .mdb-size {
+            display: inline-block;
+        }
+        
+        .mdb-sidebar__support {
+            margin-left: 5px;
+        }
+        
+        .mdb-logo {}
+        
+        .mdb-text:hover {
+            color: rgba(255, 153, 0, 0.548);
+            cursor: pointer;
+        }
+        
+        .fa-bars:hover {
+            color: rgba(255, 153, 0, 0.548);
+            cursor: pointer;
+        }
+        
+        .fa-film:hover {
+            color: rgba(255, 153, 0, 0.548);
+            cursor: pointer;
+        }
+        
+        .fa-television:hover {
+            color: rgba(255, 153, 0, 0.548);
+            cursor: pointer;
+        }
+        
+        .fa-bar-chart:hover {
+            color: rgba(255, 153, 0, 0.548);
+            cursor: pointer;
+        }
+        
+        .fa-question-circle-o:hover {
+            color: rgba(255, 153, 0, 0.548);
+            cursor: pointer;
+        }
+        /* .mdb-sidebar__btn {
     opacity: 1;
 } */
-
-.mdb-logo-container {
-    margin: 0px;
-}
-
-.sidebar {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    align-content: stretch;
-    justify-content: flex-start;
-}
+        
+        .mdb-logo-container {
+            margin: 0px;
+        }
+        
+        .sidebar {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            align-content: stretch;
+            justify-content: flex-start;
+        }
+        
+        .active-link {
+            color: rgb(149, 113, 208);
+        }
+        
+        .mdb-show>a {
+            text-decoration: none;
+        }
+        
+        a:active {
+            color: rgb(149, 113, 208);
+        }

@@ -8,7 +8,7 @@ import {
 } from './../actions';
 
 const initialState = {
-    state: 'INITIAL',
+
     movies: []
 }
 

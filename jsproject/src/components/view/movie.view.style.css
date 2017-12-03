@@ -1,18 +1,25 @@
 .mdb_movieView_container {
-    background-color: #363947;
-    display: inline-block;
-    position: absolute;
-    min-width: 90%;
+    background-color: #262830;
     min-height: 100%;
+    flex: 1 1 100px;
 }
 
 .mdb-dashboard__films {
-    overflow: auto;
+    /* overflow: auto; */
     /* position: absolute; */
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    height: 570px;
+    /* width: 90%; */
+    margin-left: 35px;
+    margin-right: 20px;
+    margin-top: 20px;
 }
 
 .mdb-header {
-    /* position: relative; */
-    margin-left: 60px;
-    margin-top: 20px;
+    /* position: absolute; */
+    /* display: none; */
+    margin-left: 40px;
+    margin-top: 10px;
 }

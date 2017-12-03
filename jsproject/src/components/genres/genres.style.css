@@ -1,0 +1,13 @@
+.mdb__genre-list {
+    /* display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around; */
+    column-count: 2;
+}
+
+.mdb__genre-item {
+    /* flex: 1 1 20px; */
+}

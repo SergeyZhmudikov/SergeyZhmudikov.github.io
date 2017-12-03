@@ -13,6 +13,7 @@ const genreDataApi = store => next => action => {
         dataService.getData(mdbUrl.genresUrl).then((result) => {
             let genres = JSON.parse(result).genres;
             let data = genres;
+            console.log(data)
             store.dispatch({
                 type: GET_GENRE_DATA,
                 payload: data
