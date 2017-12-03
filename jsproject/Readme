@@ -2,6 +2,8 @@ npm start - run develop project with devserver;
 npm run build - run webpack with common.js settings;
 npm run release -run webpack production project(mini).
 
-
+Some notes:
+1.Advanced search works only with overview.
+2. Support page. Click on Submit - save information to Session storage. Cancel click - delete information from session storage.
 
 
