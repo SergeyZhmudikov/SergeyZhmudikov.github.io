@@ -50,7 +50,9 @@ export class Card extends Component {
                               <div className='mdb-card__popularity'>Popularity: {item.popularity}</div>
                               <div className='mdb-card__vote-average'> Vote average: {item.voteaverage}</div> 
                               </div>
+
                               <div className={this.props.hideRecommend?'mdb-card__recomend--hide':'mdb-card__recomend'}> We also recomended: </div>
+                              <div className='mdb-card__wrapper'> 
                               <div className={this.props.hideRecommend?"mdb-card__recomend_array--hide":"mdb-card__recomend_array"}>  
                               
                               {this.props.recomArr
@@ -66,6 +68,7 @@ export class Card extends Component {
                               );
                         })
                 }
+                </div>
                               </div> 
                               
                               </div>
