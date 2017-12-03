@@ -108,8 +108,10 @@ class AdvancedSearch extends Component{
 
             }
             handleSubmitSearch(){
-                this.props.saveMovieSearchConfig();
-
+                // this.props.saveMovieSearchConfig();
+                if(this.props.searchItemsAdvanced){
+                    this.props.searchItemsAdvanced();
+                }
             //     e.preventDefault();
             //     let saveitem = {
             //         name: this.state.name,
@@ -143,6 +145,7 @@ class AdvancedSearch extends Component{
            <div className="mdb-advanced-search__title">
            <div className="search-title">Title</div>
            <Inputblock
+           isdisabled = {true}
            onChange={this.onTitleSearchChange.bind(this)}
            placeholder = 'Title'
            inputtype = 'text'
@@ -235,8 +238,8 @@ const mapDispatchToProps = (dispatch) =>({
 
         advancedMovieGenre:() => dispatch(advancedMovieGenre()),
         advancedMovieAdult:() => dispatch(advancedMovieAdult()),
-        advancedMovieTitle:() => dispatch(advancedMovieTitle()),
-        advancedMovieOverview:() => dispatch(advancedMovieOverview()),
+        advancedMovieTitle:(name) => dispatch(advancedMovieTitle(name)),
+        advancedMovieOverview:(overview) => dispatch(advancedMovieOverview(overview)),
         saveMovieSearchConfig:() => dispatch(saveMovieSearchConfig())
 
        

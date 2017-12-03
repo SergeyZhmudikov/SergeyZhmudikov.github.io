@@ -9,7 +9,8 @@ import addMovieMiddle from './middleware/addmovie.middleware.js';
 import addShowMiddle from './middleware/addshow.middleware.js';
 import libraryData from './middleware/library.middleware.js';
 import libraryMotionsMiddlware from './middleware/library.motions.middleware.js';
-import recomDataApi from './middleware/recommendation.middleware.js'
+import recomDataApi from './middleware/recommendation.middleware.js';
+import advancedSearchMiddlewear from '../store/middleware/advancedsearch.middleware.js'
 
 
 export const appStore = createStore(
@@ -22,7 +23,8 @@ export const appStore = createStore(
         addShowMiddle,
         libraryData,
         libraryMotionsMiddlware,
-        recomDataApi
+        recomDataApi,
+        advancedSearchMiddlewear
     )
 
 

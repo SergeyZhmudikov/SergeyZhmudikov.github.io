@@ -77,7 +77,7 @@ class MovieView extends Component {
             <Navigation 
             tag='movie'/>
             <SuperSearch
-            searchItemsAdvanced = {this.props.doSearch}
+            searchItemsAdvanced = {this.props.doSearch.bind(this)}
             />
             <Form 
             header='Add movie'
@@ -124,6 +124,6 @@ class MovieView extends Component {
         addMovie: (item) => dispatch(addMovie(item)),
         addMovieToLibrary: (item) => dispatch(addMovieToLibrary(item)),
         deleteMovieFromLibrary: (item) => dispatch(deleteMovieFromLibrary(item)),
-        doSearch: (saveitem) => dispatch(doSearch(saveitem))
+        doSearch: () => dispatch(doSearch())
     })
     export const MovieContainer = connect(mapStateToProps, mapDispatchToProps)(MovieView);

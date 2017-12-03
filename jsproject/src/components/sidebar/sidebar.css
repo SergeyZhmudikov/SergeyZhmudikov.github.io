@@ -129,6 +129,10 @@
             color: rgb(149, 113, 208);
         }
         
+        .mdb-show>a {
+            text-decoration: none;
+        }
+        
         a:active {
             color: rgb(149, 113, 208);
         }

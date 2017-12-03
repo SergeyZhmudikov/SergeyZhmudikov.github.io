@@ -22,7 +22,7 @@ export class Addform extends Component{
             name: '',
             overview: '',
             genre: [] ,
-            // poster: 0
+            poster: 0
         };
         this.onTitleChange = this.onTitleChange.bind(this);       
         this.onOverviewChange = this.onOverviewChange.bind(this);
@@ -175,19 +175,7 @@ export class Addform extends Component{
             type="file"
             disabled
              multiple onLoad={this.uploadPicture}/></div>
-            {/* <div className="poster_bar">
-                <div className="poster_bar__poster"></div>
-                <div className="poster_bar__poster"></div>
-                <div className="poster_bar__poster"></div>
-                <div className="poster_bar__poster"></div>
-            </div>
-            <div className="slide_bar">
-                <div className="slide_bar__item"></div>
-                <div className="slide_bar__item"></div>
-                <div className="slide_bar__item"></div>
-                <div className="slide_bar__item"></div>
-            </div>
-            <div className="scroll_bar"></div> */}
+            
             <Button 
             className={"mdb-addform__btn mdb-addform__btn--big"} 
             disabled={this.validationForm()} 
@@ -226,25 +214,3 @@ export const Form = connect(mapStateToProps, mapDispatchToProps)(Addform);
 
 
 
-
-
-
- //   onChange(event) {
-            //     let valueName = event;
-            //     console.log(valueName);
-            //     // if(event.target === true) {
-            //     //   this.setState((array) => ({
-            //     //     genres: array.genres.concat(valueName)
-            //     //   }));
-            //     // } else {
-            //     //   this.setState((array) => ({
-            //     //     genres: array.genres.filter(function(item) {
-            //     //       return item !== valueName;
-            //     //   })}));
-            //     // }
-            //   }
-
-            //   uploadPicture(e) {
-            //     this.setState({uploadimg: e.target.value});
-            //   }
-              

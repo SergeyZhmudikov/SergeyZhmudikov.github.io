@@ -19,7 +19,7 @@ const libraryMotionsMiddlware = store => next => action => {
         let myLibStr = localStorage.getItem("library");
         console.log('get library', myLibStr);
         let item = action.payload;
-        item.isInLibrary = true;
+
         if (!myLibStr) {
             let tempArray = [];
             tempArray.push(item);
@@ -42,7 +42,7 @@ const libraryMotionsMiddlware = store => next => action => {
         let myLibStr = localStorage.getItem("library");
         console.log('get library', myLibStr);
         let item = action.payload;
-        item.isInLibrary = true;
+
         if (!myLibStr) {
             let tempArray = [];
             tempArray.push(item);

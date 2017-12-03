@@ -26,7 +26,7 @@ export class AboutView extends Component {
             <Navigation hideAddMovie = { true }/> 
             </div>
             <div className = "mdb-dashboard__about" >
-            <div className = "about-title" > Welcome to my page! </div>
+            <div className = "about-title" > Welcome! </div>
             <div className = "about-block">
             <div className = "about-block__descriptoon" >
 

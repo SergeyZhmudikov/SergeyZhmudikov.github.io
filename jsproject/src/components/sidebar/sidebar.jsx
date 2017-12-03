@@ -73,7 +73,7 @@ render(){
         <div className={(this.props.openSidebar)?"mdb-show":"mdb-hide"}>
             
                 {/* <div className="mdb-logo"> </div> */}
-                <div className="mdb-logo mdb-text mdb-text--big"><i className="fa fa-plus-square-o" aria-hidden="true"></i>Logo</div>
+                <div className="mdb-logo mdb-text mdb-text--big"><i className="fa fa-plus-square-o" aria-hidden="true"></i> Logo</div>
                 <NavLink to="/movies" activeClassName="active-link">
                 <div className="mdb-text" onClick={this.props.movieView} >Movies </div>
                 </NavLink>

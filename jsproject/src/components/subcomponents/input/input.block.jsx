@@ -31,7 +31,7 @@ render(){
             type={this.props.inputtype} 
             placeholder={this.props.placeholder}
             value = {this.props.inputvalue}
- 
+            disabled = {this.props.isdisabled}
             onChange={this.handleInput.bind(this)}/>
         
          
